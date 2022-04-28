@@ -61,3 +61,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+## Custom ignores
+# Text files in 2D Tilemap Extras
+Packages/com.unity.2d.tilemap.extras/*.md
+Packages/com.unity.2d.tilemap.extras/*.md.meta
