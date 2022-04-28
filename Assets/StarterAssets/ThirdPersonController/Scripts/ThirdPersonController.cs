@@ -12,6 +12,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
     [RequireComponent(typeof(PlayerInput))]
 #endif
+    [RequireComponent(typeof(StarterAssetsInputs))]     // WTF Unity? you need this but do not RequireComponent it??
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]

@@ -14,10 +14,13 @@ public class PlayfieldSpawner : MonoBehaviour
 
     [SerializeField] private int numberOfWalls;
 
+    private System.Random random = new System.Random();
+
     public void GeneratePlayfield()
     {
         generateBorderAndFloor();
         generateInnerWalls();
+        generatePlayer();
     }
 
     private void generateBorderAndFloor()
@@ -46,8 +49,6 @@ public class PlayfieldSpawner : MonoBehaviour
 
     private void generateInnerWalls()
     {
-        System.Random random = new System.Random();
-
         for (int i = 0; i < numberOfWalls; i++)
         {
             // TODO?: grid/snapping; coord clamping according to prefab (size) picked
@@ -55,6 +56,22 @@ public class PlayfieldSpawner : MonoBehaviour
             GameObject.Instantiate(wallPrefabs[random.Next(0, wallPrefabs.Count)],
                                    new Vector3(random.Next(-width / 2, width / 2), 0, random.Next(-height / 2, height / 2)),
                                    Quaternion.identity);
+        }
+    }
+
+    private void generatePlayer()
+    {
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            Debug.Log("<b>PlayfieldSpawner:</b> There is already a Player object in the scene. Skipping Player generation.");
+        }
+        else
+        {
+            // TODO?: detection of free/occupied tiles to prevent spawning the player in walls
+            GameObject player = new GameObject("Player");
+            player.transform.SetPositionAndRotation(new Vector3(random.Next(-width + 1, width - 1), 0, random.Next(-height + 1, height - 1)),
+                                                    Quaternion.identity);
+            player.AddComponent<StarterAssets.ThirdPersonController>();
         }
     }
 }
