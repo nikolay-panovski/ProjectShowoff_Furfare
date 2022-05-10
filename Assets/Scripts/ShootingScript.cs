@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShootingScript : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class ShootingScript : MonoBehaviour
         if (_canFire) Fire();
     }
 
-    private void Update()
+    public void OnFire(InputValue value)
     {
         ShootingInput();
     }

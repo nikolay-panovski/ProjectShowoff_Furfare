@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f55e94b12104df543b0dbba1c95490d2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 3ec1c12fca25f284aba042c3dcf5ea6a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2046,7 +2046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1048881351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2456,13 +2456,14 @@ GameObject:
   - component: {fileID: 1159246956}
   - component: {fileID: 1159246962}
   - component: {fileID: 1159246955}
+  - component: {fileID: 1159246963}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1159246955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,7 +2478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   rotationSmoothTime: 0.12
-  speedChangeRate: 10
+  speedChangeRate: 20
   gravity: -15
 --- !u!114 &1159246956
 MonoBehaviour:
@@ -2661,7 +2662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159246954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.12, y: 1.23, z: 6.03}
+  m_LocalPosition: {x: -0.76, y: 2.49, z: 6.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2686,6 +2687,20 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 0
   cursorInputForLook: 0
+--- !u!114 &1159246963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159246954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abbd67ebbced994386e27dfc2220c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 4384799109232136392, guid: 5e7ad260b041e2a438878b2824b416f7, type: 3}
+  _cooldownDuration: 1
 --- !u!1001 &1176008681
 PrefabInstance:
   m_ObjectHideFlags: 0
