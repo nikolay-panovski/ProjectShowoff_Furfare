@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4365142385433880052}
   - component: {fileID: 4365142385433880053}
   - component: {fileID: 4365142385433880054}
-  - component: {fileID: 4365142385433880055}
+  - component: {fileID: 7787496773594055972}
+  - component: {fileID: -8353146294195489321}
   m_Layer: 0
   m_Name: ProjectilePickup
   m_TagString: ProjectilePickup
@@ -82,16 +83,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4365142385433880055
+--- !u!135 &7787496773594055972
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4365142385433880041}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 13400000, guid: 24dc7a9456865444a9a3ac33bb77f0fe, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8353146294195489321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365142385433880041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0064fc512ef153e48a5116cc96325aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _maxBounces: 3

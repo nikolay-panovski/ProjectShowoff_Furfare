@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class ShootingScript : MonoBehaviour
 {
-    [SerializeField] private Projectile _bulletPrefab;
+    private Projectile heldProjectile;
     [SerializeField] private int _cooldownDuration = 1;
     private bool _canFire = false;
 
@@ -15,15 +15,16 @@ public class ShootingScript : MonoBehaviour
 
     private void Fire()
     {
-        Projectile createdBullet = Instantiate<Projectile>(_bulletPrefab, transform.position + (transform.forward * 1.5f), Quaternion.identity);
         //Set own forward vector for now, replace with vector from the controller joystick
-        createdBullet.SetDirection(transform.forward);
+        heldProjectile.SetState(ProjectileState.FIRED);
+        heldProjectile.SetDirection(transform.forward * 1.2f);
         SetCanFire(false);
+        heldProjectile = null;
     }
 
     private void ShootingInput()
     {
-        //Add input trigger
+        //input trigger through OnFire (technically this method is already useless)
         if (_canFire) Fire();
     }
 
@@ -37,7 +38,15 @@ public class ShootingScript : MonoBehaviour
         if (other.CompareTag("ProjectilePickup") && _canFire == false)
         {
             _canFire = true;
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            pickProjectileUp(other.gameObject.GetComponent<Projectile>());     // dirty, should not be here
         }
+    }
+
+    private void pickProjectileUp(Projectile projectile)
+    {
+        heldProjectile = projectile;
+        heldProjectile.SetHoldingPlayer(this.gameObject);
+        heldProjectile.SetState(ProjectileState.HELD);
     }
 }
