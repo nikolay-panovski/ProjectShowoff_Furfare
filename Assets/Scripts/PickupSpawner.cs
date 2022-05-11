@@ -6,7 +6,7 @@ public class PickupSpawner : MonoBehaviour
 {
     [SerializeField] int _pickupSpawnInterval = 10;
     [SerializeField] int _maximumPickups = 4;
-    public Spawnpoint[] _allSpawnpoints;
+    private Spawnpoint[] _allSpawnpoints;
 
     // Start is called before the first frame update
     void Start()
