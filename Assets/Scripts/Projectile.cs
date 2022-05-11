@@ -21,6 +21,8 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody myRigidbody;
 
+    private Spawnpoint _originalSpawnpoint;
+
     public void SetDirection(Vector3 newDirection)
     {
         myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
@@ -57,7 +59,14 @@ public class Projectile : MonoBehaviour
             CheckCollisionCount();
 
             SetHoldingPlayer(null);
+
+            if (_originalSpawnpoint != null)_originalSpawnpoint.SetHasSpawnedPickup(false);
         }
+    }
+
+    public void SetOriginalSpawnpoint(Spawnpoint myspawnpoint)
+    {
+        _originalSpawnpoint = myspawnpoint;
     }
 
     private void Start()
