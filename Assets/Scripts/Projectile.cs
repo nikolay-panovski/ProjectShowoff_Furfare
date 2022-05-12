@@ -23,10 +23,15 @@ public class Projectile : MonoBehaviour
 
     private Spawnpoint _originalSpawnpoint;
 
-    public void SetDirection(Vector3 newDirection)
+    #region GETTERS/SETTERS
+    public ProjectileState GetState()
     {
-        myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
-        GetComponent<Collider>().isTrigger = false;     // else no collisions happen
+        return state;
+    }
+
+    public GameObject GetHoldingPlayer()
+    {
+        return holdingPlayer;
     }
 
     public void SetState(ProjectileState newState)
@@ -37,6 +42,14 @@ public class Projectile : MonoBehaviour
     public void SetHoldingPlayer(GameObject player)
     {
         holdingPlayer = player;
+    }
+    #endregion
+
+    // ~~misleading method name
+    public void SetDirection(Vector3 newDirection)
+    {
+        myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
+        GetComponent<Collider>().isTrigger = false;     // else no collisions happen
     }
 
     private void CheckCollisionCount()

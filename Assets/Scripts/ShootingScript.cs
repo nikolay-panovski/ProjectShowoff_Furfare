@@ -10,8 +10,8 @@ public class ShootingScript : MonoBehaviour
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
     [SerializeField] private float bufferTime = 0.5f;
-    private float timeBetweenGrabAndCollision = 0f;
-    private bool isAttemptingGrab = false;
+    private float timeBetweenCatchAndCollision = 0f;
+    private bool isAttemptingCatch = false;
 
     private void SetCanFire(bool trueOrFalse)
     {
@@ -27,10 +27,10 @@ public class ShootingScript : MonoBehaviour
         heldProjectile = null;
     }
 
-    public void OnGrab(InputValue value)
+    public void OnCatch(InputValue value)
     {
-        if (isAttemptingGrab == false) isAttemptingGrab = true;
-        Debug.Log("Grab attempted.");
+        if (isAttemptingCatch == false) isAttemptingCatch = true;
+        Debug.Log("Catch attempted.");
     }
 
     public void OnFire(InputValue value)
@@ -53,11 +53,11 @@ public class ShootingScript : MonoBehaviour
         if (coll.CompareTag("ProjectilePickup"))
         {
             Projectile incomingProjectile = coll.gameObject.GetComponent<Projectile>();     // can fail if no Projectile script attached
-            if (isAttemptingGrab)   // can validly grab - the button was pressed up to bufferTime ago
+            if (isAttemptingCatch)   // can validly Catch - the button was pressed up to bufferTime ago
             {
                 pickProjectileUp(incomingProjectile);
             }
-            else // is NOT attempting grab - await to be pressed up to bufferTime late
+            else // is NOT attempting Catch - await to be pressed up to bufferTime late
             {
                 StartCoroutine(delayCollisionDamage(incomingProjectile));
             }
@@ -66,7 +66,7 @@ public class ShootingScript : MonoBehaviour
 
     private void Update()
     {
-        if (isAttemptingGrab == true)
+        if (isAttemptingCatch == true)
         {
             incrementTimer();
             checkTimer();
@@ -75,25 +75,25 @@ public class ShootingScript : MonoBehaviour
 
     private void incrementTimer()
     {
-        timeBetweenGrabAndCollision += Time.deltaTime;
+        timeBetweenCatchAndCollision += Time.deltaTime;
     }
 
     private bool checkTimer()
     {
-        bool hasTimerElapsed = timeBetweenGrabAndCollision >= bufferTime;
+        bool hasTimerElapsed = timeBetweenCatchAndCollision >= bufferTime;
 
         if (hasTimerElapsed)
         {
-            turnOffGrabState();
+            turnOffCatchState();
         }
 
         return hasTimerElapsed;
     }
 
-    private void turnOffGrabState()
+    private void turnOffCatchState()
     {
-        timeBetweenGrabAndCollision = 0.0f;
-        isAttemptingGrab = false;
+        timeBetweenCatchAndCollision = 0.0f;
+        isAttemptingCatch = false;
     }
 
     private IEnumerator delayCollisionDamage(Projectile projectile)
@@ -102,7 +102,7 @@ public class ShootingScript : MonoBehaviour
         {
             incrementTimer();
 
-            if (isAttemptingGrab == true)
+            if (isAttemptingCatch == true)
             {
                 pickProjectileUp(projectile);
                 yield break;
@@ -117,11 +117,16 @@ public class ShootingScript : MonoBehaviour
 
     private void pickProjectileUp(Projectile projectile)
     {
-        heldProjectile = projectile;
-        heldProjectile.SetHoldingPlayer(this.gameObject);
-        heldProjectile.SetState(ProjectileState.HELD);
+        if (projectile.GetHoldingPlayer() == null)
+        {
+            heldProjectile = projectile;
+            heldProjectile.SetHoldingPlayer(this.gameObject);
+            heldProjectile.SetState(ProjectileState.HELD);
 
-        _canFire = true;
-        Debug.Log("Grab successful.");
+            _canFire = true;
+            Debug.Log("Catch successful.");
+        }
+
+        //else Debug.Log("Trying to catch projectile held by another player. Won't catch.");
     }
 }
