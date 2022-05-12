@@ -59,9 +59,11 @@ public class Projectile : MonoBehaviour
 
     private void setPositionRelativeToHoldingPlayer()
     {
-        // basically assumes that bullets and player are of the same size
+        Transform player = holdingPlayer.transform;
+
         // PLUS some extra value on the forward, otherwise an immediate collision with the player happens (+1 to bounce count)
-        transform.position = holdingPlayer.transform.position + holdingPlayer.transform.forward * 1.1f;
+        // to add z to the forward vector (even for non-uniform scale) is correct because z *is* forward
+        transform.position = player.position + player.forward * player.localScale.z;
     }
 
     private void OnCollisionEnter(Collision collision)
