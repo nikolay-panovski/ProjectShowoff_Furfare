@@ -9,7 +9,7 @@ public enum ProjectileState
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private int _speed = 100;
+    [SerializeField] private int _speed;
     [SerializeField] private int _maxBounces = 3;
     [SerializeField] private int _bounceCount;
 
@@ -52,6 +52,9 @@ public class Projectile : MonoBehaviour
     public void SetDirection(Vector3 newDirection)
     {
         myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
+        Debug.Log(newDirection);
+        Debug.Log(Time.deltaTime);
+        Debug.Log(_speed);
         GetComponent<Collider>().isTrigger = false;     // else no collisions happen
     }
 
