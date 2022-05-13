@@ -13,7 +13,10 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private int _speed = 100;
     [SerializeField] private int _maxBounces = 3;
-    private int _bounceCount;
+    [SerializeField] private int _bounceCount;
+
+    private float _bufferAfterBounce = 0.5f;
+    private bool _hitWallRecently = false;
 
     private ProjectileState state = ProjectileState.IDLE;
 
@@ -23,10 +26,15 @@ public class Projectile : MonoBehaviour
 
     private Spawnpoint _originalSpawnpoint;
 
-    public void SetDirection(Vector3 newDirection)
+    #region GETTERS/SETTERS
+    public ProjectileState GetState()
     {
-        myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
-        GetComponent<Collider>().isTrigger = false;     // else no collisions happen
+        return state;
+    }
+
+    public GameObject GetHoldingPlayer()
+    {
+        return holdingPlayer;
     }
 
     public void SetState(ProjectileState newState)
@@ -38,6 +46,14 @@ public class Projectile : MonoBehaviour
     {
         holdingPlayer = player;
     }
+    #endregion
+
+    // ~~misleading method name
+    public void SetDirection(Vector3 newDirection)
+    {
+        myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
+        GetComponent<Collider>().isTrigger = false;     // else no collisions happen
+    }
 
     private void CheckCollisionCount()
     {
@@ -46,15 +62,22 @@ public class Projectile : MonoBehaviour
 
     private void setPositionRelativeToHoldingPlayer()
     {
-        // basically assumes that bullets and player are of the same size
-        // PLUS some extra value on the forward, otherwise an immediate collision with the player happens (+1 to bounce count)
-        transform.position = holdingPlayer.transform.position + holdingPlayer.transform.forward * 1.1f;
+        Transform player = holdingPlayer.transform;
+
+        transform.position = new Vector3(player.position.x + player.forward.x * player.localScale.x,
+                                         transform.position.y,
+                                         player.position.z + player.forward.z * player.localScale.z);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(collision.gameObject);
+
         if (state == ProjectileState.FIRED)
         {
+            toggleHitWallState();   // true
+            Invoke("toggleHitWallState", _bufferAfterBounce);   // false
+
             _bounceCount += 1;
             CheckCollisionCount();
 
@@ -80,5 +103,10 @@ public class Projectile : MonoBehaviour
         {
             setPositionRelativeToHoldingPlayer();
         }
+    }
+
+    private void toggleHitWallState()
+    {
+        _hitWallRecently ^= true;
     }
 }
