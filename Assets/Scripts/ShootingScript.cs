@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 
 public class ShootingScript : MonoBehaviour
 {
-    private Projectile heldProjectile;
     [SerializeField] private int _cooldownDuration = 1;
+    [SerializeField] private Score _scoreManager;
+    [SerializeField] private int _playerNumber;
+    private Projectile heldProjectile;
     private bool _canFire = false;      // currently equivalent to "is holding a projectile" (source irrelevant)
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
@@ -24,6 +26,7 @@ public class ShootingScript : MonoBehaviour
         heldProjectile.SetState(ProjectileState.FIRED);
         heldProjectile.SetDirection(transform.forward * 1.2f);
         SetCanFire(false);
+        heldProjectile.SetOriginalShooter(_playerNumber);
         heldProjectile = null;
     }
 
@@ -59,7 +62,7 @@ public class ShootingScript : MonoBehaviour
             }
             else // is NOT attempting grab - await to be pressed up to bufferTime late
             {
-                StartCoroutine(delayCollisionDamage(incomingProjectile));
+                StartCoroutine(delayCollisionDamage(incomingProjectile, incomingProjectile.GetOriginalShooter()));
             }
         }
     }
@@ -96,7 +99,7 @@ public class ShootingScript : MonoBehaviour
         isAttemptingGrab = false;
     }
 
-    private IEnumerator delayCollisionDamage(Projectile projectile)
+    private IEnumerator delayCollisionDamage(Projectile projectile, int enemyPlayerNumber)
     {
         while (!checkTimer())
         {
@@ -110,6 +113,7 @@ public class ShootingScript : MonoBehaviour
         }
 
         //takeDamage();     // or addScore() or whatever equivalent fits
+        _scoreManager.IncreaseScore(enemyPlayerNumber);
         Debug.Log("ouch!");
         Destroy(projectile.gameObject);    // dirty, I guess?
                                            // Destroy(projectile) will only destroy the script and keep the ball alive forever! :)

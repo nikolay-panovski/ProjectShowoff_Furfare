@@ -23,6 +23,8 @@ public class Projectile : MonoBehaviour
 
     private Spawnpoint _originalSpawnpoint;
 
+    private int _originalShooter;
+
     public void SetDirection(Vector3 newDirection)
     {
         myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
@@ -42,6 +44,16 @@ public class Projectile : MonoBehaviour
     private void CheckCollisionCount()
     {
         if (_bounceCount >= _maxBounces) Destroy(gameObject);
+    }
+
+    public void SetOriginalShooter(int number)
+    {
+        _originalShooter = number;
+    }
+
+    public int GetOriginalShooter()
+    {
+        return _originalShooter;
     }
 
     private void setPositionRelativeToHoldingPlayer()
