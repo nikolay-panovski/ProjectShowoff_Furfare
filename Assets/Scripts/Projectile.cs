@@ -13,7 +13,10 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private int _speed = 100;
     [SerializeField] private int _maxBounces = 3;
-    private int _bounceCount;
+    [SerializeField] private int _bounceCount;
+
+    private float _bufferAfterBounce = 0.5f;
+    private bool _hitWallRecently = false;
 
     private ProjectileState state = ProjectileState.IDLE;
 
@@ -61,15 +64,20 @@ public class Projectile : MonoBehaviour
     {
         Transform player = holdingPlayer.transform;
 
-        // PLUS some extra value on the forward, otherwise an immediate collision with the player happens (+1 to bounce count)
-        // to add z to the forward vector (even for non-uniform scale) is correct because z *is* forward
-        transform.position = player.position + player.forward * player.localScale.z;
+        transform.position = new Vector3(player.position.x + player.forward.x * player.localScale.x,
+                                         transform.position.y,
+                                         player.position.z + player.forward.z * player.localScale.z);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(collision.gameObject);
+
         if (state == ProjectileState.FIRED)
         {
+            toggleHitWallState();   // true
+            Invoke("toggleHitWallState", _bufferAfterBounce);   // false
+
             _bounceCount += 1;
             CheckCollisionCount();
 
@@ -95,5 +103,10 @@ public class Projectile : MonoBehaviour
         {
             setPositionRelativeToHoldingPlayer();
         }
+    }
+
+    private void toggleHitWallState()
+    {
+        _hitWallRecently ^= true;
     }
 }
