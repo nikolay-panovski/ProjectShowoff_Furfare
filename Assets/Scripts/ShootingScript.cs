@@ -22,7 +22,7 @@ public class ShootingScript : MonoBehaviour
     {
         //Set own forward vector for now, replace with vector from the controller joystick
         heldProjectile.SetState(ProjectileState.FIRED);
-        heldProjectile.SetDirection(transform.forward * 1.2f);
+        heldProjectile.SetDirection(transform.forward);
         SetCanFire(false);
         heldProjectile = null;
     }
@@ -53,7 +53,8 @@ public class ShootingScript : MonoBehaviour
         if (coll.CompareTag("ProjectilePickup"))
         {
             Projectile incomingProjectile = coll.gameObject.GetComponent<Projectile>();     // can fail if no Projectile script attached
-            if (isAttemptingCatch)   // can validly Catch - the button was pressed up to bufferTime ago
+            // can validly Catch - the button was pressed up to bufferTime ago
+            if (incomingProjectile.GetState() == ProjectileState.FIRED && isAttemptingCatch)
             {
                 pickProjectileUp(incomingProjectile);
             }
@@ -120,6 +121,7 @@ public class ShootingScript : MonoBehaviour
         if (projectile.GetHoldingPlayer() == null)
         {
             heldProjectile = projectile;
+            Physics.IgnoreCollision(this.GetComponent<Collider>(), heldProjectile.GetComponent<Collider>());
             heldProjectile.SetHoldingPlayer(this.gameObject);
             heldProjectile.SetState(ProjectileState.HELD);
 
