@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Based on ThirdPersonController. Until it is made in good code, RequireComponent the base parts.
-[RequireComponent(typeof(CharacterController))]
+// Based on ThirdPersonController.
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInput))]
 public class SimpleMoveController : MonoBehaviour
 {
@@ -28,8 +28,8 @@ public class SimpleMoveController : MonoBehaviour
     private float _terminalVelocity = 53.0f;
 
     private PlayerInput _playerInput;
+    private Rigidbody _rigidbody;
 
-    private CharacterController _controller;
     private Camera _mainCamera;
 
     private void Awake()
@@ -39,11 +39,11 @@ public class SimpleMoveController : MonoBehaviour
 
     private void Start()
     {
-        _controller = GetComponent<CharacterController>();
+        _rigidbody = GetComponent<Rigidbody>();
         _playerInput = GetComponent<PlayerInput>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // necessary actions
         // Move, Fire
@@ -73,13 +73,48 @@ public class SimpleMoveController : MonoBehaviour
     /**/
     private void move(Vector2 input)
     {
+        Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y).normalized;
+
+        /**
+        if (input == Vector2.zero)
+        {
+            _rigidbody.velocity = Vector3.zero;
+        }
+        /**/
+
+        if (input != Vector2.zero)
+        {
+            _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
+                              _mainCamera.transform.eulerAngles.y;
+            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
+                rotationSmoothTime);
+
+            // rotate to face input direction relative to camera position
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+
+
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+
+            //if (_rigidbody.velocity.magnitude < moveSpeed)
+            {
+                _rigidbody.MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
+            }
+        }
+
+        
+    }
+    /**/
+
+    /**
+    private void move(Vector2 input)
+    {
         float targetSpeed = moveSpeed;
 
         // if there is no input, set the target speed  to 0
         if (input == Vector2.zero) targetSpeed = 0.0f;
 
         // a reference to the players current horizontal velocity
-        float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+        float currentHorizontalSpeed = new Vector3(_rigidbody.velocity.x, 0.0f, _rigidbody.velocity.z).magnitude;
 
         float speedOffset = 0.1f;
 
@@ -119,9 +154,10 @@ public class SimpleMoveController : MonoBehaviour
 
         Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-        // move the player
-        _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime)
-                        + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+        // move the player (Unity Rigidbody physics version)
+        _rigidbody.AddForce(targetDirection.normalized * (_speed * Time.deltaTime)
+                          + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime,
+                          ForceMode.VelocityChange);
     }
     /**/
 }
