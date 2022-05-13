@@ -10,30 +10,12 @@ public class Score : MonoBehaviour
     public Slider pink;
     public Slider yellow;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseScore(int playerNumber)
     {
-
-    }
-    public void BlueIncrement() 
-    {
-        blue.value += 0.01f;
-    }
-    public void GreenIncrement()
-    {
-        green.value += 0.01f;
-    }
-    public void PinkIncrement()
-    {
-        pink.value += 0.01f;
-    }
-    public void YellowIncrement()
-    {
-        yellow.value += 0.01f;
+        if (playerNumber == 1) blue.value += 1f;
+        if (playerNumber == 2) green.value += 1f;
+        if (playerNumber == 3) pink.value += 1f;
+        if (playerNumber == 4) yellow.value += 1f;
     }
 }
