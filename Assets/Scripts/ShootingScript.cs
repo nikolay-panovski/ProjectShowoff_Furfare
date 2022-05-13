@@ -22,7 +22,6 @@ public class ShootingScript : MonoBehaviour
 
     private void Fire()
     {
-        //Set own forward vector for now, replace with vector from the controller joystick
         heldProjectile.SetState(ProjectileState.FIRED);
         heldProjectile.SetDirection(transform.forward);
         SetCanFire(false);
@@ -45,7 +44,7 @@ public class ShootingScript : MonoBehaviour
     {
         if (other.CompareTag("ProjectilePickup") && _canFire == false)
         {
-            pickProjectileUp(other.gameObject.GetComponent<Projectile>());     // dirty, should not be here
+            pickProjectileUp(other.gameObject.GetComponent<Projectile>());     // dirty, to rework
         }
     }
 
@@ -100,6 +99,7 @@ public class ShootingScript : MonoBehaviour
         isAttemptingCatch = false;
     }
 
+    // FOR NOW - ALSO talks to score manager to modify score. that should be in a different place.
     private IEnumerator delayCollisionDamage(Projectile projectile, int enemyPlayerNumber)
     {
         while (!checkTimer())

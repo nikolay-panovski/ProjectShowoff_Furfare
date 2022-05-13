@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum ProjectileState
@@ -28,11 +26,8 @@ public class Projectile : MonoBehaviour
 
     private int _originalShooter;
 
-    public void SetDirection(Vector3 newDirection)
-
     #region GETTERS/SETTERS
     public ProjectileState GetState()
-    
     {
         return state;
     }
@@ -86,8 +81,6 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log(collision.gameObject);
-
         if (state == ProjectileState.FIRED)
         {
             toggleHitWallState();   // true
