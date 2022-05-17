@@ -50,7 +50,7 @@ public class SimpleMoveController : MonoBehaviour
 
     private void move(Vector2 input)
     {
-        Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y).normalized;
+        Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y);
 
         /**
         if (input == Vector2.zero)
@@ -72,7 +72,11 @@ public class SimpleMoveController : MonoBehaviour
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            _rigidbody.MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
+            _rigidbody.velocity = inputDirection.magnitude * targetDirection * moveSpeed;
+            //MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
+        } else
+        {
+            _rigidbody.velocity = Vector3.zero;
         }
     }
 }
