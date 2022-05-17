@@ -9,8 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1514549403074450006, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_Name
-      value: Player (2)
+      value: Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450009, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+      propertyPath: _playerNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450015, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7684cb84d57fc64581d2b3155b547b8, type: 2}
     - target: {fileID: 1514549403074450017, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_RootOrder
       value: 0

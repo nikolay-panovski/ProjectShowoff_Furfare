@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1514549403074450009}
   - component: {fileID: 3787529474825268777}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Blue
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cooldownDuration: 1
   _scoreManager: {fileID: 0}
-  _playerNumber: 0
+  _playerNumber: 1
   bufferTime: 0.5
 --- !u!54 &3787529474825268777
 Rigidbody:
