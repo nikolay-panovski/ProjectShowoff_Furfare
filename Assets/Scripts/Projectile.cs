@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
     // ~~misleading method name
     public void SetDirection(Vector3 newDirection)
     {
-        myRigidbody.AddForce(newDirection * Time.deltaTime * _speed);
+        myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
         Debug.Log(newDirection);
         Debug.Log(Time.deltaTime);
         Debug.Log(_speed);
