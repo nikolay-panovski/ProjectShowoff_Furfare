@@ -82,6 +82,7 @@ public class Projectile : MonoBehaviour
                                          player.position.z + player.forward.z * player.localScale.z);
     }
 
+    // why is *almost any of this* in OnCollisionEnter?
     private void OnCollisionEnter(Collision collision)
     {
         if (state == ProjectileState.FIRED)
