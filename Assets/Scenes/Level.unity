@@ -646,6 +646,10 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 4392838028421565382}
+    - target: {fileID: 7371500517856424615, guid: 9be7aebec0ce811448cdc89148e393fe, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7371500517856424619, guid: 9be7aebec0ce811448cdc89148e393fe, type: 3}
       propertyPath: m_Name
       value: Green
@@ -807,6 +811,10 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 4392838028421565382}
+    - target: {fileID: 1408685393586270326, guid: e9011304f2fe7a3498e41e73ea26e7fe, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1408685393586270330, guid: e9011304f2fe7a3498e41e73ea26e7fe, type: 3}
       propertyPath: m_Name
       value: Yellow
@@ -4081,6 +4089,10 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 4392838028421565382}
+    - target: {fileID: 1514549403074450010, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4372,6 +4384,10 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 4392838028421565382}
+    - target: {fileID: 7205763459894272307, guid: d41598c585302614f950d9c33ce97956, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7205763459894272319, guid: d41598c585302614f950d9c33ce97956, type: 3}
       propertyPath: m_Name
       value: Pink
