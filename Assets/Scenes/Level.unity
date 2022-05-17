@@ -3219,6 +3219,48 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535159022}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1549498025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1514549403074450006, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+  m_PrefabInstance: {fileID: 1514549401931448065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1549498026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549498025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5487099acc054214aa0076f3418b002f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1549498027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549498025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f89d8e04ecd040aa941feed11f780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1549498034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549498025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26811a6adc47c240a9279ca8f5bd2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bufferTime: 0.5
 --- !u!1001 &1556583241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4474,6 +4516,10 @@ PrefabInstance:
     - target: {fileID: 1514549403074450006, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450009, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450009, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: _playerNumber
