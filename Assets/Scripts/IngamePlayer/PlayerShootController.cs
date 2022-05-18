@@ -14,9 +14,8 @@ public class PlayerShootController : ShootController
 
         else
         {
-            projectile.SetState(ProjectileState.FIRED);
-            projectile.SetHoldingPlayer(null);              // consider what this reference might be needed for (score?)
-            projectile.SetDirection(transform.forward);     // the meat - the Rigidboy.AddForce() deal. change method name.
+            projectile.state = ProjectileState.FIRED;
+            projectile.SetForceInDirection(transform.forward);     // the meat - the Rigidboy.AddForce() deal. change method name.
 
             return true;
         }

@@ -12,5 +12,5 @@ public abstract class PickupController : MonoBehaviour
     /// TODO: Abstract for any kind of pickup?
     /// </summary>
     /// <returns> Whether the pickup was successful. </returns>
-    public abstract bool pickProjectileUp(Projectile projectile);
+    public abstract bool PickProjectileUp(Projectile projectile);
 }
