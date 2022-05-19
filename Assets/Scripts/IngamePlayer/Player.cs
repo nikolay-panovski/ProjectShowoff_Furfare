@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
 
     private Projectile heldProjectile = null;
 
+    [SerializeField] private float _stunDuration = 1;
+    [SerializeField] private float _invincibilityDuration = 2;
+    private bool stunned = false;
+    private bool invincible = false;
+
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
@@ -45,6 +50,7 @@ public class Player : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
+        if (stunned == false) return;
         if (shooter.TryShoot(heldProjectile) == true)
         {
             //eventQueue.AddEvent(new ProjectileFiredEventData(this));
@@ -55,6 +61,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (stunned == true || invincible == true) return;
         Projectile incomingProjectile;
 
         if (collision.gameObject.TryGetComponent<Projectile>(out incomingProjectile))
@@ -75,6 +82,7 @@ public class Player : MonoBehaviour
 
     private void handleProjectileCatch(Projectile projectile)
     {
+        if (stunned == true) return;
         ProjectileState projectileState = projectile.state;
 
         if (projectileState == ProjectileState.IDLE)
@@ -116,6 +124,10 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
+        ToggleInvincibilty();
+        Invoke("ToggleInvincibility", _invincibilityDuration);
+        ToggleStun();
+        Invoke("ToggleStun", _stunDuration);
         takeDamage();
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
@@ -132,4 +144,15 @@ public class Player : MonoBehaviour
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
     }
+
+    public void ToggleStun()
+    {
+        stunned = !stunned;
+    }
+
+    public void ToggleInvincibilty()
+    {
+        invincible = !invincible;
+    }
+
 }
