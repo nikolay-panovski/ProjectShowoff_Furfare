@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1514549403074450008}
   - component: {fileID: 1514549403074450009}
   - component: {fileID: 3787529474825268777}
+  - component: {fileID: 1964651190930511647}
   m_Layer: 6
   m_Name: Blue
   m_TagString: Player
@@ -223,6 +224,7 @@ MonoBehaviour:
   _scoreManager: {fileID: 0}
   _playerNumber: 1
   bufferTime: 0.5
+  rumble: {fileID: 1964651190930511647}
 --- !u!54 &3787529474825268777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,3 +241,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!114 &1964651190930511647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514549403074450006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa63ccb1ef0e3a7439dd0b711df448dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

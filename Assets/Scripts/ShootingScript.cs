@@ -15,6 +15,7 @@ public class ShootingScript : MonoBehaviour
     private float timeBetweenCatchAndCollision = 0f;
     private bool isAttemptingCatch = false;
 
+    public Rumble rumble;
     private void SetCanFire(bool trueOrFalse)
     {
         _canFire = trueOrFalse;
@@ -27,12 +28,14 @@ public class ShootingScript : MonoBehaviour
         SetCanFire(false);
         heldProjectile.SetOriginalShooter(_playerNumber);
         heldProjectile = null;
+        rumble.RumbleConstant(1f, 1f, 0.05f);
     }
 
     public void OnCatch(InputValue value)
     {
         if (isAttemptingCatch == false) isAttemptingCatch = true;
         Debug.Log("Catch attempted.");
+        rumble.RumbleConstant(1f, 1f, 0.1f);
     }
 
     public void OnFire(InputValue value)
