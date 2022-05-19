@@ -66,3 +66,4 @@ crashlytics-build.properties
 # Text files in 2D Tilemap Extras
 Packages/com.unity.2d.tilemap.extras/*.md
 Packages/com.unity.2d.tilemap.extras/*.md.meta
+UserSettings/EditorUserSettings.asset

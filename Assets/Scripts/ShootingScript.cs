@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/* DEPRECATED SCRIPT, DO NOT USE!
+ */
 public class ShootingScript : MonoBehaviour
 {
     [SerializeField] private int _cooldownDuration = 1;
@@ -23,10 +25,9 @@ public class ShootingScript : MonoBehaviour
 
     private void Fire()
     {
-        heldProjectile.SetState(ProjectileState.FIRED);
-        heldProjectile.SetDirection(transform.forward);
+        heldProjectile.state = ProjectileState.FIRED;
+        heldProjectile.SetForceInDirection(transform.forward);
         SetCanFire(false);
-        heldProjectile.SetOriginalShooter(_playerNumber);
         heldProjectile = null;
         rumble.RumbleConstant(1f, 1f, 0.05f);
     }
@@ -59,13 +60,13 @@ public class ShootingScript : MonoBehaviour
         {
             Projectile incomingProjectile = coll.gameObject.GetComponent<Projectile>();     // can fail if no Projectile script attached
             // can validly Catch - the button was pressed up to bufferTime ago
-            if (incomingProjectile.GetState() == ProjectileState.FIRED && isAttemptingCatch)
+            if (incomingProjectile.state == ProjectileState.FIRED && isAttemptingCatch)
             {
                 pickProjectileUp(incomingProjectile);
             }
             else // is NOT attempting Catch - await to be pressed up to bufferTime late
             {
-                StartCoroutine(delayCollisionDamage(incomingProjectile, incomingProjectile.GetOriginalShooter()));
+                StartCoroutine(delayCollisionDamage(incomingProjectile));
             }
         }
     }
@@ -103,7 +104,7 @@ public class ShootingScript : MonoBehaviour
     }
 
     // FOR NOW - ALSO talks to score manager to modify score. that should be in a different place.
-    private IEnumerator delayCollisionDamage(Projectile projectile, int enemyPlayerNumber)
+    private IEnumerator delayCollisionDamage(Projectile projectile)
     {
         while (!checkTimer())
         {
@@ -117,7 +118,7 @@ public class ShootingScript : MonoBehaviour
         }
 
         //takeDamage();     // or addScore() or whatever equivalent fits
-        _scoreManager.IncreaseScore(enemyPlayerNumber);
+        //_scoreManager.IncreaseScore(enemyPlayerNumber);
         Debug.Log("ouch!");
         Destroy(projectile.gameObject);    // dirty, I guess?
                                            // Destroy(projectile) will only destroy the script and keep the ball alive forever! :)
@@ -125,12 +126,14 @@ public class ShootingScript : MonoBehaviour
 
     private void pickProjectileUp(Projectile projectile)
     {
-        if (projectile.GetHoldingPlayer() == null)
+        if (projectile.owningPlayer == null)
         {
             heldProjectile = projectile;
             Physics.IgnoreCollision(this.GetComponent<Collider>(), heldProjectile.GetComponent<Collider>());
-            heldProjectile.SetHoldingPlayer(this.gameObject);
-            heldProjectile.SetState(ProjectileState.HELD);
+            // ~~breaking this script (it should not be used, as beyond-deprecated)
+            // to un-break: go back to Projectile.cs and revert Player reference to GameObject reference
+            //heldProjectile.SetHoldingPlayer(this.gameObject.GetComponent<Player>());
+            heldProjectile.state = ProjectileState.HELD;
 
             _canFire = true;
             Debug.Log("Catch successful.");
