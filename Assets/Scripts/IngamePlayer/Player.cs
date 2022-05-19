@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
         {
             //eventQueue.AddEvent(new ProjectileFiredEventData(this));
             heldProjectile = null;
+            gameObject.layer = LayerMask.NameToLayer("Players");    // stop ignoring collisions with other projectiles after firing one
         }
     }
     #endregion
@@ -129,6 +130,7 @@ public class Player : MonoBehaviour
     private void pickProjectileUp(Projectile projectile)
     {
         catcher.PickProjectileUp(projectile);
+        gameObject.layer = LayerMask.NameToLayer("Ignore Projectiles");    // ignore collisions with other projectiles while holding one
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
     }
