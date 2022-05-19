@@ -35,6 +35,12 @@ public class Player : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        // revert stupidity if FrisbeeProjectile hits another player before its last return
+        if (heldProjectile == null && gameObject.layer != LayerMask.NameToLayer("Players")) gameObject.layer = LayerMask.NameToLayer("Players");
+    }
+
     #region ON INPUT EVENTS
     // ~~not in this class?
     public void OnCatch(InputValue value)
@@ -48,8 +54,11 @@ public class Player : MonoBehaviour
         if (shooter.TryShoot(heldProjectile) == true)
         {
             //eventQueue.AddEvent(new ProjectileFiredEventData(this));
-            heldProjectile = null;
-            gameObject.layer = LayerMask.NameToLayer("Players");    // stop ignoring collisions with other projectiles after firing one
+            if (heldProjectile.GetHoldAfterFire() == false)  // keep "fired" state on player end if the projectile type demands it (FrisbeeProjectile)
+            {
+                heldProjectile = null;
+                gameObject.layer = LayerMask.NameToLayer("Players");    // stop ignoring collisions with other projectiles after firing one
+            }
         }
     }
     #endregion

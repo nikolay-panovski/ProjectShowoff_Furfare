@@ -21,7 +21,7 @@ public class ScatterProjectile : Projectile
             //scatterProjectile.Fire(offsetDirection);  // this shorthand would work if the owningPlayer was ever set there
             Physics.IgnoreCollision(scatterProjectile.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
             scatterProjectile.state = ProjectileState.FIRED;
-            scatterProjectile.SetForceInDirection(offsetDirection);
+            scatterProjectile.SetVelocityInDirection(offsetDirection);
         }
 
         // destroy self, it did its job
