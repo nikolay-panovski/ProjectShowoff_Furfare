@@ -22,7 +22,6 @@ public class SimpleMoveController : MonoBehaviour
     private float _targetRotation = 0.0f;
     private float _rotationVelocity;
 
-    private PlayerInput _playerInput;
     private Rigidbody _rigidbody;
 
     private Camera _mainCamera;     // used to make movements relative to the camera
@@ -35,7 +34,6 @@ public class SimpleMoveController : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _playerInput = GetComponent<PlayerInput>();
     }
 
     private void FixedUpdate()
