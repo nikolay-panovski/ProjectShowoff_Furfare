@@ -8,27 +8,20 @@ public enum ProjectileState
 }
 
 /* Projectile object (currently instantiated on pre-determined Spawnpoints).
- * Can be held and fired (communication with Player), bounce (physics), can hit another player (destruction event).
+ * Can be held and fired (caused by Player), bounce (physics), can hit another player (destruction event).
  * Needs to tell a Spawnpoint when it gets picked up and vacates the spot.
  */
-public class Projectile : MonoBehaviour
+public class Projectile : Item
 {
-    [SerializeField] private int _speed;
-    [SerializeField] private int _maxBounces = 3;
+    [SerializeField] protected int _speed;
+    [SerializeField] protected int _maxBounces = 3;
     private int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
-
-    private float _bufferAfterBounce = 0.5f;
-    private bool _hitWallRecently = false;
 
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
 
-    public Player owningPlayer { get; set; } = null;
-
     private Rigidbody myRigidbody;
 
-    public Spawnpoint originalSpawnpoint { get; set; }
-
-    private void Start()
+    private void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
 
@@ -43,14 +36,32 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void SetForceInDirection(Vector3 newDirection)
+    /// <summary>
+    /// Fires the current projectile off of a player. Base guarantees the traversal of a single projectile.
+    /// Specify extra functionality like more bullets in overrides.
+    /// </summary>
+    /// <param name="direction"></param>
+    public virtual void Fire(Vector3 direction)
     {
-        myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);  // to Impulse if balls will have a difference by Mass
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
+        state = ProjectileState.FIRED;
+        SetForceInDirection(direction);
     }
 
-    private void CheckCollisionCount()
+    public void SetForceInDirection(Vector3 newDirection)
+    {
+        //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);  // to Impulse if balls will have a difference by Mass
+        myRigidbody.velocity = newDirection * _speed;
+    }
+
+    private void destroyOnMaxCollisionCount()
     {
         if (_bounceCount >= _maxBounces) Destroy(gameObject);
+    }
+
+    private void incrementCollisionCount()
+    {
+        _bounceCount += 1;
     }
 
     private void setPositionRelativeToHoldingPlayer()
@@ -62,26 +73,15 @@ public class Projectile : MonoBehaviour
                                          player.position.z + player.forward.z * player.localScale.z);
     }
 
-    // why is *almost any of this* in OnCollisionEnter?
     private void OnCollisionEnter(Collision collision)
     {
-        /**
-        if (state == ProjectileState.IDLE) return;
-        // or something to that effect (disable collision of projectiles with projectiles, probably)
-        /**/
-
         if (state == ProjectileState.FIRED)
         {
-            toggleHitWallState();   // true
-            Invoke("toggleHitWallState", _bufferAfterBounce);   // false
+            //toggleHitWallState();   // _hitWallRecently ^= true;
+            //Invoke("toggleHitWallState", _bufferAfterBounce);
 
-            _bounceCount += 1;
-            CheckCollisionCount();
+            incrementCollisionCount();
+            destroyOnMaxCollisionCount();
         }
-    }
-
-    private void toggleHitWallState()
-    {
-        _hitWallRecently ^= true;
     }
 }
