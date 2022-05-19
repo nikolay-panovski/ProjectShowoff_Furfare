@@ -54,12 +54,12 @@ public class Projectile : Item
         myRigidbody.velocity = newDirection * _speed;
     }
 
-    private void destroyOnMaxCollisionCount()
+    private void checkForMaxBounceCount()
     {
-        if (_bounceCount >= _maxBounces) Destroy(gameObject);
+        if (_bounceCount >= _maxBounces) onMaxBounceCount();
     }
 
-    private void incrementCollisionCount()
+    private void incrementBounceCount()
     {
         _bounceCount += 1;
     }
@@ -77,11 +77,13 @@ public class Projectile : Item
     {
         if (state == ProjectileState.FIRED)
         {
-            //toggleHitWallState();   // _hitWallRecently ^= true;
-            //Invoke("toggleHitWallState", _bufferAfterBounce);
-
-            incrementCollisionCount();
-            destroyOnMaxCollisionCount();
+            incrementBounceCount();
+            checkForMaxBounceCount();
         }
+    }
+
+    protected virtual void onMaxBounceCount()
+    {
+        Destroy(gameObject);
     }
 }
