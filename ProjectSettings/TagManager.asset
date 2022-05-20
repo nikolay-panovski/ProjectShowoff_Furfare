@@ -18,9 +18,9 @@ TagManager:
   - PostProcessing
   - Not in Reflection
   - Projectiles
-  - 
-  - 
-  - 
+  - Ignore Walls
+  - Walls
+  - Ignore Projectiles
   - 
   - 
   - 

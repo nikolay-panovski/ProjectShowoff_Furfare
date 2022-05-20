@@ -29,11 +29,12 @@ public class SpawnpointInittedEventData : EventData
 
 public class PickupSpawnedEventData : EventData
 {
-    // TODO: Projectile -> Item
-    public readonly Projectile pickup;
-    public PickupSpawnedEventData(Projectile pPickup) : base(EventType.PICKUP_SPAWNED)
+    public readonly Item pickup;
+    public readonly Spawnpoint atSpawnpoint;
+    public PickupSpawnedEventData(Item pPickup, Spawnpoint pAtSpawnpoint) : base(EventType.PICKUP_SPAWNED)
     {
         pickup = pPickup;
+        atSpawnpoint = pAtSpawnpoint;
     }
 }
 

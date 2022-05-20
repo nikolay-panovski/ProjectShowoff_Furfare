@@ -4,38 +4,35 @@ public enum ProjectileState
 {
     IDLE,   // does nothing - when on the ground and yet to be picked up
     HELD,
-    FIRED
+    FIRED,
+    RETURNING   // returning to player after max bounce count
 }
 
 /* Projectile object (currently instantiated on pre-determined Spawnpoints).
- * Can be held and fired (communication with Player), bounce (physics), can hit another player (destruction event).
- * Needs to tell a Spawnpoint when it gets picked up and vacates the spot.
+ * Can be held and fired (caused by Player), bounce (physics), can hit another player (destruction event).
+ * Needs to tell a Spawnpoint when it gets picked up and vacates the spot. (*this is now for Item)
+ * Is designed to already work as a base, but some methods are virtual for altered implementations.
  */
-public class Projectile : MonoBehaviour
+public class Projectile : Item
 {
-    [SerializeField] private int _speed;
-    [SerializeField] private int _maxBounces = 3;
-    private int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
-
-    private float _bufferAfterBounce = 0.5f;
-    private bool _hitWallRecently = false;
+    [SerializeField] protected int _speed;
+    [SerializeField] protected int _maxBounces = 3;
+    protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
 
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
 
-    public Player owningPlayer { get; set; } = null;
+    protected bool holdAfterFire = false;
 
     private Rigidbody myRigidbody;
 
-    public Spawnpoint originalSpawnpoint { get; set; }
-
-    private void Start()
+    protected virtual void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
 
         //eventQueue = FindObjectOfType<EventQueue>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (state == ProjectileState.HELD)
         {
@@ -43,14 +40,33 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void SetForceInDirection(Vector3 newDirection)
+    /// <summary>
+    /// Fires the current projectile off of a player. Base guarantees the traversal of a single projectile.
+    /// Specify extra functionality like more bullets in overrides.
+    /// </summary>
+    /// <param name="direction"></param>
+    public virtual void Fire(Vector3 direction)
     {
-        myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);  // to Impulse if balls will have a difference by Mass
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
+        state = ProjectileState.FIRED;
+        SetVelocityInDirection(direction);
     }
 
-    private void CheckCollisionCount()
+    public void SetVelocityInDirection(Vector3 newDirection)
     {
-        if (_bounceCount >= _maxBounces) Destroy(gameObject);
+        // to Impulse if balls will have a difference by Mass... will it work?
+        //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
+        myRigidbody.velocity = newDirection * _speed;
+    }
+
+    private void checkForMaxBounceCount()
+    {
+        if (_bounceCount >= _maxBounces) onMaxBounceCount();
+    }
+
+    private void incrementBounceCount()
+    {
+        _bounceCount += 1;
     }
 
     private void setPositionRelativeToHoldingPlayer()
@@ -62,26 +78,24 @@ public class Projectile : MonoBehaviour
                                          player.position.z + player.forward.z * player.localScale.z);
     }
 
-    // why is *almost any of this* in OnCollisionEnter?
     private void OnCollisionEnter(Collision collision)
     {
-        /**
-        if (state == ProjectileState.IDLE) return;
-        // or something to that effect (disable collision of projectiles with projectiles, probably)
-        /**/
-
         if (state == ProjectileState.FIRED)
         {
-            toggleHitWallState();   // true
-            Invoke("toggleHitWallState", _bufferAfterBounce);   // false
-
-            _bounceCount += 1;
-            CheckCollisionCount();
+            incrementBounceCount();
+            checkForMaxBounceCount();
         }
     }
 
-    private void toggleHitWallState()
+    protected virtual void onMaxBounceCount()
     {
-        _hitWallRecently ^= true;
+        Destroy(gameObject);
+    }
+
+
+
+    public bool GetHoldAfterFire()
+    {
+        return holdAfterFire;
     }
 }

@@ -8,9 +8,9 @@ public abstract class PickupController : MonoBehaviour
 {
     // Projectile projectile -> Item item?
     // return bool -> Projectile? (or Item?)
-    /// <summary> Attempts to pick a projectile up (and update the relevant references).
+    /// <summary> Attempts to pick a projectile up (and update the projectile references).
     /// TODO: Abstract for any kind of pickup?
     /// </summary>
-    /// <returns> Whether the pickup was successful. </returns>
-    public abstract bool PickProjectileUp(Projectile projectile);
+    public abstract void PickProjectileUp(Projectile projectile);
+    // <returns> Whether the pickup was successful. </returns>
 }

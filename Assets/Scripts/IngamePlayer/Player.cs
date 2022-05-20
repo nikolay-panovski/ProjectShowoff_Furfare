@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     private EventQueue eventQueue;
 
-    private PickupController catcher;   // ~~RequireComponent does not work, bless /s.
+    private PickupController catcher;
     private ShootController shooter;
 
     private Projectile heldProjectile = null;
@@ -26,13 +26,19 @@ public class Player : MonoBehaviour
     {
         eventQueue = FindObjectOfType<EventQueue>();
 
-        if (!TryGetComponent<PickupController>(out catcher)) Debug.LogError("Player is missing a PickupController-type script!");
-        if (!TryGetComponent<ShootController>(out shooter)) Debug.LogError("Player is missing a ShootController-type script!");
+        if (!TryGetComponent<PickupController>(out catcher)) throw new MissingComponentException("Player is missing a PickupController-type script!");
+        if (!TryGetComponent<ShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
     }
 
     void OnDestroy()
     {
         
+    }
+
+    private void Update()
+    {
+        // revert stupidity if FrisbeeProjectile hits another player before its last return
+        if (heldProjectile == null && gameObject.layer != LayerMask.NameToLayer("Players")) gameObject.layer = LayerMask.NameToLayer("Players");
     }
 
     #region ON INPUT EVENTS
@@ -48,13 +54,18 @@ public class Player : MonoBehaviour
         if (shooter.TryShoot(heldProjectile) == true)
         {
             //eventQueue.AddEvent(new ProjectileFiredEventData(this));
-            heldProjectile = null;
+            if (heldProjectile.GetHoldAfterFire() == false)  // keep "fired" state on player end if the projectile type demands it (FrisbeeProjectile)
+            {
+                heldProjectile = null;
+                gameObject.layer = LayerMask.NameToLayer("Players");    // stop ignoring collisions with other projectiles after firing one
+            }
         }
     }
     #endregion
 
     private void OnCollisionEnter(Collision collision)
     {
+        // TODO: Treat collision with all relevant entities (right now: pickups)
         Projectile incomingProjectile;
 
         if (collision.gameObject.TryGetComponent<Projectile>(out incomingProjectile))
@@ -63,6 +74,8 @@ public class Player : MonoBehaviour
             {
                 // try handle projectile pickup on any player-projectile collision, if player doesn't already have one
                 // (previously: picked static ones up from OnTriggerEnter)
+
+                // TODO: Consider returning to triggers for idle projectiles? Current alternative is layers magic.
 
                 // ~~design choice: should player be able to catch projectiles if it is already holding one? (currently: no)
                 // (if yes, send null check to pickProjectileUp and if it fails, keep the original heldProjectile reference)
@@ -75,13 +88,11 @@ public class Player : MonoBehaviour
 
     private void handleProjectileCatch(Projectile projectile)
     {
-        ProjectileState projectileState = projectile.state;
-
-        if (projectileState == ProjectileState.IDLE)
+        if (projectile.state == ProjectileState.IDLE)
         {
             pickProjectileUp(projectile);
         }
-        else if (projectileState == ProjectileState.FIRED)
+        else if (projectile.state == ProjectileState.FIRED)
         {
             if (readyToCatchBeforeCollision())
             {
@@ -104,7 +115,6 @@ public class Player : MonoBehaviour
         while (!Utils.checkTimer(timeBetweenCatchAndCollision, bufferTime))
         {
             Utils.incrementTimer(ref timeBetweenCatchAndCollision);
-            Debug.Log(timeBetweenCatchAndCollision);
 
             if (isAttemptingCatch == true)
             {
@@ -129,6 +139,7 @@ public class Player : MonoBehaviour
     private void pickProjectileUp(Projectile projectile)
     {
         catcher.PickProjectileUp(projectile);
+        gameObject.layer = LayerMask.NameToLayer("Ignore Projectiles");    // ignore collisions with other projectiles while holding one
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
     }

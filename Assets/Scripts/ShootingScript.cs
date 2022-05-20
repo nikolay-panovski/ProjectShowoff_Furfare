@@ -26,7 +26,7 @@ public class ShootingScript : MonoBehaviour
     private void Fire()
     {
         heldProjectile.state = ProjectileState.FIRED;
-        heldProjectile.SetForceInDirection(transform.forward);
+        heldProjectile.SetVelocityInDirection(transform.forward);
         SetCanFire(false);
         heldProjectile = null;
         rumble.RumbleConstant(1f, 1f, 0.05f);
