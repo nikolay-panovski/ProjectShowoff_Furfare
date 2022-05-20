@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1514549403074450006, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450015, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450015, guid: 7f1c9c2838f1be24e9a38650394aa989, type: 3}
       propertyPath: m_Materials.Array.data[0]

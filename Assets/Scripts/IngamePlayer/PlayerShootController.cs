@@ -14,8 +14,8 @@ public class PlayerShootController : ShootController
 
         else
         {
-            projectile.state = ProjectileState.FIRED;
-            projectile.SetForceInDirection(transform.forward);     // the meat - the Rigidboy.AddForce() deal. change method name.
+            // can add an Event, but for now... public Projectile Fire()
+            projectile.Fire(transform.forward);
 
             return true;
         }
