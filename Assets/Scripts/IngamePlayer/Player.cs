@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 
     private Projectile heldProjectile = null;
 
+    // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
+    public UnityEngine.UI.Slider UISlider;
+
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]

@@ -16,9 +16,10 @@ public class ScatterProjectile : Projectile
 
             // instantiate the extra projectiles from here
             Projectile scatterProjectile = Instantiate<Projectile>(this, transform.position + offsetDirection, Quaternion.identity);
+            scatterProjectile.owningPlayer = this.owningPlayer;
 
             // base.Fire():
-            //scatterProjectile.Fire(offsetDirection);  // this shorthand would work if the owningPlayer was ever set there
+            //scatterProjectile.Fire(offsetDirection);  // this shorthand works if the owningPlayer is ever set for the new projectiles
             Physics.IgnoreCollision(scatterProjectile.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
             scatterProjectile.state = ProjectileState.FIRED;
             scatterProjectile.SetVelocityInDirection(offsetDirection);
