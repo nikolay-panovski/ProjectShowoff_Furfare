@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
 
     private void handleProjectileCatch(Projectile projectile)
     {
-        f (stunned == true) return;
+        if (stunned == true) return;
         if (projectile.state == ProjectileState.IDLE)
         {
             pickProjectileUp(projectile);
