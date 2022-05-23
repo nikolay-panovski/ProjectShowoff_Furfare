@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-         if (stunned == false) return;
+        if (stunned == true) return;
         if (shooter.TryShoot(heldProjectile) == true)
         {
             //eventQueue.AddEvent(new ProjectileFiredEventData(this));
