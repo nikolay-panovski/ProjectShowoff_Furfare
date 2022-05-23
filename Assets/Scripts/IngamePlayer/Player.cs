@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
-    public bool stunned = false;
-    public bool invincible = false;
+    private bool stunned = false;
+    private bool invincible = false;
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
         ToggleInvincibilty();
-        Invoke("ToggleInvincibilty", _invincibilityDuration);
+        Invoke("ToggleInvincibility", _invincibilityDuration);
         ToggleStun();
         Invoke("ToggleStun", _stunDuration);
         takeDamage();
