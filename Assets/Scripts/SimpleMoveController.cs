@@ -3,12 +3,9 @@ using UnityEngine.InputSystem;
 
 // Based on ThirdPersonController.
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(PlayerInput))]
 public class SimpleMoveController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-
-    private Vector2 moveInput;  // store OnMove results here
     
     [Header("Fine-tune settings")]
     [Tooltip("How fast the character turns to face movement direction")]
@@ -36,17 +33,7 @@ public class SimpleMoveController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
-    {
-        move(moveInput);
-    }
-
-    public void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }
-
-    private void move(Vector2 input)
+    public void Move(Vector2 input)
     {
         Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y);
 

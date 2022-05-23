@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     private PickupController catcher;
     private ShootController shooter;
+    private SimpleMoveController mover;
 
     private Projectile heldProjectile = null;
 
@@ -29,12 +30,15 @@ public class Player : MonoBehaviour
     private float timeBetweenCatchAndCollision = 0f;
     private bool isAttemptingCatch = false;
 
+    private Vector2 moveInput;  // store OnMove results here
+
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
 
         if (!TryGetComponent<PickupController>(out catcher)) throw new MissingComponentException("Player is missing a PickupController-type script!");
         if (!TryGetComponent<ShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
+        if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
     }
 
     void OnDestroy()
@@ -48,8 +52,18 @@ public class Player : MonoBehaviour
         if (heldProjectile == null && gameObject.layer != LayerMask.NameToLayer("Players")) gameObject.layer = LayerMask.NameToLayer("Players");
     }
 
+    private void FixedUpdate()
+    {
+        if (stunned == true) return;
+        mover.Move(moveInput);
+    }
+
     #region ON INPUT EVENTS
-    // ~~not in this class?
+    public void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+    }
+
     public void OnCatch(InputValue value)
     {
         if (isAttemptingCatch == false) isAttemptingCatch = true;
