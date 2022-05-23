@@ -37,13 +37,6 @@ public class SimpleMoveController : MonoBehaviour
     {
         Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y);
 
-        /**
-        if (input == Vector2.zero)
-        {
-            _rigidbody.velocity = Vector3.zero;
-        }
-        /**/
-
         if (input != Vector2.zero)
         {
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
@@ -59,9 +52,15 @@ public class SimpleMoveController : MonoBehaviour
 
             _rigidbody.velocity = inputDirection.magnitude * targetDirection * moveSpeed;
             //MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
-        } else
+        } 
+        else
         {
-            _rigidbody.velocity = Vector3.zero;
+            StopVelocity();
         }
+    }
+
+    public void StopVelocity()
+    {
+        _rigidbody.velocity = Vector3.zero;
     }
 }

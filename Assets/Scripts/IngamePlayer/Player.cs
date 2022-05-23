@@ -54,7 +54,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (stunned == true) return;
+        if (stunned == true)
+        {
+            mover.StopVelocity();
+            return;
+        }
         mover.Move(moveInput);
     }
 
