@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        ToggleInvincibilty();
+        ToggleInvincibility();
         Invoke("ToggleInvincibility", _invincibilityDuration);
         ToggleStun();
         Invoke("ToggleStun", _stunDuration);
@@ -177,7 +177,7 @@ public class Player : MonoBehaviour
         stunned = !stunned;
     }
 
-    public void ToggleInvincibilty()
+    public void ToggleInvincibility()
     {
         invincible = !invincible;
     }
