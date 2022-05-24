@@ -7,6 +7,7 @@ public class SwitchWall : MonoBehaviour
     [Tooltip("How many frames it takes to fully expand")]
     [SerializeField] private bool _expanded = false;
     [SerializeField] private float _heightDifference = 1f;
+    [SerializeField] private float _extendSpeed = 1;
     private Vector3 _originalPosition;
 
 
@@ -24,12 +25,12 @@ public class SwitchWall : MonoBehaviour
     {
         if (_expanded == true && transform.position.y <= (_originalPosition.y + _heightDifference))
         {
-            if (CheckForPlayerCollision() == false) transform.position += new Vector3(0, 0.1f, 0);
+            if (CheckForPlayerCollision() == false) transform.position += new Vector3(0, _extendSpeed * Time.deltaTime, 0);
         }
 
         else if (_expanded == false && transform.position.y >= _originalPosition.y)
             {
-            transform.position -= new Vector3(0, 0.1f, 0);
+            transform.position -= new Vector3(0, _extendSpeed * Time.deltaTime, 0);
         }
     }
 
