@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 3839697022422530458}
   - component: {fileID: -434726590338978400}
   - component: {fileID: -1701745551176802956}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2666822321070752501
 Transform:

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3463970377660469638}
   - component: {fileID: 8846350082263218958}
   - component: {fileID: -5106874982018419268}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: drawer (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
