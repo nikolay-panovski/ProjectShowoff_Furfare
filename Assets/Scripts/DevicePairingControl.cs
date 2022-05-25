@@ -31,6 +31,10 @@ public class DevicePairingControl : MonoBehaviour
             }
 
             performPairingWithDevice(p, p.defaultControlScheme);
+
+            // DEBUG
+            Debug.Log(p.user.id);
+            Debug.Log(p.user.index);
         }
     }
 
