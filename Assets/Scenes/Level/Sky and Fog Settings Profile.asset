@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
@@ -333,18 +333,18 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 11
+    m_Value: 12
   multiplier:
     m_OverrideState: 1
     m_Value: 1219.1
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 2.7345486
+    m_Value: 2.9926233
     min: 0
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.37630057, z: 0.28209552}
+    m_Value: {x: 0.5, y: 0.3266332, z: 0.21960573}
   desiredLuxValue:
     m_OverrideState: 1
     m_Value: 20000
@@ -360,7 +360,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 18a0be10f0f64ac4c9f679d68e2cf857, type: 3}
+    m_Value: {fileID: 8900000, guid: c9bc6cdb7a2e78b4c85ae74715b0a355, type: 3}
   enableDistortion:
     m_OverrideState: 1
     m_Value: 0
