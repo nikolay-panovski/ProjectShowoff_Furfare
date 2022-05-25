@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Cursor : MonoBehaviour
+public class ControllerCursor : MonoBehaviour
 {
     private void OnMove(InputValue value)
     {
