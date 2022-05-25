@@ -71,7 +71,7 @@ public class PlayfieldSpawner : MonoBehaviour
             GameObject player = new GameObject("Player");
             player.transform.SetPositionAndRotation(new Vector3(random.Next(-width + 1, width - 1), 0, random.Next(-height + 1, height - 1)),
                                                     Quaternion.identity);
-            player.AddComponent<StarterAssets.ThirdPersonController>();
+            player.AddComponent<SimpleMoveController>();
         }
     }
 }
