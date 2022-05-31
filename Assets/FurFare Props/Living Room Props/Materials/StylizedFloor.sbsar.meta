@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6a4ea7682fcd8f3438bc9bb25c0b821c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 60e39a463a4d7c04d87a8fa01218ce4d, type: 2}
+  _assetPath: Assets/FurFare Props/Living Room Props/Materials/StylizedFloor.sbsar
