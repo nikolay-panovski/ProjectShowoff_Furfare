@@ -109,17 +109,20 @@ public class Player : MonoBehaviour
                 handleProjectileCatch(incomingProjectile);
             }
         }
+        //else literally any other collision possible (even with generic walls)
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
         Portal collidedPortal;
 
-        if (collision.gameObject.TryGetComponent<Portal>(out collidedPortal))
+        if (other.gameObject.TryGetComponent<Portal>(out collidedPortal))
         {
             if (collidedPortal.GetActiveStatus() == true)
             {
                 TeleportToPortal(collidedPortal);
             }
         }
-        //else literally any other collision possible (even with generic walls)
     }
 
     private void handleProjectileCatch(Projectile projectile)
