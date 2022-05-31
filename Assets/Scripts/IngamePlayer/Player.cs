@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     private Projectile heldProjectile = null;
 
     // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
-    public UnityEngine.UI.Slider UISlider;
+    public UnityEngine.UI.Text UIText;
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
+    private int _score;
     private bool stunned = false;
     private bool invincible = false;
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
@@ -177,6 +178,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
+        projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
         takeDamage();
@@ -195,6 +197,16 @@ public class Player : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Ignore Projectiles");    // ignore collisions with other projectiles while holding one
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
+    }
+
+    public int GetScore()
+    {
+        return _score;
+    }
+
+    public void IncreaseScore(int amount)
+    {
+        _score += amount;
     }
 
     public void ToggleStun()

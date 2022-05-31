@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _maxBounces: 6
-  _speedIncrease: 0.2
+  _maxBounces: 5
+  _bounceCooldown: 0.05
+  _speedIncrease: 0.3
