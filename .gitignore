@@ -66,3 +66,8 @@ crashlytics-build.properties
 # Text files in 2D Tilemap Extras
 Packages/com.unity.2d.tilemap.extras/*.md
 Packages/com.unity.2d.tilemap.extras/*.md.meta
+UserSettings/EditorUserSettings.asset
+
+# Sky Series package- free HDRI skies to test out the scene with HDRI map instead of procedural skybox
+Assets/SkySeries Freebie/
+Assets/SkySeries Freebie.meta
