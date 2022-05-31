@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7968076865329929108}
   - component: {fileID: 5291937339104259934}
   - component: {fileID: 6823280374620935408}
-  - component: {fileID: 6823280374620935411}
+  - component: {fileID: 6221058989913487296}
   m_Layer: 0
   m_Name: TV (1)
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5940318865123757707}
-  m_Mesh: {fileID: 6089593845132410909, guid: 9d143781c112db4489775abf43a04497, type: 3}
+  m_Mesh: {fileID: -6554459026472318359, guid: 9d143781c112db4489775abf43a04497, type: 3}
 --- !u!23 &5291937339104259934
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6823280374620935411
+--- !u!65 &6221058989913487296
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 146.29, y: 100, z: 118.71}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 140.26297, y: 103.35176, z: 145.89279}
+  m_Center: {x: 0.00006103517, y: -0.00005340576, z: 0.000015258793}
