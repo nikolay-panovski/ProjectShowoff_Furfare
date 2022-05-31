@@ -23,7 +23,7 @@ public class Projectile : Item
 
     protected bool holdAfterFire = false;
 
-    private Rigidbody myRigidbody;
+    protected Rigidbody myRigidbody;
 
     protected virtual void Awake()
     {
@@ -52,7 +52,7 @@ public class Projectile : Item
         SetVelocityInDirection(direction);
     }
 
-    public void SetVelocityInDirection(Vector3 newDirection)
+    public virtual void SetVelocityInDirection(Vector3 newDirection)
     {
         // to Impulse if balls will have a difference by Mass... will it work?
         //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
