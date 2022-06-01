@@ -17,6 +17,7 @@ public class Projectile : Item
 {
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
+    [SerializeField] ParticleSystem Impact = null;
     protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
 
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
@@ -82,6 +83,12 @@ public class Projectile : Item
     {
         if (state == ProjectileState.FIRED)
         {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Players"))
+            {
+                Instantiate(Impact, transform.position, Quaternion.identity);
+                Debug.Log("particle");
+            }
+            
             incrementBounceCount();
             checkForMaxBounceCount();
         }
