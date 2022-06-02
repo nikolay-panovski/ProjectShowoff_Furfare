@@ -24,6 +24,6 @@ public class Score : MonoBehaviour
 
     public void IncreaseScore(Player ofPlayer)
     {
-        ofPlayer.UIText.text = "Points: " + ofPlayer.GetScore();
+        ofPlayer.UIText.text = ofPlayer.GetScore() + "Points: ";
     }
 }
