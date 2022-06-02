@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/NonGameplay/MainMenu.unity
+    guid: 230af4308fe1f65488a5794cc98e12d3
+  - enabled: 1
+    path: Assets/Scenes/NonGameplay/CharacterSelect.unity
+    guid: 594370153a3a80642ab5843f78ce22ca
+  - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 445fbb52f71371a4aa282e408cf8dac4
   m_configObjects:
