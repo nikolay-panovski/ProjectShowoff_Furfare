@@ -6,8 +6,9 @@ public class SuperbouncyProjectile : Projectile
 {
     [SerializeField] float _speedIncrease = 0.2f;
 
-    public override void SetVelocityInDirection(Vector3 newDirection)
+    public override void incrementBounceCount()
     {
-        myRigidbody.velocity = newDirection * _speed * ( 1 + (_bounceCount * _speedIncrease));
+        base.incrementBounceCount();
+        myRigidbody.velocity = myRigidbody.velocity * (1 + _speedIncrease);
     }
 }

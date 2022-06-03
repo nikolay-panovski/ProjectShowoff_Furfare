@@ -24,6 +24,6 @@ public class Score : MonoBehaviour
 
     public void IncreaseScore(Player ofPlayer)
     {
-        ofPlayer.UISlider.value += 1f;
+        ofPlayer.UIText.text = ofPlayer.GetScore() + "Points: ";
     }
 }

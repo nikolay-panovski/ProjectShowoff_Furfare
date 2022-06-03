@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b70cce6346ae44a831d7bbbd9fc020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickupPrefab: {fileID: -8353146294195489321, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
-  _hasSpawnedPickup: 0
+  _pickupPrefab:
+  - {fileID: -3378610175752979242, guid: 08a82eb06a8cb9242b3f187e3a8795bf, type: 3}
+  - {fileID: 8260780898877844429, guid: 46ec7b0169fbc1149b68b292d9edfa2e, type: 3}
+  - {fileID: 7746697664118286202, guid: 7e589b056f1ec5946815af3106476a73, type: 3}
