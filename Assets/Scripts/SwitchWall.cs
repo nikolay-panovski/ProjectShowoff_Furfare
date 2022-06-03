@@ -23,7 +23,7 @@ public class SwitchWall : MonoBehaviour
 
     private void AttemptExpanding()
     {
-        if (_expanded == true && transform.position.y <= (_originalPosition.y + _heightDifference))
+        if (_expanded == true && transform.position.y <= (_originalPosition.y + (_heightDifference * transform.localScale.y)))
         {
             if (CheckForPlayerCollision() == false) transform.position += new Vector3(0, _extendSpeed * Time.deltaTime, 0);
         }

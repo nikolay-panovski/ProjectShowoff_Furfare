@@ -143,8 +143,8 @@ MonoBehaviour:
   _speed: 20
   _maxBounces: 1
   _bounceCooldown: 0.05
-  numOfProjectiles: 3
-  scatterAngle: 30
+  numOfProjectiles: 5
+  scatterAngle: 15
 --- !u!1001 &7727292596598197753
 PrefabInstance:
   m_ObjectHideFlags: 0
