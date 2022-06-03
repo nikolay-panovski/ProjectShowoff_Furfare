@@ -100,6 +100,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 167887985608899363, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667040873920598333, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4365142385433880041, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
       propertyPath: m_Name
       value: GhostProjectile
@@ -156,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3adf8af5628579549881c5fb2a92b6f2, type: 2}
+    - target: {fileID: 6983392650470646684, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5192817002530907108, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
     - {fileID: 4365142385433880053, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
