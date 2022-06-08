@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     private Projectile heldProjectile = null;
 
     // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
-    public UnityEngine.UI.Slider UISlider;
+    public UnityEngine.UI.Text UIText;
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
+    private int _score;
     private bool stunned = false;
     private bool invincible = false;
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
@@ -109,8 +110,20 @@ public class Player : MonoBehaviour
                 handleProjectileCatch(incomingProjectile);
             }
         }
-
         //else literally any other collision possible (even with generic walls)
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Portal collidedPortal;
+
+        if (other.gameObject.TryGetComponent<Portal>(out collidedPortal))
+        {
+            if (collidedPortal.GetActiveStatus() == true)
+            {
+                TeleportToPortal(collidedPortal);
+            }
+        }
     }
 
     private void handleProjectileCatch(Projectile projectile)
@@ -131,6 +144,17 @@ public class Player : MonoBehaviour
                 StartCoroutine(delayCollisionDamage(projectile));
             }
         }
+    }
+
+    private void TeleportToPortal(Portal targetPortal)
+    {
+        //Cahnges the current position to the new position and resets the y axis
+        Vector3 newposition = targetPortal.GetLinkedPortalPosition();
+        newposition.y = transform.position.y;
+        transform.position = newposition;
+        //Turns both the collided portal off and the portal the player teleports to
+        targetPortal.ToggleActive();
+        targetPortal.GetLinkedPortal().ToggleActive();
     }
 
     private bool readyToCatchBeforeCollision()
@@ -154,10 +178,9 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
+        projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
-        Invoke("ToggleInvincibility", _invincibilityDuration);
         ToggleStun();
-        Invoke("ToggleStun", _stunDuration);
         takeDamage();
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
@@ -176,13 +199,27 @@ public class Player : MonoBehaviour
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
     }
 
+    public int GetScore()
+    {
+        return _score;
+    }
+
+    public void IncreaseScore(int amount)
+    {
+        _score += amount;
+    }
+
     public void ToggleStun()
     {
+        //Turns stun on and after a delay turns it back off
         stunned = !stunned;
+        if (stunned == true) Invoke("ToggleStun", _stunDuration);
     }
 
     public void ToggleInvincibility()
     {
+        //Turns invincibility on and after a delay turns it back off
         invincible = !invincible;
+        if (invincible == true) Invoke("ToggleInvincibility", _invincibilityDuration);
     }
 }

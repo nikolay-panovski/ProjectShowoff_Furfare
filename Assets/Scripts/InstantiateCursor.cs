@@ -1,18 +1,21 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InstantiateCursor : MonoBehaviour
 {
+    [SerializeField] private GameObject cursorPrefab;
     [SerializeField] private Sprite cursorImage;
 
     // https://answers.unity.com/questions/889689/spriterenderer-on-top-of-canvases.html
-    public void OnPlayerJoined(PlayerInput player)
+    private void Awake()
     {
-        Debug.Log("Player joined");
-        if (!TryGetComponent<SpriteRenderer>(out SpriteRenderer renderer))  // prevent multiple attachment on already set up players
+        //GameObject cursor = new GameObject("Cursor", typeof(SpriteRenderer), typeof(ControllerCursor));
+        //cursor.transform.parent = this.transform;
+        GameObject cursor = Instantiate(cursorPrefab, this.transform);
+
+        if (cursorImage == null) Debug.LogError("Cursor image not assigned! Player input is in, but cursor will be invisible!");
+        else
         {
-            SpriteRenderer cursorRenderer = player.gameObject.AddComponent<SpriteRenderer>();
-            cursorRenderer.sprite = cursorImage;
+            cursor.GetComponent<SpriteRenderer>().sprite = cursorImage;
         }
     }
 }

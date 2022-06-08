@@ -17,13 +17,16 @@ public class Projectile : Item
 {
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
-    protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
+    [SerializeField] protected float _bounceCooldown = 0.05f;
 
+    //[SerializeField] ParticleSystem Impact = null;
+    protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
+    protected bool _justBounced = false;
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
 
     protected bool holdAfterFire = false;
 
-    private Rigidbody myRigidbody;
+    protected Rigidbody myRigidbody;
 
     protected virtual void Awake()
     {
@@ -52,7 +55,7 @@ public class Projectile : Item
         SetVelocityInDirection(direction);
     }
 
-    public void SetVelocityInDirection(Vector3 newDirection)
+    public virtual void SetVelocityInDirection(Vector3 newDirection)
     {
         // to Impulse if balls will have a difference by Mass... will it work?
         //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
@@ -64,9 +67,13 @@ public class Projectile : Item
         if (_bounceCount >= _maxBounces) onMaxBounceCount();
     }
 
-    private void incrementBounceCount()
+    public virtual void incrementBounceCount()
     {
-        _bounceCount += 1;
+        if (_justBounced == false)
+        {
+            _bounceCount += 1;
+            ToggleJustBounced();
+        }
     }
 
     private void setPositionRelativeToHoldingPlayer()
@@ -82,6 +89,12 @@ public class Projectile : Item
     {
         if (state == ProjectileState.FIRED)
         {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Players"))
+            {
+                //Instantiate(Impact, transform.position, Quaternion.identity);
+                Debug.Log("particle");
+            }
+            
             incrementBounceCount();
             checkForMaxBounceCount();
         }
@@ -93,6 +106,12 @@ public class Projectile : Item
     }
 
 
+    private void ToggleJustBounced()
+    {
+        //Turns justBounced on and after a delay turns it back off
+        _justBounced = !_justBounced;
+        if (_justBounced == true) Invoke("ToggleJustBounced", _bounceCooldown);
+    }
 
     public bool GetHoldAfterFire()
     {

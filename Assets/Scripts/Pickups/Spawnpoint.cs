@@ -5,9 +5,7 @@ using UnityEngine;
  */
 public class Spawnpoint : MonoBehaviour
 {
-    // TODO: Instantiate random from List of pickups instead? (where each instance of Projectile -> Item)
-    // or, define spawnpoint types such as ProjectileSpawnpoint and PickupSpawnpoint?
-    [SerializeField] Item _pickupPrefab;
+    [SerializeField] Item[] _pickupPrefab;
 
     private EventQueue eventQueue;
 
@@ -27,7 +25,8 @@ public class Spawnpoint : MonoBehaviour
 
     public void SpawnPickup()
     {
-        Item spawnedPickup = Instantiate(_pickupPrefab, transform.position, Quaternion.identity);
+        int randomNumber = Random.Range(0, _pickupPrefab.Length);
+        Item spawnedPickup = Instantiate(_pickupPrefab[randomNumber], transform.position, Quaternion.identity);
         spawnedPickup.originalSpawnpoint = this;
 
         eventQueue.AddEvent(new PickupSpawnedEventData(spawnedPickup, this));   // pickup currently does NOT consume this so the oSp is to be set above
