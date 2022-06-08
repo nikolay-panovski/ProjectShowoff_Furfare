@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 7538681639634223176}
   - component: {fileID: 273272129830827445}
   - component: {fileID: 9199965986729623023}
-  - component: {fileID: 4457323644765620630}
   m_Layer: 0
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -234,21 +233,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4457323644765620630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071585551253523091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78295a8982c93743a8c42259b81e9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roundTime: 90
-  timeIsLeft: 0
-  timeText: {fileID: 8024354730103392213}
 --- !u!1 &1078846298878726243
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 2:59
+  m_Text: 0:00
 --- !u!1 &1785754598310913116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87da1a3388cca0a41b3eb0f8d5ea726c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundTime: 120
+  timeIsLeft: 1
+  timeText: {fileID: 8024354730103392213}
   Sprites:
   - {fileID: 21300000, guid: b7234154adcd59544a041622ab3c5d2b, type: 3}
   - {fileID: 21300000, guid: bc9b08606b4faf7468349903044040c7, type: 3}
