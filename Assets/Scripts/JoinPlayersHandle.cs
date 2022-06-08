@@ -4,12 +4,11 @@ using UnityEngine.InputSystem.Users;
 
 public class JoinPlayersHandle : MonoBehaviour
 {
-    /**
-    [SerializeField] private GameObject playerPrefab = null;
+    private EventQueue eventQueue;
 
-    private PlayerInputManager manager = null;
+    private void Start()
     {
-        ++InputUser.listenForUnpairedDeviceActivity;
+        eventQueue = FindObjectOfType<EventQueue>();
     }
 
     private void OnPlayerJoined(PlayerInput player)
@@ -21,7 +20,6 @@ public class JoinPlayersHandle : MonoBehaviour
         // TODO: Resolve hierarchy so this can indeed be DontDestroyOnLoad-ed
         DontDestroyOnLoad(player);
 
-        // TODO: (Code quality) Send an event for GameManager to consume through EventSystem instead
-        GameManager.Instance.AddPlayerInputObject(player);
+        eventQueue.AddEvent(new ControllerJoinedEventData(player));
     }
 }
