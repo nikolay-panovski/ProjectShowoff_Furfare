@@ -1,26 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
+/* Performs collider-based checks for overlaps between this item and the other one.
+ * Currently the result is that if the other items is strictly a Button, it should Select itself.
+ */
 public class UISelectHandler : MonoBehaviour
 {
-    private Camera mainCamera;
-    private Ray cursorRay;
-
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-    }
 
     void Update()
     {
+        /**
+        // STOPPED:
         // raycast from camera through the position of the cursor (with what anchor - deal with that later)
         // cursor is in world space (as it is not attached to the canvas)
         cursorRay = getRayThroughObjectToCanvas(mainCamera.transform.position, this.transform.position);
 
         selectUIButtonViaRaycast();
+        /**/
+
     }
 
+    /**
     private Ray getRayThroughObjectToCanvas(Vector3 fromCameraPosition, Vector3 throughObjectPosition)
     {
         // intended cursor point: top center (hardcoded)
@@ -28,7 +29,9 @@ public class UISelectHandler : MonoBehaviour
                                                        throughObjectPosition.y + this.transform.localScale.y * 0.5f - fromCameraPosition.y,
                                                        throughObjectPosition.z - fromCameraPosition.z));
     }
+    /**/
 
+    /**
     private void selectUIButtonViaRaycast()
     {
         if (Physics.Raycast(cursorRay, out RaycastHit hit))
@@ -41,9 +44,26 @@ public class UISelectHandler : MonoBehaviour
         }
         else EventSystem.current.SetSelectedGameObject(null);
     }
+    /**/
 
-    private void OnDrawGizmos()
+    public Collider2D CheckForColliderOverlap(Collider2D thisCollider)
     {
-        //Gizmos.DrawLine(mainCamera.transform.position, this.transform.position);
+        // prepare array to catch and return only 1st found overlap result - we have no reason to treat multiple
+        Collider2D[] results = new Collider2D[1];
+        thisCollider.OverlapCollider(new ContactFilter2D().NoFilter(), results);
+        return results[0];
+    }
+
+    public void OnColliderOverlap(Collider2D overlap, out Button button)
+    {
+        if (overlap.TryGetComponent<Button>(out button))
+        {
+            button.Select();
+            // TODO: deselect?
+        }
+        else
+        {
+            Debug.Log("No button overlap this frame. Last selected button should be null.");
+        }
     }
 }

@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8158374425815952622}
+  - component: {fileID: 2565538963953929134}
   - component: {fileID: 8158374425815952623}
   - component: {fileID: 5443830406628352831}
   m_Layer: 0
@@ -18,7 +18,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8158374425815952622
+--- !u!4 &2565538963953929134
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,39 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8172395758541043811, guid: 92a4884cff9547d46b5c85304c3c924f, type: 3}
+        m_TargetAssemblyTypeName: GotoScene, Assembly-CSharp
+        m_MethodName: OnSceneChangeButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CharacterSelect
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 188b464b-adf8-4017-abd3-e08c1d846279
+    m_ActionName: NonGameplayUI/Click[/Mouse/leftButton,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIInputPositionController, Assembly-CSharp
+        m_MethodName: moveRectTransform
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 41b26df7-5e92-4833-aedc-2a545df21245
+    m_ActionName: NonGameplayUI/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: NonGameplayUI
