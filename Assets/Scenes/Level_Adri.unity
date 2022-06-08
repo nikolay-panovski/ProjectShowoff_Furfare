@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1400.228, g: 777.7241, b: 438.5625, a: 1}
+  m_IndirectSpecularColor: {r: 3585.8188, g: 1597.9512, b: 652.63086, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -77.5
+      value: -77.03
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1545,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -1578,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -79.06
+      value: -77.1
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1622,7 +1622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -2159,7 +2159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -77.5
+      value: -77.54
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2203,7 +2203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -2285,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -3017,7 +3017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -5010,7 +5010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -79.7
+      value: -77.1
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5054,7 +5054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -6326,7 +6326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -79.7
+      value: -76.99
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6370,7 +6370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
@@ -7240,7 +7240,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 27426.238
+  m_Intensity: 70186.73
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7283,7 +7283,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6067
+  m_ColorTemperature: 4587
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -7324,7 +7324,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 27426.238
+  m_Intensity: 70186.73
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -9154,7 +9154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -79.06
+      value: -77.1
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965730, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9198,7 +9198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166548384348965734, guid: a3a96d4190598724687c04597aebca4d, type: 3}
       propertyPath: _heightDifference
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3a96d4190598724687c04597aebca4d, type: 3}
