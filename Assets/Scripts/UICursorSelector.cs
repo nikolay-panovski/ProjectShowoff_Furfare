@@ -50,6 +50,12 @@ public class UICursorSelector : MonoBehaviour
 
         Collider2D firstOverlappedCollider = selectHandler.CheckForColliderOverlap(thisCollider);
         if (firstOverlappedCollider != null) selectHandler.OnColliderOverlap(firstOverlappedCollider, out lastSelectedButton);
+        else lastSelectedButton = null;
+
+        // following block requires EventSystem. not really to process anything (certainly DO NOT use UI Input Modules),
+        // but for... the highlighting.
+        if (lastSelectedButton != null) EventSystem.current.SetSelectedGameObject(lastSelectedButton.gameObject);
+        else EventSystem.current.SetSelectedGameObject(null);
     }
 
 }

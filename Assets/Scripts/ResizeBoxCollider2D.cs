@@ -20,12 +20,12 @@ public class ResizeBoxCollider2D : MonoBehaviour
     private bool hasSprite = false;
     private bool hasRectTransform = false;
 
-    private Image spriteImage = null;
+    private SpriteRenderer spriteImage = null;
     private RectTransform rectTransform = null;
     
     void Start()
     {
-        if(TryGetComponent<Image>(out spriteImage))
+        if(TryGetComponent<SpriteRenderer>(out spriteImage))
         {
             if (spriteImage.sprite != null) hasSprite = true;
         }
