@@ -9864,6 +9864,7 @@ GameObject:
   - component: {fileID: 1242569691131050864}
   - component: {fileID: 85501488565885832}
   - component: {fileID: 9157045841607584708}
+  - component: {fileID: 4871682693679185535}
   m_Layer: 0
   m_Name: Portal_2
   m_TagString: Untagged
@@ -9913,6 +9914,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _linkedPortal: {fileID: 2001637414956795937}
   _cooldownDuration: 2
+--- !u!114 &4871682693679185535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6994945358181808092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064be72cfff4535419846a8f29af19b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalSource: {fileID: 0}
+  pro_Pick_Up: {fileID: 0}
+  pro_Spawn: {fileID: 0}
+  couch: {fileID: 0}
+  bush: {fileID: 0}
+  sack: {fileID: 0}
+  watering_Can: {fileID: 0}
+  wood: {fileID: 0}
+  bench: {fileID: 0}
+  points: {fileID: 0}
+  event_On: {fileID: 0}
+  event_Off: {fileID: 0}
+  countdown_Start: {fileID: 0}
+  countdown_Finish: {fileID: 0}
+  cancel_Button: {fileID: 0}
+  selected_Button: {fileID: 0}
+  snapping_Options: {fileID: 0}
+  character_Stunned: {fileID: 0}
+  IamABench: 0
+  IamABush: 0
+  IamACouch: 0
+  IamAWateringCan: 0
+  IamAWood: 0
+  IamASack: 0
+  IamAPickUp: 0
+  IamASpawn: 0
 --- !u!1 &7383286255360111373
 GameObject:
   m_ObjectHideFlags: 0
