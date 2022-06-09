@@ -34,18 +34,33 @@ public class InGameUI : MonoBehaviour
         timer();
     }
 
-    
-
     void OrderPlaces()
     {
         bool Weird = false;
+        Debug.Log(Places[0]+ " " + Places[1]+ " " + Places[2]+" "+ Places[3]);
         WeirdPlaces = Places;
         for (int i = 0; i < 3; i++)
         {
             if (Scores[i] == Scores[i + 1])
             {
+                Debug.Log("Matching Scores: " + i + " " + (i+1) +"\n" + Scores[i]);
+                int a = 0, b = 0;
+                for (int j = 0; j < 3; j++)
+                {
+                    if (Places[j] == i)
+                    {
+                        a = j;
+                        Debug.Log("A is set!");
+                    }
+                    else if (Places[j] == i + 1)
+                    {
+                        b = j;
+                        Debug.Log("B is set!");
+                    }
+                }
+                Debug.Log(a + "\n" + b);
                 Weird = true;
-                WeirdPlaces[i + 1] = WeirdPlaces[i];
+                WeirdPlaces[b] = WeirdPlaces[a];
             }
         }
         if (Weird)
@@ -82,13 +97,13 @@ public class InGameUI : MonoBehaviour
                         b = j;
                     }
                 }
-                Places[a] = Places[b] ^ Places[a];
-                Places[b] = Places[a] ^ Places[b];
-                Places[a] = Places[a] ^ Places[b];
+                int tmp = Places[a];
+                Places[a] = Places[b];
+                Places[b] = tmp;
 
-                Scores[i] = Scores[i + 1] ^ Scores[i];
-                Scores[i + 1] = Scores[i] ^ Scores[i + 1];
-                Scores[i] = Scores[i] ^ Scores[i + 1];
+                tmp = Scores[i];
+                Scores[i] = Scores[i+1];
+                Scores[i + 1] = tmp;
             }
         }
         OrderPlaces();

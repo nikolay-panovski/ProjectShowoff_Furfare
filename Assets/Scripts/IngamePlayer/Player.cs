@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
-    private int _score;
+    private int _score = 0;
     private bool stunned = false;
     private bool invincible = false;
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
