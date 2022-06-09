@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7361886318268138950}
   - component: {fileID: 5874232185537514083}
   - component: {fileID: 8530240204419743401}
+  - component: {fileID: -660491640401994718}
   m_Layer: 0
   m_Name: Fence_Low_Yellow
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-660491640401994718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881717391688605564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 996.5488, y: 297.31073, z: 84.92383}
+  m_Center: {x: 0, y: 0, z: 0}

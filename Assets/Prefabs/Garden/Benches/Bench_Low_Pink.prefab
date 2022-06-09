@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 985906129965547509}
   - component: {fileID: 4179762613321134160}
   - component: {fileID: 2154278331332560026}
+  - component: {fileID: 3717784193807964788}
   m_Layer: 0
   m_Name: Bench_Low_Pink
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3717784193807964788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496931746047698255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 438.67676, y: 274.66327, z: 213.90002}
+  m_Center: {x: 0, y: 0, z: 0}

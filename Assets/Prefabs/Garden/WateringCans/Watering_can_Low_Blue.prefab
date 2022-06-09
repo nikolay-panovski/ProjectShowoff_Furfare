@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3624171671868825496}
   - component: {fileID: 424604428264886333}
   - component: {fileID: 2450107953116194039}
+  - component: {fileID: -279771231633111742}
   m_Layer: 0
   m_Name: Watering_can_Low_Blue
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-279771231633111742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107410693562959138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 252.28223, y: 131.47469, z: 131.88477}
+  m_Center: {x: 0, y: 0, z: 0}
