@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6784495399918034205}
   - component: {fileID: 7604474255562887864}
   - component: {fileID: 5651017262258005618}
+  - component: {fileID: -7488267484619279607}
   m_Layer: 0
   m_Name: Dog_House_Low_Red
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-7488267484619279607
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155451137430554535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 355.9098, y: 450.62463, z: 482.45288}
+  m_Center: {x: -0.000061035156, y: -0.000022888184, z: 0}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3995046242525970783}
   - component: {fileID: 62657806134284026}
   - component: {fileID: 2826692356376033840}
+  - component: {fileID: 3193016960713588067}
   m_Layer: 0
   m_Name: Potted_Flowers_v1_Orange
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3193016960713588067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339941481414745061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 263.20312, y: 328.29587, z: 173.1864}
+  m_Center: {x: 0, y: 0, z: 0}
