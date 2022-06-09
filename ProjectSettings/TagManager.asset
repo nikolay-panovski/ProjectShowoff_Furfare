@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ProjectilePickup
   - PickupSpawnpoint
+  - SoundSettings
   layers:
   - Default
   - TransparentFX

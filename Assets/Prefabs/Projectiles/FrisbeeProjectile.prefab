@@ -64,6 +64,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 167887985608899363, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4365142385433880041, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
       propertyPath: m_Name
       value: FrisbeeProjectile
@@ -145,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1411e0e49a12141b826fc64811ff4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 30
   _maxBounces: 3
-  Impact: {fileID: 0}
+  _bounceCooldown: 0.05
   maxReturns: 2
   returnSpeedMultiplier: 2
