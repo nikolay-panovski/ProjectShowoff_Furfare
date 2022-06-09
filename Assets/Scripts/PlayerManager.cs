@@ -59,11 +59,14 @@ public class PlayerManager : MonoBehaviour
         // DontDestroyOnLoad()s for important to preserve objects:
         // Player Input Manager, Event System
         // ~~SOMEONE's job, not necessarily of a PlayerManager
-        // COMMENT OUT IS DEBUG: DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
+
+        // COMMENT OUT IS DEBUG:
+        DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
         if (UnityEngine.EventSystems.EventSystem.current != null)
             DontDestroyOnLoad(UnityEngine.EventSystems.EventSystem.current.gameObject);
 
         // !!! DEBUG, REMOVE THIS FOR PLAYTEST AND ONWARD !!!
+        /**
         foreach (PlayerInput input in FindObjectsOfType<PlayerInput>())
         {
             PlayerConfig joiningPlayer = new PlayerConfig(input);
@@ -75,6 +78,7 @@ public class PlayerManager : MonoBehaviour
             cursor.SetAttachedPlayer(joiningPlayer);
             print("loop complete");
         }
+        /**/
     }
 
     private void OnDestroy()

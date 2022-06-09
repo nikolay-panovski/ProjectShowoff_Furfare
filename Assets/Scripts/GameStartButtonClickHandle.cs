@@ -12,17 +12,13 @@ public class GameStartButtonClickHandle : MonoBehaviour
         {
             GetComponent<Image>().enabled = true;
             GetComponent<Button>().enabled = true;
-            GetComponent<Button>().interactable = true;
-
-            transform.GetChild(0).gameObject.SetActive(true);
+            GetComponent<BoxCollider2D>().enabled = true;
         }
         else
         {
             GetComponent<Image>().enabled = false;
-            GetComponent<Button>().enabled = false;
-            GetComponent<Button>().interactable = false;
-
-            transform.GetChild(0).gameObject.SetActive(false);
+            GetComponent<Button>().enabled = false; 
+            GetComponent<BoxCollider2D>().enabled = false;
         }
 
         print(PlayerManager.Instance.GetAllPlayersReady());
