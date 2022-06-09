@@ -10,7 +10,8 @@ public enum EventType
     // WARNING: The below should be split IN A CLEAR WAY from the above (gameplay) events. In a different queue.
     // That would be the ideal case scenario.
 
-    CONTROLLER_JOINED
+    CONTROLLER_JOINED,
+    CHARACTER_SELECTED
 }
 
 public class EventData
@@ -87,5 +88,15 @@ public class ControllerJoinedEventData : EventData
     public ControllerJoinedEventData(UnityEngine.InputSystem.PlayerInput pController) : base(EventType.CONTROLLER_JOINED)
     {
         playerInput = pController;
+    }
+}
+
+public class CharacterSelectedEventData : EventData
+{
+    public readonly UnityEngine.GameObject chosenCharacter;
+
+    public CharacterSelectedEventData(UnityEngine.GameObject pCharacterPrefab) : base(EventType.CHARACTER_SELECTED)
+    {
+        chosenCharacter = pCharacterPrefab;
     }
 }

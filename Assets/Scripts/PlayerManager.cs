@@ -51,6 +51,7 @@ public class PlayerManager : MonoBehaviour
         eventQueue = FindObjectOfType<EventQueue>();
 
         eventQueue.Subscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
+        eventQueue.Subscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
 
         //SceneManager.activeSceneChanged += onSceneChanged;
         SceneManager.sceneLoaded += onSceneChanged;
@@ -58,14 +59,28 @@ public class PlayerManager : MonoBehaviour
         // DontDestroyOnLoad()s for important to preserve objects:
         // Player Input Manager, Event System
         // ~~SOMEONE's job, not necessarily of a PlayerManager
-        DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
+        // COMMENT OUT IS DEBUG: DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
         if (UnityEngine.EventSystems.EventSystem.current != null)
             DontDestroyOnLoad(UnityEngine.EventSystems.EventSystem.current.gameObject);
+
+        // !!! DEBUG, REMOVE THIS FOR PLAYTEST AND ONWARD !!!
+        foreach (PlayerInput input in FindObjectsOfType<PlayerInput>())
+        {
+            PlayerConfig joiningPlayer = new PlayerConfig(input);
+
+            updatePlayerListWithJoining(joiningPlayer);
+            instantiateCursorForJoinedPlayer(joiningPlayer);
+
+            UICursorSelector cursor = input.GetComponentInChildren<UICursorSelector>();
+            cursor.SetAttachedPlayer(joiningPlayer);
+            print("loop complete");
+        }
     }
 
     private void OnDestroy()
     {
         eventQueue.Unsubscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
+        eventQueue.Unsubscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
     }
 
     private void onControllerJoined(EventData eventData)
@@ -75,6 +90,12 @@ public class PlayerManager : MonoBehaviour
 
         updatePlayerListWithJoining(joiningPlayer);
         instantiateCursorForJoinedPlayer(joiningPlayer);
+    }
+
+    private void onCharacterSelected(EventData eventData)
+    {
+        CharacterSelectedEventData data = (CharacterSelectedEventData)eventData;
+
     }
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
@@ -96,7 +117,8 @@ public class PlayerManager : MonoBehaviour
 
     private void instantiateCursorForJoinedPlayer(PlayerConfig joinedPlayer)
     {
-        GameObject cursor = Instantiate(cursorFunctionPrefab.gameObject, joinedPlayer.gameObject.transform);
+        UICursorSelector cursor = Instantiate(cursorFunctionPrefab, joinedPlayer.gameObject.transform);
+        cursor.SetAttachedPlayer(joinedPlayer);
         SpriteRenderer cursorImage = cursor.GetComponent<SpriteRenderer>();
 
         // CHANGE: set sprite using playerIndex, not numJoinedPlayers
@@ -117,8 +139,21 @@ public class PlayerManager : MonoBehaviour
 
     // Assumed that controllers are not leaving in any way (there is no event for that and joinedPlayers will not be decremented).
 
-    //public void GetPlayerAtIndex(int index)
-    //{ 
-    //  out of joinedPlayers
-    //}
+    public PlayerConfig GetPlayerAtIndex(int index)
+    {
+        if (index < 0 || index >= joinedPlayers.Count) return null;
+        else return joinedPlayers[index];
+    }
+
+    public bool GetAllPlayersReady()
+    {
+        bool allPlayersReady = true;
+
+        foreach (PlayerConfig player in joinedPlayers)
+        {
+            if (player.isReady == false) allPlayersReady = false;
+        }
+
+        return allPlayersReady;
+    }
 }

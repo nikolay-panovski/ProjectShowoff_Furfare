@@ -19,7 +19,7 @@ public class InstantiateCursor : MonoBehaviour
         if (cursorImage == null) Debug.LogError("Cursor image not assigned! Player input is in, but cursor will be invisible!");
         else
         {
-            cursor.GetComponent<Image>().sprite = cursorImage;
+            cursor.GetComponent<SpriteRenderer>().sprite = cursorImage;
         }
     }
 }

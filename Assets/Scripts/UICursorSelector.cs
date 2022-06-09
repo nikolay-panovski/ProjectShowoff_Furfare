@@ -1,24 +1,23 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class UICursorSelector : MonoBehaviour
 {
-    private Vector2 inputVector;
-
     private bool hasRectTransform;
     private RectTransform rectTransform;
-
     private BoxCollider2D thisCollider = null;
-
     private Button lastSelectedButton = null;
-
 
     private UIInputPositionController inputController;
     private UISelectHandler selectHandler;
 
-    // Start is called before the first frame update
+    private Vector2 inputVector;
+
+    private PlayerConfig attachedPlayer;
+
     void Start()
     {
         hasRectTransform = TryGetComponent<RectTransform>(out rectTransform);
@@ -40,6 +39,20 @@ public class UICursorSelector : MonoBehaviour
     private void OnClick(InputValue value)
     {
         if (lastSelectedButton != null) lastSelectedButton.onClick.Invoke();
+        // TODO: DECOUPLE!!
+        if (lastSelectedButton.TryGetComponent<ButtonClickHandle>(out ButtonClickHandle handle))
+        {
+            // select and attach character model on first click
+            if (attachedPlayer.characterModel == null)
+            {
+                attachedPlayer.characterModel = handle.GetCharacterModel();
+                attachedPlayer.isReady = true;
+            }
+            // BUG: would de-select/de-attach on second click, but the Click event gets fired twice at a time
+            //else attachedPlayer.characterModel = null;
+            //attachedPlayer.isReady = false;
+        }
+        
     }
     #endregion
 
@@ -54,8 +67,15 @@ public class UICursorSelector : MonoBehaviour
 
         // following block requires EventSystem. not really to process anything (certainly DO NOT use UI Input Modules),
         // but for... the highlighting.
-        if (lastSelectedButton != null) EventSystem.current.SetSelectedGameObject(lastSelectedButton.gameObject);
-        else EventSystem.current.SetSelectedGameObject(null);
+        // AND it still only allows for 1 highlight per canvas (1 selection per cursor object at least, phew.)
+        if (lastSelectedButton != null) GetComponent<MultiplayerEventSystem>().SetSelectedGameObject(lastSelectedButton.gameObject);
+        else GetComponent<MultiplayerEventSystem>().SetSelectedGameObject(null);
+
+        //print(GetComponent<MultiplayerEventSystem>().currentSelectedGameObject);
     }
 
+    public void SetAttachedPlayer(PlayerConfig player)
+    {
+        attachedPlayer = player;
+    }
 }
