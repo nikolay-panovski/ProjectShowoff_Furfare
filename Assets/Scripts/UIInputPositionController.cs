@@ -1,28 +1,16 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class UIInputPositionController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private Vector2 inputVector;
+    [SerializeField] private float pixelsPerSecond;
 
-    private void Update()
+    public void MoveTransform(Transform transform, Vector2 byInputVector)
     {
-        move(inputVector);
+        transform.Translate(new Vector3(byInputVector.x, byInputVector.y, 0) * Time.deltaTime * pixelsPerSecond);
     }
 
-    private void OnMove(InputValue value)
+    public void MoveRectTransform(RectTransform rectTransform, Vector2 byInputVector)
     {
-        inputVector = value.Get<Vector2>();
-    }
-
-    private void OnSubmit(InputValue value)
-    {
-        Debug.Log("clicked");
-    }
-
-    private void move(Vector2 inputVector)
-    {
-        transform.Translate(new Vector3(inputVector.x, inputVector.y, 0) * Time.deltaTime * speed);
+        rectTransform.anchoredPosition += byInputVector * Time.deltaTime * pixelsPerSecond;
     }
 }

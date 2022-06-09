@@ -4,35 +4,22 @@ using UnityEngine.InputSystem.Users;
 
 public class JoinPlayersHandle : MonoBehaviour
 {
-    /**
-    [SerializeField] private GameObject playerPrefab = null;
+    private EventQueue eventQueue;
 
-    private PlayerInputManager manager = null;
-
-    private void Awake()
+    private void Start()
     {
-        ++InputUser.listenForUnpairedDeviceActivity;
-        InputUser.onUnpairedDeviceUsed += onUnpairedDeviceUsed;
-
-        if (!TryGetComponent<PlayerInputManager>(out manager)) Debug.LogError("A JoinPlayersHandle script is attached to a non-" +
-            "PlayerInputManager object! Fix this!");
+        eventQueue = FindObjectOfType<EventQueue>();
     }
-
-    private void onUnpairedDeviceUsed(InputControl device, UnityEngine.InputSystem.LowLevel.InputEventPtr eventPtr)
-    {
-        // controlScheme should be Gamepad at the end
-        manager.JoinPlayer(GameManager.Instance.joinedPlayers, controlScheme: "Keyboard&Mouse", pairWithDevice: (InputDevice)device);
-        GameManager.Instance.joinedPlayers++;
-    }
-    /**/
 
     private void OnPlayerJoined(PlayerInput player)
     {
-        Debug.Log("Player joined");
+        //Debug.Log("Player joined");
+
+        // for object where cursor + input are in one
+        //player.transform.SetParent(FindObjectOfType<Canvas>().transform, false);
 
         DontDestroyOnLoad(player);
 
-        // TODO: (Code quality) Send an event for GameManager to consume through EventSystem instead
-        GameManager.Instance.AddPlayerInputObject(player);
+        eventQueue.AddEvent(new ControllerJoinedEventData(player));
     }
 }
