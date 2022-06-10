@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6143567030708545413}
   - component: {fileID: 7128510187792508960}
   - component: {fileID: 4974640814261066986}
+  - component: {fileID: -2226663539516636745}
   m_Layer: 0
   m_Name: Potted_Flowers_v1_Purple
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2226663539516636745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776093377547959615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 263.20312, y: 305.56714, z: 171.6543}
+  m_Center: {x: 0, y: 0, z: 0}

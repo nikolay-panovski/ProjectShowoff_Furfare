@@ -9,6 +9,32 @@ public class EventQueue : MonoBehaviour
     private Dictionary<EventType, EventHandler> subscriberDict = new Dictionary<EventType, EventHandler>();
     private List<EventData> eventList = new List<EventData>();
 
+    #region SINGLETON + DONTDESTROYONLOAD
+    private static EventQueue instance = null;
+
+    public static EventQueue Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    #endregion
+
     public void Update()
     {
         PublishEvents();

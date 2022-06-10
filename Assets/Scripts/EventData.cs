@@ -5,7 +5,13 @@ public enum EventType
     PICKUP_PICKED,
     PROJECTILE_FIRED,
     //PROJECTILE_DESTROYED,
-    PLAYER_HIT
+    PLAYER_HIT,
+
+    // WARNING: The below should be split IN A CLEAR WAY from the above (gameplay) events. In a different queue.
+    // That would be the ideal case scenario.
+
+    CONTROLLER_JOINED,
+    CHARACTER_SELECTED
 }
 
 public class EventData
@@ -18,6 +24,7 @@ public class EventData
     }
 }
 
+#region GAMEPLAY EVENTS
 public class SpawnpointInittedEventData : EventData
 {
     public readonly Spawnpoint spawnpoint;
@@ -69,5 +76,27 @@ public class PlayerHitEventData : EventData
     {
         hitPlayer = pPlayer;
         byPlayer = pByPlayer;
+    }
+}
+
+#endregion
+
+public class ControllerJoinedEventData : EventData
+{
+    public readonly UnityEngine.InputSystem.PlayerInput playerInput;
+
+    public ControllerJoinedEventData(UnityEngine.InputSystem.PlayerInput pController) : base(EventType.CONTROLLER_JOINED)
+    {
+        playerInput = pController;
+    }
+}
+
+public class CharacterSelectedEventData : EventData
+{
+    public readonly UnityEngine.GameObject chosenCharacter;
+
+    public CharacterSelectedEventData(UnityEngine.GameObject pCharacterPrefab) : base(EventType.CHARACTER_SELECTED)
+    {
+        chosenCharacter = pCharacterPrefab;
     }
 }
