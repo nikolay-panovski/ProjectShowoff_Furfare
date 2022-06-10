@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public AudioSource portalSource;
 
+=======
+>>>>>>> Stashed changes
     //Projectiles
     public AudioSource pro_Pick_Up;
     public AudioSource pro_Spawn;
@@ -27,11 +30,15 @@ public class SoundManager : MonoBehaviour
     public AudioSource snapping_Options;
 
     public AudioSource character_Stunned;
+<<<<<<< Updated upstream
 
     public void PortalSound()
     {
         portalSource.Play();
     }
+=======
+    public bool IamAPortal;
+>>>>>>> Stashed changes
 
     //Point
     public void Points()

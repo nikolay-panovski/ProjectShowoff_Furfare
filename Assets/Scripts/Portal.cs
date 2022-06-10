@@ -31,4 +31,11 @@ public class Portal : MonoBehaviour
     {
         return _linkedPortal;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            this.GetComponent<AudioSource>().Play();
+        }
+    }
 }
