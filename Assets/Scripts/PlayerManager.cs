@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private UICursorSelector cursorFunctionPrefab;
 
     private List<PlayerConfig> joinedPlayers = new List<PlayerConfig>();
-    private int numJoinedPlayers = 0;
+    private int numJoinedPlayers { get { return joinedPlayers.Count; } }
 
     private static PlayerManager instance = null;
 
@@ -60,25 +60,10 @@ public class PlayerManager : MonoBehaviour
         // Player Input Manager, Event System
         // ~~SOMEONE's job, not necessarily of a PlayerManager
 
-        // COMMENT OUT IS DEBUG:
+        // handle enabling and disabling of persistent objects when they should not operate on a scene (gameplay vs non-gameplay)
         DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
         if (UnityEngine.EventSystems.EventSystem.current != null)
             DontDestroyOnLoad(UnityEngine.EventSystems.EventSystem.current.gameObject);
-
-        // !!! DEBUG, REMOVE THIS FOR PLAYTEST AND ONWARD !!!
-        /**
-        foreach (PlayerInput input in FindObjectsOfType<PlayerInput>())
-        {
-            PlayerConfig joiningPlayer = new PlayerConfig(input);
-
-            updatePlayerListWithJoining(joiningPlayer);
-            instantiateCursorForJoinedPlayer(joiningPlayer);
-
-            UICursorSelector cursor = input.GetComponentInChildren<UICursorSelector>();
-            cursor.SetAttachedPlayer(joiningPlayer);
-            print("loop complete");
-        }
-        /**/
     }
 
     private void OnDestroy()
@@ -114,9 +99,8 @@ public class PlayerManager : MonoBehaviour
 
     private void updatePlayerListWithJoining(PlayerConfig joiningPlayer)
     {
+        joiningPlayer.playerIndex = numJoinedPlayers;   // assign index before adding self, because Lists are 0-indexed for 1st item
         joinedPlayers.Add(joiningPlayer);
-        joiningPlayer.playerIndex = numJoinedPlayers;
-        numJoinedPlayers++;
     }
 
     private void instantiateCursorForJoinedPlayer(PlayerConfig joinedPlayer)
@@ -145,7 +129,7 @@ public class PlayerManager : MonoBehaviour
 
     public PlayerConfig GetPlayerAtIndex(int index)
     {
-        if (index < 0 || index >= joinedPlayers.Count) return null;
+        if (index < 0 || index >= numJoinedPlayers) return null;
         else return joinedPlayers[index];
     }
 
