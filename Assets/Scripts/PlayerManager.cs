@@ -89,7 +89,8 @@ public class PlayerManager : MonoBehaviour
         {
             if (data.byCursor == player.cursorObject)
             {
-                if (player.characterModel == data.selectedCharacter)
+                if (player.characterModel != null)  // better: if (player.characterModel == data.selectedCharacter),
+                                                    // but that would cause additional checks across this and CharacterDisplaySlot
                 {
                     player.characterModel = null;
                     player.isReady = false;
