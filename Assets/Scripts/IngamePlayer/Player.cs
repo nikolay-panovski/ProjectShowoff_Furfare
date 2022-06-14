@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /* Player class to attach to player object. Holds references to relevant functionality components (hold, shoot etc.)
  * and to relevant objects to communicate with (held projectile, if any; powerups if any?; game manager for stats.)
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
-    private int _score;
+    private int _score = 0;
     private bool stunned = false;
     private bool invincible = false;
     //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
 
     private Vector2 moveInput;  // store OnMove results here
 
+    //UI Part Data
+    public Text MyPoints;
+    public InGameUI UI;
+    public int PlayerID;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -178,7 +183,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        projectile.owningPlayer.IncreaseScore(1);
+        projectile.owningPlayer.IncreaseScore(100);
         ToggleInvincibility();
         ToggleStun();
         takeDamage();
@@ -207,6 +212,9 @@ public class Player : MonoBehaviour
     public void IncreaseScore(int amount)
     {
         _score += amount;
+        //UIScore
+        MyPoints.text = _score.ToString();
+        UI.UpdatePlace(_score, PlayerID);
     }
 
     public void ToggleStun()

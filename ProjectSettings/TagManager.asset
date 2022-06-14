@@ -6,11 +6,12 @@ TagManager:
   tags:
   - ProjectilePickup
   - PickupSpawnpoint
+  - SoundSettings
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Cursors
   - Water
   - UI
   - Players
