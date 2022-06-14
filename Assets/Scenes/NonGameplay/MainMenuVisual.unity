@@ -5851,7 +5851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorSprites: {fileID: 11400000, guid: 12cba908783ef9e4da6adc6205df88dd, type: 2}
-  characterModels: {fileID: 11400000, guid: 05c25185c8e94c74fb0ff6e27964e14f, type: 2}
+  characterModels: {fileID: 11400000, guid: 294a5cbda42d5f74e82b2cfce16ad7a4, type: 2}
   cursorFunctionPrefab: {fileID: 3217315624693753171, guid: d1719825fda200d4ea12615d9e16e46f, type: 3}
 --- !u!4 &2132312391
 Transform:
