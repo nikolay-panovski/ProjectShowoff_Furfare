@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UICursorSelector : MonoBehaviour
 {
+    private EventQueue eventQueue;
+
     private bool hasRectTransform;
     private RectTransform rectTransform;
     private BoxCollider2D thisCollider = null;
@@ -13,14 +15,21 @@ public class UICursorSelector : MonoBehaviour
 
     private UIInputPositionController inputController;
     private UISelectHandler selectHandler;
+    private SpriteRenderer spriteRenderer;
+    private ResizeBoxCollider2D collResizer;
+
+    private MultiplayerEventSystem eventSystem;
 
     private Vector2 inputVector;
 
-    private PlayerConfig attachedPlayer;
-
     void Start()
     {
-        hasRectTransform = TryGetComponent<RectTransform>(out rectTransform);
+        eventQueue = FindObjectOfType<EventQueue>();
+
+        #region TRYGETCOMPONENTS
+        if (!TryGetComponent<SpriteRenderer>(out spriteRenderer))
+            throw new MissingComponentException("Cursor prefab is missing a SpriteRenderer component! Add one for visuals to work!");
+
         if (!TryGetComponent<UIInputPositionController>(out inputController))
             throw new MissingComponentException("Cursor is missing a UIInputPositionController-type script!");
         if (!TryGetComponent<UISelectHandler>(out selectHandler))
@@ -28,6 +37,20 @@ public class UICursorSelector : MonoBehaviour
 
         if (!TryGetComponent<BoxCollider2D>(out thisCollider))
             throw new MissingComponentException("Cursor is missing a BoxCollider2D Component! Will not be able to interact with buttons!");
+        if (!TryGetComponent<ResizeBoxCollider2D>(out collResizer))
+            throw new MissingComponentException("Cursor is missing a ResizeBoxCollider2D Component! Will not be able to interact with buttons!");
+
+        if (!TryGetComponent<MultiplayerEventSystem>(out eventSystem))
+            throw new MissingComponentException("Cursor is missing a MultiplayerEventSystem component, you will not see highlights from it!");
+        hasRectTransform = TryGetComponent<RectTransform>(out rectTransform);
+        #endregion
+
+        eventQueue.Subscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
+    }
+
+    private void OnDestroy()
+    {
+        eventQueue.Unsubscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
     }
 
     #region ON INPUT EVENTS
@@ -38,23 +61,27 @@ public class UICursorSelector : MonoBehaviour
 
     private void OnClick(InputValue value)
     {
-        if (lastSelectedButton != null) lastSelectedButton.onClick.Invoke();
-        // TODO: DECOUPLE!!
-        if (lastSelectedButton.TryGetComponent<ButtonClickHandle>(out ButtonClickHandle handle))
+        // simply force Invoke whatever is on the onClick and inform about the click. any special effects should be handled by the button itself.
+        if (lastSelectedButton != null)
         {
-            // select and attach character model on first click
-            if (attachedPlayer.characterModel == null)
-            {
-                attachedPlayer.characterModel = handle.GetCharacterModel();
-                attachedPlayer.isReady = true;
-            }
-            // BUG: would de-select/de-attach on second click, but the Click event gets fired twice at a time
-            //else attachedPlayer.characterModel = null;
-            //attachedPlayer.isReady = false;
+            lastSelectedButton.onClick.Invoke();
+            eventQueue.AddEvent(new ButtonPressedEventData(this, lastSelectedButton));
         }
-        
     }
     #endregion
+
+    private void onPlayerRegistered(EventData eventData)
+    {
+        PlayerRegisteredEventData data = (PlayerRegisteredEventData)eventData;
+        assignCursorSprite(data.playerIndex);
+        collResizer.Resize();
+    }
+
+    private void assignCursorSprite(int fromIndex)
+    {
+        spriteRenderer.sprite = PlayerManager.Instance.GetSpriteAtIndex(fromIndex);
+        // ~~if sprite is null after this, expect a fun stack trace traversal
+    }
 
     void Update()
     {
@@ -65,17 +92,13 @@ public class UICursorSelector : MonoBehaviour
         if (firstOverlappedCollider != null) selectHandler.OnColliderOverlap(firstOverlappedCollider, out lastSelectedButton);
         else lastSelectedButton = null;
 
-        // following block requires EventSystem. not really to process anything (certainly DO NOT use UI Input Modules),
-        // but for... the highlighting.
-        // AND it still only allows for 1 highlight per canvas (1 selection per cursor object at least, phew.)
-        if (lastSelectedButton != null) GetComponent<MultiplayerEventSystem>().SetSelectedGameObject(lastSelectedButton.gameObject);
-        else GetComponent<MultiplayerEventSystem>().SetSelectedGameObject(null);
+        /** following block requires EventSystem. not really to process anything (certainly DO NOT use UI Input Modules),
+          * but for... the highlighting.
+          * AND it still only allows for 1 highlight per canvas (1 selection per cursor object at least, phew.)
+          */
+        if (lastSelectedButton != null) eventSystem.SetSelectedGameObject(lastSelectedButton.gameObject);
+        else eventSystem.SetSelectedGameObject(null);
 
-        //print(GetComponent<MultiplayerEventSystem>().currentSelectedGameObject);
-    }
-
-    public void SetAttachedPlayer(PlayerConfig player)
-    {
-        attachedPlayer = player;
+        //print(eventSystem.currentSelectedGameObject);
     }
 }

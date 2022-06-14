@@ -85,6 +85,22 @@ public class PlayerManager : MonoBehaviour
     {
         CharacterSelectedEventData data = (CharacterSelectedEventData)eventData;
 
+        foreach (PlayerConfig player in joinedPlayers)
+        {
+            if (data.byCursor == player.cursorObject)
+            {
+                if (player.characterModel == data.selectedCharacter)
+                {
+                    player.characterModel = null;
+                    player.isReady = false;
+                }
+                else
+                {
+                    player.characterModel = data.selectedCharacter;
+                    player.isReady = true;
+                }
+            }
+        }
     }
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
@@ -105,32 +121,30 @@ public class PlayerManager : MonoBehaviour
 
     private void instantiateCursorForJoinedPlayer(PlayerConfig joinedPlayer)
     {
+        if (joinedPlayer.cursorObject != null)
+        {
+            throw new System.Exception("Player who just joined already has a cursor instantiated, this should not be the case! Trace back the code!");
+        }
+
         UICursorSelector cursor = Instantiate(cursorFunctionPrefab, joinedPlayer.gameObject.transform);
-        cursor.SetAttachedPlayer(joinedPlayer);
-        SpriteRenderer cursorImage = cursor.GetComponent<SpriteRenderer>();
-
-        // CHANGE: set sprite using playerIndex, not numJoinedPlayers
-        if (cursorSprites.cursorSprites.Count >= numJoinedPlayers)
-        {
-            cursorImage.sprite = cursorSprites.cursorSprites[numJoinedPlayers];
-        }
-        else
-        {
-            Debug.LogWarning("Not enough unique cursor sprites specified in the Cursor Container! Will try to assign last available sprite again!");
-            cursorImage.sprite = cursorSprites.cursorSprites[cursorSprites.cursorSprites.Count];
-        }
-
-        joinedPlayer.cursorSprite = cursorImage.sprite;
-
-        // send event if necessary
+        joinedPlayer.cursorObject = cursor;
+        
+        // send event with the index to allow the cursor to self-assign a sprite
+        eventQueue.AddEvent(new PlayerRegisteredEventData(joinedPlayer.playerIndex));
     }
 
     // Assumed that controllers are not leaving in any way (there is no event for that and joinedPlayers will not be decremented).
 
-    public PlayerConfig GetPlayerAtIndex(int index)
+    public PlayerConfig GetPlayerAtIndex(int index) // NULLABLE
     {
         if (index < 0 || index >= numJoinedPlayers) return null;
         else return joinedPlayers[index];
+    }
+
+    public Sprite GetSpriteAtIndex(int index)   // NULLABLE
+    {
+        if (index < 0 || index >= numJoinedPlayers) return null;
+        else return cursorSprites.cursorSprites[index];
     }
 
     public bool GetAllPlayersReady()
@@ -140,6 +154,7 @@ public class PlayerManager : MonoBehaviour
         foreach (PlayerConfig player in joinedPlayers)
         {
             if (player.isReady == false) allPlayersReady = false;
+            break;
         }
 
         return allPlayersReady;

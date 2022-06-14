@@ -25,12 +25,15 @@ public class ResizeBoxCollider2D : MonoBehaviour
     
     void Start()
     {
-        if(TryGetComponent<SpriteRenderer>(out spriteImage))
-        {
-            if (spriteImage.sprite != null) hasSprite = true;
-        }
-
         hasRectTransform = TryGetComponent<RectTransform>(out rectTransform);
+    }
+
+    /* ~~kinda odd relationship that this and the UICursorSelector have
+     */
+    public void Resize()
+    {
+        // not in Start() because that is too early in the cursor instantiation pipeline specifically
+        if (hasSprite == false) hasSprite = TryGetComponent<SpriteRenderer>(out spriteImage);
 
         switch (resizeMode)
         {
