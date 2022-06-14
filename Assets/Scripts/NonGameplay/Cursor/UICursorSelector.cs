@@ -59,8 +59,20 @@ public class UICursorSelector : MonoBehaviour
         inputVector = value.Get<Vector2>();
     }
 
+    /* For future generations:
+     * Using Unity's InputSystem, this gets sent both on button PRESS (DOWN) and button RELEASE (UP).
+     * Dunno if it is documented properly.
+     * One or the other can be filtered via value.isPressed, as seen immediately below.
+     */
     private void OnClick(InputValue value)
     {
+        if (value.isPressed == false)
+        {
+            //Debug.LogWarning("On Click button release");
+            return;
+        }
+
+        //Debug.LogWarning("On Click button press");
         // simply force Invoke whatever is on the onClick and inform about the click. any special effects should be handled by the button itself.
         if (lastSelectedButton != null)
         {
