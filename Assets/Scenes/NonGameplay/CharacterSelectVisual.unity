@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 8646981074679266972, guid: 3da1393f293be4b40a96130132a9d2bc, type: 3}
+  characterID: 6
 --- !u!224 &208700960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1004,6 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5135583667661462337, guid: d411a54c0ca637649a48e2576aea3707, type: 3}
+  characterID: 7
 --- !u!1 &730163379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5934890367811059511, guid: 5c55ccc457636724fa8f6a5f8a90097a, type: 3}
+  characterID: 2
 --- !u!1 &921358233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 6293213831887771660, guid: 010d06e453f852c4094d3aa2d55e38c4, type: 3}
+  characterID: 8
 --- !u!1 &1064287923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 157230683855596803, guid: baff538fdbdd7b147bebb0c7c962aef6, type: 3}
+  characterID: 5
 --- !u!1 &1359474634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,6 +2791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 6025047016171398672, guid: 682df42e0187cb14ead10d0f50614995, type: 3}
+  characterID: 1
 --- !u!1 &1420669041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,6 +3551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 1091228790641785062, guid: 7cc71ce35405210488bf13dc01a944da, type: 3}
+  characterID: 3
 --- !u!1 &1968361257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,6 +3884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5116138281481010184, guid: d41b75975a597f544860405196baf240, type: 3}
+  characterID: 4
 --- !u!224 &2001696890
 RectTransform:
   m_ObjectHideFlags: 0

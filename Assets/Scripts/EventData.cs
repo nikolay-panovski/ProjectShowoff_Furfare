@@ -120,10 +120,12 @@ public class CharacterSelectedEventData : EventData
 {
     public readonly UICursorSelector byCursor;
     public readonly UnityEngine.GameObject selectedCharacter;
+    public readonly int selectedCharacterID;
 
-    public CharacterSelectedEventData(UICursorSelector pByCursor, UnityEngine.GameObject pSelectedCharacter) : base(EventType.CHARACTER_SELECTED)
+    public CharacterSelectedEventData(UICursorSelector pByCursor, UnityEngine.GameObject pSelectedCharacter, int pID) : base(EventType.CHARACTER_SELECTED)
     {
         byCursor = pByCursor;
         selectedCharacter = pSelectedCharacter;
+        selectedCharacterID = pID;
     }
 }

@@ -94,23 +94,40 @@ public class PlayerManager : MonoBehaviour
                 {
                     player.characterModel = null;
                     player.isReady = false;
+                    player.characterIndex = data.selectedCharacterID;
                 }
                 else
                 {
                     player.characterModel = data.selectedCharacter;
                     player.isReady = true;
+                    // ~~do not reset player index for now
                 }
             }
         }
     }
 
+    /* NEXT FOCUS:
+     * Create non-gameplay -> gameplay transition with focus on the managed player (input) objects.
+     * In a clean(ish) way.
+     */
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
     {
-        // on EACH new scene load, unless filtered:
-        foreach (PlayerConfig player in joinedPlayers)
+        // happens on EACH new scene load, unless filtered:
+        //print(loadedScene.name);
+        if (loadedScene.name == "AssetsMaterialsLevel") // TODO: distinguish between gameplay and non-gameplay screen (bogus script?)
+                                                        // for this check?
         {
-            // EDIT: cursor is now persistent as a child of InputObject that is NOT on the canvas
-            //instantiateCursorForJoinedPlayer(player);
+            foreach (PlayerConfig player in joinedPlayers)
+            {
+                // all PlayerInput transforms currently at (0, 0, 0)
+                GameObject functionalPlayerObject = Instantiate(characterModels.characterModels[player.characterIndex], player.gameObject.transform);
+                // cursor object itself gets disabled, but not the parenting InputObject (and it shouldn't, only the relevant PlayerInput)
+                player.cursorObject.gameObject.SetActive(false);
+                // DIRTY - does not preserve original input (for exit out of level)
+                player.input = functionalPlayerObject.GetComponent<PlayerInput>();
+                // VERY DIRTY (obvious why). As mostly expected, does not prevent the bad from happening.
+                FindObjectOfType<PlayerInputManager>().gameObject.SetActive(false);
+            }
         }
     }
 

@@ -12,6 +12,7 @@ public class ButtonClickHandle : MonoBehaviour
     private Button button;
 
     [SerializeField] private GameObject characterModel;
+    [SerializeField] private int characterID;   // probably "dirty but lazy". Make sure there is a match in the numbers between model (filename) and ID.
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class ButtonClickHandle : MonoBehaviour
     private void performEventButtonAction(UICursorSelector byCursor)
     {
         // SPECIFIC: character selected
-        eventQueue.AddEvent(new CharacterSelectedEventData(byCursor, characterModel));
+        // characterID is - 1 for the human-readable form of player1 = ID "1" etc. vs a 0-indexed array
+        eventQueue.AddEvent(new CharacterSelectedEventData(byCursor, characterModel, characterID - 1));
     }
 }
