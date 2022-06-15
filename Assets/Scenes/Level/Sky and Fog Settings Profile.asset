@@ -213,6 +213,36 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.5
     min: 0
+--- !u!114 &-8483795462616665347
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  type:
+    m_OverrideState: 1
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+    max: 1
+  response:
+    m_OverrideState: 1
+    m_Value: 0.222
+    min: 0
+    max: 1
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
 --- !u!114 &-8074114477405755029
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -511,6 +541,36 @@ MonoBehaviour:
     m_Value: 0
     min: -100
     max: 100
+--- !u!114 &-1326962849985530155
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 1
+  spectralLut:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.05
+    min: 0
+    max: 1
+  m_MaxSamples:
+    m_OverrideState: 1
+    m_Value: 6
+    min: 3
+    max: 24
 --- !u!114 &-33654480517439552
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -581,79 +641,14 @@ MonoBehaviour:
   - {fileID: 8038451870537399896}
   - {fileID: 3864862591466449012}
   - {fileID: -8074114477405755029}
-  - {fileID: 1809033897289409322}
   - {fileID: -8553062089229260966}
   - {fileID: -33654480517439552}
   - {fileID: -1776733871511731281}
   - {fileID: -5389929655404566198}
   - {fileID: -8663985590346545521}
   - {fileID: -7655153347761942332}
---- !u!114 &1809033897289409322
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b145d2b9ee1ac4f846968484e7485a, type: 3}
-  m_Name: ContactShadows
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  quality:
-    m_OverrideState: 1
-    m_Value: 1
-  enable:
-    m_OverrideState: 1
-    m_Value: 1
-  length:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-    max: 1
-  opacity:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-    max: 1
-  distanceScaleFactor:
-    m_OverrideState: 1
-    m_Value: 0.2
-    min: 0
-    max: 1
-  maxDistance:
-    m_OverrideState: 1
-    m_Value: 50
-    min: 0
-  minDistance:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  fadeDistance:
-    m_OverrideState: 1
-    m_Value: 5
-    min: 0
-  fadeInDistance:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  rayBias:
-    m_OverrideState: 1
-    m_Value: 0.5
-    min: 0
-    max: 1
-  thicknessScale:
-    m_OverrideState: 1
-    m_Value: 0.5
-    min: 0.02
-    max: 1
-  m_SampleCount:
-    m_OverrideState: 1
-    m_Value: 10
-    min: 4
-    max: 64
+  - {fileID: -1326962849985530155}
+  - {fileID: -8483795462616665347}
 --- !u!114 &3864862591466449012
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -682,7 +677,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.235
+    m_Value: 0.38
     min: 0
     max: 1
   smoothness:
