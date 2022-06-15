@@ -26,7 +26,5 @@ public class CharacterDisplaySlot : MonoBehaviour
                 displayedCharacter = null;
             }
         }
-
-        // TODO: Idle animation (unless it plays by default)
     }
 }

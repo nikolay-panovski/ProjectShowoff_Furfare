@@ -1,14 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 /* Singleton player manager - for decoupling different player-related objects and keeping persistent information about players (inputs).
  * Rework the singleton part?
- * 
- * TODO? character select scene manager subscribes (listener) to the events sent by the player/cursor objects (the Move, Click etc.)
- * (figure out how it looks like)
  */
 public class PlayerManager : MonoBehaviour
 {
@@ -22,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private UICursorSelector cursorFunctionPrefab;
 
     private List<PlayerConfig> joinedPlayers = new List<PlayerConfig>();
-    private int numJoinedPlayers = 0;
+    public int numJoinedPlayers { get { return joinedPlayers.Count; } }
 
     private static PlayerManager instance = null;
 
@@ -52,29 +46,6 @@ public class PlayerManager : MonoBehaviour
 
         eventQueue.Subscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
         eventQueue.Subscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
-
-        //SceneManager.activeSceneChanged += onSceneChanged;
-        SceneManager.sceneLoaded += onSceneChanged;
-
-        // DontDestroyOnLoad()s for important to preserve objects:
-        // Player Input Manager, Event System
-        // ~~SOMEONE's job, not necessarily of a PlayerManager
-        // COMMENT OUT IS DEBUG: DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
-        if (UnityEngine.EventSystems.EventSystem.current != null)
-            DontDestroyOnLoad(UnityEngine.EventSystems.EventSystem.current.gameObject);
-
-        // !!! DEBUG, REMOVE THIS FOR PLAYTEST AND ONWARD !!!
-        foreach (PlayerInput input in FindObjectsOfType<PlayerInput>())
-        {
-            PlayerConfig joiningPlayer = new PlayerConfig(input);
-
-            updatePlayerListWithJoining(joiningPlayer);
-            instantiateCursorForJoinedPlayer(joiningPlayer);
-
-            UICursorSelector cursor = input.GetComponentInChildren<UICursorSelector>();
-            cursor.SetAttachedPlayer(joiningPlayer);
-            print("loop complete");
-        }
     }
 
     private void OnDestroy()
@@ -96,53 +67,65 @@ public class PlayerManager : MonoBehaviour
     {
         CharacterSelectedEventData data = (CharacterSelectedEventData)eventData;
 
-    }
-
-    private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
-    {
-        // on EACH new scene load, unless filtered:
         foreach (PlayerConfig player in joinedPlayers)
         {
-            // EDIT: cursor is now persistent as a child of InputObject that is NOT on the canvas
-            //instantiateCursorForJoinedPlayer(player);
+            if (data.byCursor == player.cursorObject)
+            {
+                if (player.characterModel != null)  // better: if (player.characterModel == data.selectedCharacter),
+                                                    // but that would cause additional checks across this and CharacterDisplaySlot
+                {
+                    player.characterModel = null;
+                    player.isReady = false;
+                    // ~~do not reset player index for now
+                }
+                else
+                {
+                    player.characterModel = data.selectedCharacter;
+                    player.isReady = true;
+                    player.characterIndex = data.selectedCharacterID;
+                }
+            }
         }
     }
 
     private void updatePlayerListWithJoining(PlayerConfig joiningPlayer)
     {
+        joiningPlayer.playerIndex = numJoinedPlayers;   // assign index before adding self, because Lists are 0-indexed for 1st item
         joinedPlayers.Add(joiningPlayer);
-        joiningPlayer.playerIndex = numJoinedPlayers;
-        numJoinedPlayers++;
     }
 
     private void instantiateCursorForJoinedPlayer(PlayerConfig joinedPlayer)
     {
+        if (joinedPlayer.cursorObject != null)
+        {
+            throw new System.Exception("Player who just joined already has a cursor instantiated, this should not be the case! Trace back the code!");
+        }
+
         UICursorSelector cursor = Instantiate(cursorFunctionPrefab, joinedPlayer.gameObject.transform);
-        cursor.SetAttachedPlayer(joinedPlayer);
-        SpriteRenderer cursorImage = cursor.GetComponent<SpriteRenderer>();
-
-        // CHANGE: set sprite using playerIndex, not numJoinedPlayers
-        if (cursorSprites.cursorSprites.Count >= numJoinedPlayers)
-        {
-            cursorImage.sprite = cursorSprites.cursorSprites[numJoinedPlayers];
-        }
-        else
-        {
-            Debug.LogWarning("Not enough unique cursor sprites specified in the Cursor Container! Will try to assign last available sprite again!");
-            cursorImage.sprite = cursorSprites.cursorSprites[cursorSprites.cursorSprites.Count];
-        }
-
-        joinedPlayer.cursorSprite = cursorImage.sprite;
-
-        // send event if necessary
+        joinedPlayer.cursorObject = cursor;
+        
+        // send event with the index to allow the cursor to self-assign a sprite
+        eventQueue.AddEvent(new PlayerRegisteredEventData(joinedPlayer.playerIndex));
     }
 
     // Assumed that controllers are not leaving in any way (there is no event for that and joinedPlayers will not be decremented).
 
-    public PlayerConfig GetPlayerAtIndex(int index)
+    public PlayerConfig GetPlayerAtIndex(int index) // NULLABLE
     {
-        if (index < 0 || index >= joinedPlayers.Count) return null;
+        if (index < 0 || index >= numJoinedPlayers) return null;
         else return joinedPlayers[index];
+    }
+
+    public Sprite GetSpriteAtIndex(int index)   // NULLABLE
+    {
+        if (index < 0 || index >= cursorSprites.cursorSprites.Count) return null;
+        else return cursorSprites.cursorSprites[index];
+    }
+
+    public GameObject GetCharacterAtIndex(int index) // NULLABLE
+    {
+        if (index < 0 || index >= characterModels.characterModels.Count) return null;
+        else return characterModels.characterModels[index];
     }
 
     public bool GetAllPlayersReady()
@@ -152,6 +135,7 @@ public class PlayerManager : MonoBehaviour
         foreach (PlayerConfig player in joinedPlayers)
         {
             if (player.isReady == false) allPlayersReady = false;
+            break;
         }
 
         return allPlayersReady;

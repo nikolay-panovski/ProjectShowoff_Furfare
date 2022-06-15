@@ -6,9 +6,11 @@ public class JoinPlayersHandle : MonoBehaviour
 {
     private EventQueue eventQueue;
 
-    private void Start()
+    private void Awake()
     {
         eventQueue = FindObjectOfType<EventQueue>();
+
+        DontDestroyOnLoad(gameObject);  // Player Input Manager gameobject
     }
 
     private void OnPlayerJoined(PlayerInput player)
