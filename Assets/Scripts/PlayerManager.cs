@@ -1,14 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 /* Singleton player manager - for decoupling different player-related objects and keeping persistent information about players (inputs).
  * Rework the singleton part?
- * 
- * TODO? character select scene manager subscribes (listener) to the events sent by the player/cursor objects (the Move, Click etc.)
- * (figure out how it looks like)
  */
 public class PlayerManager : MonoBehaviour
 {
@@ -22,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private UICursorSelector cursorFunctionPrefab;
 
     private List<PlayerConfig> joinedPlayers = new List<PlayerConfig>();
-    private int numJoinedPlayers { get { return joinedPlayers.Count; } }
+    public int numJoinedPlayers { get { return joinedPlayers.Count; } }
 
     private static PlayerManager instance = null;
 
@@ -52,18 +46,6 @@ public class PlayerManager : MonoBehaviour
 
         eventQueue.Subscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
         eventQueue.Subscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
-
-        //SceneManager.activeSceneChanged += onSceneChanged;
-        SceneManager.sceneLoaded += onSceneChanged;
-
-        // DontDestroyOnLoad()s for important to preserve objects:
-        // Player Input Manager, Event System
-        // ~~SOMEONE's job, not necessarily of a PlayerManager
-
-        // handle enabling and disabling of persistent objects when they should not operate on a scene (gameplay vs non-gameplay)
-        DontDestroyOnLoad(FindObjectOfType<PlayerInputManager>().gameObject);
-        if (UnityEngine.EventSystems.EventSystem.current != null)
-            DontDestroyOnLoad(UnityEngine.EventSystems.EventSystem.current.gameObject);
     }
 
     private void OnDestroy()
@@ -94,39 +76,14 @@ public class PlayerManager : MonoBehaviour
                 {
                     player.characterModel = null;
                     player.isReady = false;
-                    player.characterIndex = data.selectedCharacterID;
+                    // ~~do not reset player index for now
                 }
                 else
                 {
                     player.characterModel = data.selectedCharacter;
                     player.isReady = true;
-                    // ~~do not reset player index for now
+                    player.characterIndex = data.selectedCharacterID;
                 }
-            }
-        }
-    }
-
-    /* NEXT FOCUS:
-     * Create non-gameplay -> gameplay transition with focus on the managed player (input) objects.
-     * In a clean(ish) way.
-     */
-    private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
-    {
-        // happens on EACH new scene load, unless filtered:
-        //print(loadedScene.name);
-        if (loadedScene.name == "AssetsMaterialsLevel") // TODO: distinguish between gameplay and non-gameplay screen (bogus script?)
-                                                        // for this check?
-        {
-            foreach (PlayerConfig player in joinedPlayers)
-            {
-                // all PlayerInput transforms currently at (0, 0, 0)
-                GameObject functionalPlayerObject = Instantiate(characterModels.characterModels[player.characterIndex], player.gameObject.transform);
-                // cursor object itself gets disabled, but not the parenting InputObject (and it shouldn't, only the relevant PlayerInput)
-                player.cursorObject.gameObject.SetActive(false);
-                // DIRTY - does not preserve original input (for exit out of level)
-                player.input = functionalPlayerObject.GetComponent<PlayerInput>();
-                // VERY DIRTY (obvious why). As mostly expected, does not prevent the bad from happening.
-                FindObjectOfType<PlayerInputManager>().gameObject.SetActive(false);
             }
         }
     }
@@ -161,8 +118,14 @@ public class PlayerManager : MonoBehaviour
 
     public Sprite GetSpriteAtIndex(int index)   // NULLABLE
     {
-        if (index < 0 || index >= numJoinedPlayers) return null;
+        if (index < 0 || index >= cursorSprites.cursorSprites.Count) return null;
         else return cursorSprites.cursorSprites[index];
+    }
+
+    public GameObject GetCharacterAtIndex(int index) // NULLABLE
+    {
+        if (index < 0 || index >= characterModels.characterModels.Count) return null;
+        else return characterModels.characterModels[index];
     }
 
     public bool GetAllPlayersReady()
