@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 9039817318120669433}
   - component: {fileID: 9039817318120669436}
   - component: {fileID: 9039817318120669437}
-  - component: {fileID: -6732570939727297634}
   m_Layer: 5
   m_Name: ButtonWithCollider
   m_TagString: Untagged
@@ -242,15 +241,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resizeMode: 1
---- !u!114 &-6732570939727297634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039817318120669435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a25ac92e86cb0d458f294dd5ba58edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
