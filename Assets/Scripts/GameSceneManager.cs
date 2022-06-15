@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    private EventQueue eventQueue;
+
     private static GameSceneManager instance = null;
 
     public static GameSceneManager Instance
@@ -30,6 +32,8 @@ public class GameSceneManager : MonoBehaviour
 
         //SceneManager.activeSceneChanged += onSceneChanged;
         SceneManager.sceneLoaded += onSceneChanged;
+
+        eventQueue = FindObjectOfType<EventQueue>();
     }
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
@@ -54,30 +58,15 @@ public class GameSceneManager : MonoBehaviour
         {
             toggleExistingPlayerCursors(false);
             togglePlayersUIInput(false);
-            //instantiateFunctionalPlayers():
-            for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
-            {
-                PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
-
-                // all PlayerInput transforms currently at (0, 0, 0) (but not all PREFABS)
-                // TODO: Spawn players at spawner positions
-                GameObject functionalPlayerObject = Instantiate(
-                    PlayerManager.Instance.GetCharacterAtIndex(player.characterIndex), player.gameObject.transform);
-
-                player.gameplayInput = functionalPlayerObject.GetComponent<PlayerInput>();
-                //player.gameplayInput.enabled = true;
-            }
+            //an instantiateFunctionalPlayers() + set gameplayInput references - a job of PlayerSpawnpoint s:
+            eventQueue.AddEvent(new PlayersEnteringGameplayEventData(PlayerManager.Instance.numJoinedPlayers));
         }
         else //if (loadedSceneProperties.isInputForGameplay == false)
         {
             toggleExistingPlayerCursors(true);
             togglePlayersUIInput(true);
-            // ~~see above
-            for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
-            {
-                PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
-                player.gameplayInput = null;
-            }
+            // ~~not consistent with above, but skip events and invalidate gameplay inputs on gameplay exit ourselves:
+            setPlayersGameplayInput(null);
         }
 
         /// ON RESET PLAYERS READY STATE
@@ -130,6 +119,15 @@ public class GameSceneManager : MonoBehaviour
         {
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
             player.isReady = false;
+        }
+    }
+
+    private void setPlayersGameplayInput(PlayerInput input)
+    {
+        for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+        {
+            PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+            player.gameplayInput = input;
         }
     }
 }

@@ -1,5 +1,7 @@
 public enum EventType
 {
+    PLAYERS_ENTERING_GAMEPLAY,
+
     SPAWNPOINT_INITTED,
     PICKUP_SPAWNED,
     PICKUP_PICKED,
@@ -24,6 +26,16 @@ public class EventData
     public EventData(EventType type)
     {
         eventType = type;
+    }
+}
+
+public class PlayersEnteringGameplayEventData : EventData
+{
+    public readonly int numOfEnteringPlayers;
+
+    public PlayersEnteringGameplayEventData(int pNumEnteringPlayers) : base(EventType.PLAYERS_ENTERING_GAMEPLAY)
+    {
+        numOfEnteringPlayers = pNumEnteringPlayers;
     }
 }
 
