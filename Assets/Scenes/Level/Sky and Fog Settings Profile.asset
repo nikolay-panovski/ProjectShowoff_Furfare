@@ -664,7 +664,6 @@ MonoBehaviour:
   - {fileID: 7745278769485050996}
   - {fileID: 3864862591466449012}
   - {fileID: -8074114477405755029}
-  - {fileID: 1809033897289409322}
   - {fileID: -8553062089229260966}
   - {fileID: -33654480517439552}
   - {fileID: -1776733871511731281}
@@ -673,7 +672,8 @@ MonoBehaviour:
   - {fileID: -7655153347761942332}
   - {fileID: -2013134974771303529}
   - {fileID: -1863671780509948393}
---- !u!114 &1809033897289409322
+  - {fileID: 1898521162718870797}
+--- !u!114 &1898521162718870797
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -682,63 +682,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b145d2b9ee1ac4f846968484e7485a, type: 3}
-  m_Name: ContactShadows
+  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
+  m_Name: FilmGrain
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
-  quality:
+  type:
     m_OverrideState: 1
-    m_Value: 1
-  enable:
+    m_Value: 9
+  intensity:
     m_OverrideState: 1
-    m_Value: 1
-  length:
-    m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.33
     min: 0
     max: 1
-  opacity:
+  response:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.73
     min: 0
     max: 1
-  distanceScaleFactor:
+  texture:
     m_OverrideState: 1
-    m_Value: 0.2
-    min: 0
-    max: 1
-  maxDistance:
-    m_OverrideState: 1
-    m_Value: 50
-    min: 0
-  minDistance:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  fadeDistance:
-    m_OverrideState: 1
-    m_Value: 5
-    min: 0
-  fadeInDistance:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-  rayBias:
-    m_OverrideState: 1
-    m_Value: 0.5
-    min: 0
-    max: 1
-  thicknessScale:
-    m_OverrideState: 1
-    m_Value: 0.5
-    min: 0.02
-    max: 1
-  m_SampleCount:
-    m_OverrideState: 1
-    m_Value: 10
-    min: 4
-    max: 64
+    m_Value: {fileID: 0}
 --- !u!114 &3864862591466449012
 MonoBehaviour:
   m_ObjectHideFlags: 3
