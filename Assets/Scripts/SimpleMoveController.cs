@@ -23,6 +23,9 @@ public class SimpleMoveController : MonoBehaviour
 
     private Camera _mainCamera;     // used to make movements relative to the camera
 
+    //Data Events
+    public int speedX = 3;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -50,7 +53,7 @@ public class SimpleMoveController : MonoBehaviour
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            _rigidbody.velocity = inputDirection.magnitude * targetDirection * moveSpeed;
+            _rigidbody.velocity = inputDirection.magnitude * targetDirection * moveSpeed * speedX;
             //MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
         } 
         else

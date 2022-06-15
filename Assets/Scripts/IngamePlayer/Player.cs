@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public Text MyPoints;
     public InGameUI UI;
     public int PlayerID;
+    public int amountX = 100;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -183,7 +184,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        projectile.owningPlayer.IncreaseScore(100);
+        projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
         takeDamage();
@@ -211,7 +212,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseScore(int amount)
     {
-        _score += amount;
+        _score += amount * amountX;
         //UIScore
         MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);

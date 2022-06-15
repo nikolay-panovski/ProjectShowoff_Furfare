@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1067.333, g: 2163.621, b: 2971.5312, a: 1}
+  m_IndirectSpecularColor: {r: 1067.8013, g: 2163.9766, b: 2971.6406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3098,8 +3098,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 484888444424887795, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 790411135525407125, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1604310dd96f2bf47ae06396109d76ea, type: 3}
     - target: {fileID: 1528217751031081396, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3188,6 +3192,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menus
       objectReference: {fileID: 0}
+    - target: {fileID: 3014627463558237579, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 59bdfe0d856ba19448711b3c93124123, type: 3}
+    - target: {fileID: 3068132528080857998, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2eefd944d9165384f9b028e71d18e981, type: 3}
+    - target: {fileID: 3141068344802057951, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fab8098d28887854e885973910ed8be6, type: 3}
+    - target: {fileID: 3500923700500452142, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c90a4b70315f7b4f873d4aad2568914, type: 3}
+    - target: {fileID: 4903234361329894861, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611937117707752348, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fab8098d28887854e885973910ed8be6, type: 3}
+    - target: {fileID: 5802272675507689486, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e11e6f3fd2635704f9587fb12c5ebf62, type: 3}
+    - target: {fileID: 6661676552357242767, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87d62369bf79fb84a9ec286d10091c64, type: 3}
+    - target: {fileID: 6774681404752131183, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c90a4b70315f7b4f873d4aad2568914, type: 3}
+    - target: {fileID: 7251219584277226798, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262578915263527786, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2eefd944d9165384f9b028e71d18e981, type: 3}
+    - target: {fileID: 8047786621472219688, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e11e6f3fd2635704f9587fb12c5ebf62, type: 3}
+    - target: {fileID: 8485574522767142318, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3935a1571db44284ebe2ba2eab4ac86d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
 --- !u!1001 &1295473194
