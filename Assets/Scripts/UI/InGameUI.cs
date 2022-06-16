@@ -16,6 +16,10 @@ public class InGameUI : MonoBehaviour
     int[] WeirdPlaces;
     [SerializeField] Sprite[] Sprites;
     [SerializeField] Image[] PlayerPlaces;
+
+    //Infographic
+    public GameObject InGameUIScreen;
+    public GameObject Countdown;
     // Start is called before the first frame update
     void Start()
     {
@@ -135,5 +139,11 @@ public class InGameUI : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void StartCountDown()
+    {
+        InGameUIScreen.gameObject.SetActive(true);
+        Countdown.gameObject.SetActive(true);
     }
 }
