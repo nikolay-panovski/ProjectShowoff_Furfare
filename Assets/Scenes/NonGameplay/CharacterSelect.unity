@@ -2428,6 +2428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputObject_Cursor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8158374425815952622, guid: 1912dc99b48c4b940a99ea55ec00818b, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8158374425815952623, guid: 1912dc99b48c4b940a99ea55ec00818b, type: 3}
       propertyPath: m_Actions
       value: 
@@ -2734,6 +2738,10 @@ PrefabInstance:
     - target: {fileID: 8158374425815952620, guid: 1912dc99b48c4b940a99ea55ec00818b, type: 3}
       propertyPath: m_Name
       value: InputObject_Cursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158374425815952622, guid: 1912dc99b48c4b940a99ea55ec00818b, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8158374425815952623, guid: 1912dc99b48c4b940a99ea55ec00818b, type: 3}
       propertyPath: m_Actions
@@ -3661,9 +3669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522e5faa803ade54f902e5a66bc60601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorSprites: {fileID: 11400000, guid: 238fe37486e571243ac4e9ae1e47e669, type: 2}
-  characterModels: {fileID: 11400000, guid: 05c25185c8e94c74fb0ff6e27964e14f, type: 2}
-  cursorFunctionPrefab: {fileID: 3217315624693753171, guid: d1719825fda200d4ea12615d9e16e46f, type: 3}
+  cursorSprites: {fileID: 0}
+  characterModels: {fileID: 0}
+  cursorFunctionPrefab: {fileID: 0}
 --- !u!4 &2035031878
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
 public enum EventType
 {
+    PLAYERS_ENTERING_GAMEPLAY,
+
     SPAWNPOINT_INITTED,
     PICKUP_SPAWNED,
     PICKUP_PICKED,
@@ -10,8 +12,11 @@ public enum EventType
     // WARNING: The below should be split IN A CLEAR WAY from the above (gameplay) events. In a different queue.
     // That would be the ideal case scenario.
 
-    CONTROLLER_JOINED,
-    CHARACTER_SELECTED
+    CONTROLLER_JOINED,  // new PlayerInput
+    PLAYER_REGISTERED,  // PlayerInput recognized, PlayerConfig created out of it, added to manager and index assigned
+    BUTTON_PRESSED,
+
+    CHARACTER_SELECTED  // specifically a character button pressed
 }
 
 public class EventData
@@ -21,6 +26,16 @@ public class EventData
     public EventData(EventType type)
     {
         eventType = type;
+    }
+}
+
+public class PlayersEnteringGameplayEventData : EventData
+{
+    public readonly int numOfEnteringPlayers;
+
+    public PlayersEnteringGameplayEventData(int pNumEnteringPlayers) : base(EventType.PLAYERS_ENTERING_GAMEPLAY)
+    {
+        numOfEnteringPlayers = pNumEnteringPlayers;
     }
 }
 
@@ -91,12 +106,38 @@ public class ControllerJoinedEventData : EventData
     }
 }
 
+public class PlayerRegisteredEventData : EventData
+{
+    public readonly int playerIndex;
+
+    public PlayerRegisteredEventData(int pPlayerIndex) : base(EventType.PLAYER_REGISTERED)
+    {
+        playerIndex = pPlayerIndex;
+    }
+}
+
+public class ButtonPressedEventData : EventData
+{
+    public readonly UICursorSelector byCursor;
+    public readonly UnityEngine.UI.Button pressedButton;
+
+    public ButtonPressedEventData(UICursorSelector pByCursor, UnityEngine.UI.Button pPressedButton) : base(EventType.BUTTON_PRESSED)
+    {
+        byCursor = pByCursor;
+        pressedButton = pPressedButton;
+    }
+}
+
 public class CharacterSelectedEventData : EventData
 {
-    public readonly UnityEngine.GameObject chosenCharacter;
+    public readonly UICursorSelector byCursor;
+    public readonly UnityEngine.GameObject selectedCharacter;
+    public readonly int selectedCharacterID;
 
-    public CharacterSelectedEventData(UnityEngine.GameObject pCharacterPrefab) : base(EventType.CHARACTER_SELECTED)
+    public CharacterSelectedEventData(UICursorSelector pByCursor, UnityEngine.GameObject pSelectedCharacter, int pID) : base(EventType.CHARACTER_SELECTED)
     {
-        chosenCharacter = pCharacterPrefab;
+        byCursor = pByCursor;
+        selectedCharacter = pSelectedCharacter;
+        selectedCharacterID = pID;
     }
 }
