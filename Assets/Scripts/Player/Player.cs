@@ -12,8 +12,9 @@ public class Player : MonoBehaviour
     private EventQueue eventQueue;
 
     private PickupController catcher;
-    private ShootController shooter;
+    private PlayerShootController shooter;
     private SimpleMoveController mover;
+    private PlayerAnimator animator;
 
     private Projectile heldProjectile = null;
 
@@ -44,8 +45,9 @@ public class Player : MonoBehaviour
         eventQueue = FindObjectOfType<EventQueue>();
 
         if (!TryGetComponent<PickupController>(out catcher)) throw new MissingComponentException("Player is missing a PickupController-type script!");
-        if (!TryGetComponent<ShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
+        if (!TryGetComponent<PlayerShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
         if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
+        if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
     }
 
     void OnDestroy()
@@ -66,7 +68,15 @@ public class Player : MonoBehaviour
             mover.StopVelocity();
             return;
         }
-        mover.Move(moveInput);
+        float movementSpeed = mover.Move(moveInput);
+        if (movementSpeed > 0)
+        {
+            animator.SetFloat("Movement", movementSpeed);
+        }
+        else
+        {
+            animator.SetFloat("Movement", 0.0f);
+        }
     }
 
     #region ON INPUT EVENTS
@@ -92,6 +102,8 @@ public class Player : MonoBehaviour
                 heldProjectile = null;
                 gameObject.layer = LayerMask.NameToLayer("Players");    // stop ignoring collisions with other projectiles after firing one
             }
+
+            animator.SetBool("IsThrowing", true);
         }
     }
     #endregion

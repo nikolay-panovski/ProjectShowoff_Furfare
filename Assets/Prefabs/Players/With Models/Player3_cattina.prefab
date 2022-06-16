@@ -180,22 +180,26 @@ PrefabInstance:
     - target: {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_Actions
       value: 
-      objectReference: {fileID: -944628639613478452, guid: ca6456d9f3d680748ab56071bb7f10aa, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: f6b90e0b88324ef4e812db692b0d862a, type: 3}
+    - target: {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard&Mouse
+      objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -232,7 +236,15 @@ PrefabInstance:
     - target: {fileID: 4026480662627611230, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: _myAnimator
       value: 
-      objectReference: {fileID: 2955209637079033518}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: throwAnimationName
+      value: Cat_Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: stunnedAnimationName
+      value: Cat_Stunned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
 --- !u!1 &8600355223142648098 stripped
@@ -341,25 +353,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &2955209637079033518
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8600355223142648098}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ca5622bcc3e44e488b1d6990435add1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-117451385387275344
 MonoBehaviour:
   m_ObjectHideFlags: 0
