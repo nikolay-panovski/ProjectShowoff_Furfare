@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1067.333, g: 2163.621, b: 2971.5312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7218,13 +7218,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851094961}
-  m_LocalRotation: {x: 0.5735764, y: -0, z: -0, w: 0.8191521}
+  m_LocalRotation: {x: 0.56789744, y: 0.41092393, z: -0.5572982, w: 0.4450313}
   m_LocalPosition: {x: 17.478815, y: 62.38215, z: 9.549375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 509238861}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 74.467, y: -86.303, z: -173.717}
 --- !u!114 &851094963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13823,6 +13823,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 799761501079231525, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 475.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 799761501079231525, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 799761501079231525, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 418.1
+      objectReference: {fileID: 0}
     - target: {fileID: 833935402204171749, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13919,8 +13931,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4785620416687151767, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4903234361329894861, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674239730959496678, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689558458229020098, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838500653331514834, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Color.a
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838500653331514834, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838500653331514834, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838500653331514834, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838500653331514834, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14104,7 +14148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599469783}
   m_LocalRotation: {x: 0.11474101, y: -0.7126258, z: 0.13225472, w: 0.6793436}
-  m_LocalPosition: {x: -21.233685, y: 6.7315, z: -6.2665205}
+  m_LocalPosition: {x: -20.7, y: 8.4, z: -6.2665205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19133,7 +19177,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: e1635d9b011a24f4f9ef411f9377d16f, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 67c6b0630b11cfe479259070cb881d8d, type: 2}
 --- !u!1 &1661231584
 GameObject:
   m_ObjectHideFlags: 0

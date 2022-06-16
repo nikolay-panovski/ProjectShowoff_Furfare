@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 12.683135
+    m_Value: 11.951806
   compensation:
     m_OverrideState: 1
     m_Value: 0.12
@@ -213,6 +213,36 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.5
     min: 0
+--- !u!114 &-8483795462616665347
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  type:
+    m_OverrideState: 1
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+    min: 0
+    max: 1
+  response:
+    m_OverrideState: 1
+    m_Value: 0.222
+    min: 0
+    max: 1
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
 --- !u!114 &-8074114477405755029
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -595,6 +625,36 @@ MonoBehaviour:
     m_Value: 4
     min: -100
     max: 100
+--- !u!114 &-1326962849985530155
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 1
+  spectralLut:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.05
+    min: 0
+    max: 1
+  m_MaxSamples:
+    m_OverrideState: 1
+    m_Value: 6
+    min: 3
+    max: 24
 --- !u!114 &-33654480517439552
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -658,7 +718,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Sky and Fog Settings Profile
+  m_Name: Sky and Fog Settings FilipRoom
   m_EditorClassIdentifier: 
   components:
   - {fileID: 7745278769485050996}
@@ -670,39 +730,8 @@ MonoBehaviour:
   - {fileID: -5389929655404566198}
   - {fileID: -8663985590346545521}
   - {fileID: -7655153347761942332}
-  - {fileID: -2013134974771303529}
-  - {fileID: -1863671780509948393}
-  - {fileID: 1898521162718870797}
---- !u!114 &1898521162718870797
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
-  m_Name: FilmGrain
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  type:
-    m_OverrideState: 1
-    m_Value: 9
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.33
-    min: 0
-    max: 1
-  response:
-    m_OverrideState: 1
-    m_Value: 0.73
-    min: 0
-    max: 1
-  texture:
-    m_OverrideState: 1
-    m_Value: {fileID: 0}
+  - {fileID: -1326962849985530155}
+  - {fileID: -8483795462616665347}
 --- !u!114 &3864862591466449012
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -731,7 +760,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.267
+    m_Value: 0.38
     min: 0
     max: 1
   smoothness:
