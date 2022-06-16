@@ -236,7 +236,15 @@ PrefabInstance:
     - target: {fileID: 4026480662627611230, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: _myAnimator
       value: 
-      objectReference: {fileID: 729712996544521193}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: throwAnimationName
+      value: Dog_Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: stunnedAnimationName
+      value: Dog_Stunned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
 --- !u!1 &6896220821185776084 stripped
@@ -345,25 +353,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &729712996544521193
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6896220821185776084}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 701b946ac938adb4ca55b47dbde8aef4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8374015246061897422
 MonoBehaviour:
   m_ObjectHideFlags: 0
