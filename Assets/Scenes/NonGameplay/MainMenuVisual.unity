@@ -817,7 +817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &339833234 stripped
 Transform:
@@ -891,7 +894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &342992296 stripped
 Transform:
@@ -1102,7 +1108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &594124026 stripped
 Transform:
@@ -1239,7 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &615500032 stripped
 Transform:
@@ -1356,7 +1368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &690700491 stripped
 Transform:
@@ -1506,7 +1521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &718867566 stripped
 Transform:
@@ -1643,7 +1661,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &772932223 stripped
 Transform:
@@ -2125,6 +2144,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4785620416687151767, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4903234361329894861, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -2176,7 +2199,7 @@ PrefabInstance:
     - target: {fileID: 7213294197750333390, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 2003267693}
+      objectReference: {fileID: 0}
     - target: {fileID: 7251219584277226798, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -2207,7 +2230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9085639031747790263, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
@@ -2613,7 +2636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1006288119 stripped
 Transform:
@@ -2846,7 +2872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1099012658 stripped
 Transform:
@@ -3113,7 +3142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1223061350 stripped
 Transform:
@@ -3335,7 +3367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1255429514 stripped
 Transform:
@@ -3409,7 +3444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1260896696 stripped
 Transform:
@@ -3557,7 +3595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1360104967 stripped
 Transform:
@@ -3631,7 +3672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1383623774 stripped
 Transform:
@@ -3896,7 +3940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1459633250 stripped
 Transform:
@@ -4550,7 +4597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1725763938 stripped
 Transform:
@@ -4624,7 +4674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1743296885 stripped
 Transform:
@@ -4961,7 +5014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1757479431 stripped
 Transform:
@@ -5355,7 +5411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1894812187 stripped
 Transform:
@@ -5472,7 +5531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Yellow (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3113099871305485099, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: -660491640401994718, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
+    - {fileID: 8652207385151944902, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
 --- !u!4 &1932099957 stripped
 Transform:
@@ -5694,24 +5756,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Low_Brown (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1842368716324450153, guid: 02c0ff8ec44a537499b48b43f424e490, type: 3}
+    - {fileID: -7807833261664156364, guid: 02c0ff8ec44a537499b48b43f424e490, type: 3}
+    - {fileID: 9203906345554911756, guid: 02c0ff8ec44a537499b48b43f424e490, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 02c0ff8ec44a537499b48b43f424e490, type: 3}
 --- !u!4 &1997682005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3619493626751210610, guid: 02c0ff8ec44a537499b48b43f424e490, type: 3}
   m_PrefabInstance: {fileID: 1997682004}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2003267693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4852096361487129438, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
-  m_PrefabInstance: {fileID: 862756839}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2008571309
 PrefabInstance:
   m_ObjectHideFlags: 0

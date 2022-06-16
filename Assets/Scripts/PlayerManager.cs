@@ -101,7 +101,7 @@ public class PlayerManager : MonoBehaviour
             throw new System.Exception("Player who just joined already has a cursor instantiated, this should not be the case! Trace back the code!");
         }
 
-        UICursorSelector cursor = Instantiate(cursorFunctionPrefab, joinedPlayer.gameObject.transform);
+        UICursorSelector cursor = Instantiate(cursorFunctionPrefab, joinedPlayer.UIInput.transform);
         joinedPlayer.cursorObject = cursor;
         
         // send event with the index to allow the cursor to self-assign a sprite
