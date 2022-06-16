@@ -35,12 +35,14 @@ public class PlayerSpawnpoint : MonoBehaviour
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(playerIDToSpawn - 1);
 
             GameObject functionalPlayerObject = Instantiate(
-                PlayerManager.Instance.GetCharacterAtIndex(player.characterIndex), player.gameObject.transform);
+                PlayerManager.Instance.GetCharacterAtIndex(player.characterIndex), player.UIInput.transform);
             functionalPlayerObject.transform.position = this.transform.position;
 
             //andAssignGameplayInputReference():
             player.gameplayInput = functionalPlayerObject.GetComponent<PlayerInput>();
             //player.gameplayInput.enabled = true;
+
+            eventQueue.AddEvent(new PlayerSpawnedInGameplayEventData(player));
         }
     }
 }

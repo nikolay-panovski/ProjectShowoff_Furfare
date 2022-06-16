@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4572071435659531617}
   - component: {fileID: 638553654797621956}
   - component: {fileID: 3402590892613021198}
+  - component: {fileID: 6630004636809156550}
   m_Layer: 0
   m_Name: Frisbee_Low_Orange
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3762918101797179355}
-  m_Mesh: {fileID: -6839594601568455252, guid: c7590f51cb20e7647b6731544b0a0591, type: 3}
+  m_Mesh: {fileID: -6839594601568455252, guid: 4daa62752eb317d4a802b955bf1717c3, type: 3}
 --- !u!23 &3402590892613021198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81,3 +82,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &6630004636809156550
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762918101797179355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cec0d9208676f3c499effdae4438be9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

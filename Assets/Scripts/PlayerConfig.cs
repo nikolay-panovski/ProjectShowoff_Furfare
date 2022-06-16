@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerConfig
 {
     public PlayerInput UIInput { get; set; }    // starting PlayerInput component attached to the InputObject instantiated prefab.
-    public GameObject gameObject { get { return UIInput.gameObject; } }
+                                                // If it is needed to access a GameObject/transform of something for parenting or
+                                                // otherwise positioning, access this one's gameObject property explicitly.
     public int playerIndex { get; set; }    // index of the PlayerInput itself - the Nth player (in order) to join the game.
                                             // Should correspond to PlayerInput's user.id.
     public UICursorSelector cursorObject { get; set; }

@@ -1,6 +1,7 @@
 public enum EventType
 {
     PLAYERS_ENTERING_GAMEPLAY,
+    PLAYER_SPAWNED_IN_GAMEPLAY,
 
     SPAWNPOINT_INITTED,
     PICKUP_SPAWNED,
@@ -36,6 +37,16 @@ public class PlayersEnteringGameplayEventData : EventData
     public PlayersEnteringGameplayEventData(int pNumEnteringPlayers) : base(EventType.PLAYERS_ENTERING_GAMEPLAY)
     {
         numOfEnteringPlayers = pNumEnteringPlayers;
+    }
+}
+
+public class PlayerSpawnedInGameplayEventData : EventData
+{
+    public readonly PlayerConfig spawnedPlayer;
+
+    public PlayerSpawnedInGameplayEventData(PlayerConfig pPlayer) :base(EventType.PLAYER_SPAWNED_IN_GAMEPLAY)
+    {
+        spawnedPlayer = pPlayer;
     }
 }
 
