@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private PlayerShootController shooter;
     private SimpleMoveController mover;
     private PlayerAnimator animator;
+    private PlayerParticleController particles;
 
     private Projectile heldProjectile = null;
 
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<PlayerShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
         if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
         if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
+        if (!TryGetComponent<PlayerParticleController>(out particles)) throw new MissingComponentException("Player is missing a ParticleController-type script!");
     }
 
     void OnDestroy()
@@ -72,10 +74,12 @@ public class Player : MonoBehaviour
         if (movementSpeed > 0)
         {
             animator.SetFloat("Movement", movementSpeed);
+            particles.PlayDustTrailAtPositionAndRotation(transform.position - transform.forward, transform.rotation);
         }
         else
         {
             animator.SetFloat("Movement", 0.0f);
+            particles.StopDustTrail();
         }
     }
 
