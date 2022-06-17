@@ -219,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotationSmoothTime: 0.009
-  speedX: 3
+  speedX: 1
 --- !u!114 &5328803503756724786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +232,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7568b74768befe84abdeb2b81b4d3571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwAnimationName: 
+  stunnedAnimationName: 
