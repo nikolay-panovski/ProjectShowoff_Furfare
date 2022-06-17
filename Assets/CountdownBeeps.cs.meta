@@ -3,7 +3,9 @@ guid: 474814a456b59104299d0497f432a3c7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - countdown: {fileID: 8300000, guid: fe27459f445682746b72679fbe72e33b, type: 3}
+  - countdownFinalBeep: {fileID: 8300000, guid: cd84b6ac37bd1cf4c8d0bfe687e2ce44, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

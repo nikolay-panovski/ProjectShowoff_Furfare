@@ -10,11 +10,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource pro_Spawn;
 
     //Points
-    public AudioSource points;
+    public AudioClip points;
 
     //Events
-    public AudioSource event_On;
-    public AudioSource event_Off;
+    
 
     //Countdowns
     public AudioSource countdown_Start;
@@ -27,6 +26,11 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource character_Stunned;
 
+    AudioSource _as;
+    private void Start()
+    {
+        _as = this.GetComponent<AudioSource>();
+    }
     public void PortalSound()
     {
         portalSource.Play();
@@ -36,18 +40,18 @@ public class SoundManager : MonoBehaviour
     //Point
     public void Points()
     {
-        points.Play();
+        _as.PlayOneShot(points);
     }
 
     //Events
-    public void Event_On()
+    /*public void Event_On()
     {
-        event_On.Play();
+        _as.PlayOneShot(event_On);
     }
     public void Event_Off()
     {
-        event_Off.Play();
-    }
+        _as.PlayOneShot(event_Off);
+    }*/
 
     //Countdown
     public void Countdown_Start()
