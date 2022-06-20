@@ -200,7 +200,7 @@ public class Player : MonoBehaviour
     private void pickProjectileUp(Projectile projectile)
     {
         catcher.PickProjectileUp(projectile);
-        gameObject.layer = LayerMask.NameToLayer("Ignore Projectiles");    // ignore collisions with other projectiles while holding one
+        gameObject.layer = LayerMask.NameToLayer("Ignore Pickup Projectiles");
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
     }

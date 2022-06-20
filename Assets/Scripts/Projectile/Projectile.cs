@@ -15,6 +15,8 @@ public enum ProjectileState
  */
 public class Projectile : Item
 {
+    private EventQueue eventQueue;
+
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
     [SerializeField] protected float _bounceCooldown = 0.05f;
@@ -34,8 +36,14 @@ public class Projectile : Item
     {
         myRigidbody = GetComponent<Rigidbody>();
 
-        // up next: this (it's about time we receive events)
-        //eventQueue = FindObjectOfType<EventQueue>();
+        eventQueue = FindObjectOfType<EventQueue>();
+
+        eventQueue.Subscribe(EventType.PICKUP_PICKED, onPickupPicked);
+    }
+
+    protected void OnDestroy()
+    {
+        eventQueue.Subscribe(EventType.PICKUP_PICKED, onPickupPicked);
     }
 
     protected virtual void Update()
@@ -58,6 +66,9 @@ public class Projectile : Item
         SetVelocityInDirection(direction);
 
         speedBeforeCollision = myRigidbody.velocity.magnitude;
+
+
+        this.gameObject.layer = LayerMask.NameToLayer("Fired Projectiles");
     }
 
     public virtual void SetVelocityInDirection(Vector3 newDirection)
@@ -111,6 +122,19 @@ public class Projectile : Item
         Destroy(gameObject);
     }
 
+    protected virtual void onPickupPicked(EventData eventData)
+    {
+        PickupPickedEventData data = (PickupPickedEventData)eventData;
+
+        if (data.pickup == this)
+        {
+            // Enable collisions with Props. (default now set to disabled)
+            // There aren't other moving objects that a projectile in pickup state should only collide with sometimes,
+            // otherwise they would have to be handled as well.
+
+            // ~~wrong place for this
+        }
+    }
 
     protected void ToggleJustBounced()
     {
