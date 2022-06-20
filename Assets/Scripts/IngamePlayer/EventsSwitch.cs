@@ -10,10 +10,12 @@ public class EventsSwitch : MonoBehaviour
     int pwr;
     AudioSource _as;
     public AudioClip event_On;
+    Rumble rmb;
     private void Start()
     {
         ChooseEvent(1);
         _as = this.GetComponent<AudioSource>();
+        rmb = this.GetComponent<Rumble>();
     }
     public void ChooseEvent(int current)
     {
@@ -35,6 +37,7 @@ public class EventsSwitch : MonoBehaviour
                     _as.PlayOneShot(event_On);
                     Debug.Log("No Event On");
                     Invoke("NoEventOff", 10f);
+                    rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
 
@@ -60,6 +63,7 @@ public class EventsSwitch : MonoBehaviour
                     }
                     _as.PlayOneShot(event_On);
                     Invoke("X2Off", 10f);
+                    rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
             case 3:
@@ -84,6 +88,7 @@ public class EventsSwitch : MonoBehaviour
                     }
                     _as.PlayOneShot(event_On);
                     Invoke("ReflexesOff", 10f);
+                    rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
         }
