@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     private int _score = 0;
     private bool stunned = false;
     private bool invincible = false;
-    //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
     [SerializeField] private float bufferTime = 0.5f;
@@ -183,9 +182,14 @@ public class Player : MonoBehaviour
     private void pickProjectileUp(Projectile projectile)
     {
         catcher.PickProjectileUp(projectile);
-        gameObject.layer = LayerMask.NameToLayer("Ignore Pickup Projectiles");
+        setOwnLayer("Ignore Pickup Projectiles");
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
+    }
+
+    private void setOwnLayer(string layer)
+    {
+        this.gameObject.layer = LayerMask.NameToLayer(layer);
     }
 
     public int GetScore()

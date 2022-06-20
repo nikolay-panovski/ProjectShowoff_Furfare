@@ -21,8 +21,7 @@ public class Projectile : Item
     [SerializeField] protected int _maxBounces = 3;
     [SerializeField] protected float _bounceCooldown = 0.05f;
 
-    //[SerializeField] ParticleSystem Impact = null;
-    protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
+    protected int _bounceCount;
     protected bool _justBounced = false;
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
 
@@ -30,20 +29,13 @@ public class Projectile : Item
 
     protected Rigidbody myRigidbody;
 
-    private float speedBeforeCollision;
-
     protected virtual void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
 
-        eventQueue = FindObjectOfType<EventQueue>();
-
-        eventQueue.Subscribe(EventType.PICKUP_PICKED, onPickupPicked);
-    }
-
-    protected void OnDestroy()
-    {
-        eventQueue.Subscribe(EventType.PICKUP_PICKED, onPickupPicked);
+        // ~~event queue *does* work with a projectile, but I do not want to change the code strucure even more this late
+        // (for the sake of readability for others involved)
+        //eventQueue = FindObjectOfType<EventQueue>();
     }
 
     protected virtual void Update()
@@ -65,16 +57,11 @@ public class Projectile : Item
         state = ProjectileState.FIRED;
         SetVelocityInDirection(direction);
 
-        speedBeforeCollision = myRigidbody.velocity.magnitude;
-
-
-        this.gameObject.layer = LayerMask.NameToLayer("Fired Projectiles");
+        setOwnLayer("Fired Projectiles");
     }
 
     public virtual void SetVelocityInDirection(Vector3 newDirection)
     {
-        // to Impulse if balls will have a difference by Mass... will it work?
-        //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
         myRigidbody.velocity = newDirection * _speed;
     }
 
@@ -115,18 +102,9 @@ public class Projectile : Item
         Destroy(gameObject);
     }
 
-    protected virtual void onPickupPicked(EventData eventData)
+    protected void setOwnLayer(string layer)
     {
-        PickupPickedEventData data = (PickupPickedEventData)eventData;
-
-        if (data.pickup == this)
-        {
-            // Enable collisions with Props. (default now set to disabled)
-            // There aren't other moving objects that a projectile in pickup state should only collide with sometimes,
-            // otherwise they would have to be handled as well.
-
-            // ~~wrong place for this
-        }
+        this.gameObject.layer = LayerMask.NameToLayer(layer);
     }
 
     protected void ToggleJustBounced()
