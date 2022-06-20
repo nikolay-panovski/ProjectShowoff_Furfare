@@ -3,7 +3,19 @@ guid: e4cb4a89401dba8479dc2bcd44229179
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - portalSource: {instanceID: 0}
+  - pro_Pick_Up: {instanceID: 0}
+  - pro_Spawn: {instanceID: 0}
+  - points: {fileID: 8300000, guid: 0be23366b6084834d9e3840b9b6a2a61, type: 3}
+  - event_On: {fileID: 8300000, guid: b5e90caae19ac6c43ad8dde5d42e0690, type: 3}
+  - event_Off: {fileID: 8300000, guid: 60590444d20a881429c1ba42f3a9e63f, type: 3}
+  - countdown_Start: {instanceID: 0}
+  - countdown_Finish: {instanceID: 0}
+  - cancel_Button: {instanceID: 0}
+  - selected_Button: {instanceID: 0}
+  - snapping_Options: {instanceID: 0}
+  - character_Stunned: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

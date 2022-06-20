@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public InGameUI UI;
     public int PlayerID;
     public int amountX = 100;
+    SoundManager sm;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -50,6 +51,9 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
         if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
         if (!TryGetComponent<PlayerParticleController>(out particles)) throw new MissingComponentException("Player is missing a ParticleController-type script!");
+
+        //Sound Data
+        sm = this.GetComponent<SoundManager>();
     }
 
     void OnDestroy()
@@ -234,6 +238,7 @@ public class Player : MonoBehaviour
         //UIScore
         MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);
+        
     }
 
     public void ToggleStun()
