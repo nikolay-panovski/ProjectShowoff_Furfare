@@ -11,6 +11,7 @@ public class InGameUI : MonoBehaviour
     public Text timeText;
 
     //Places
+    private Player[] _allPlayers;
     int[] Scores;
     int[] Places;
     int[] WeirdPlaces;
@@ -23,6 +24,12 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _allPlayers = FindObjectsOfType<Player>();
+        List<int> test = new List<int>() { 45, 111, 22, 10, };
+        Debug.Log("Sort" + quicksort(test)[0]);
+        Debug.Log("Sort" + quicksort(test)[1]);
+        Debug.Log("Sort" + quicksort(test)[2]);
+        Debug.Log("Sort" + quicksort(test)[3]);
         timeIsLeft = true;
 
         Scores = new int[4];
@@ -109,6 +116,8 @@ public class InGameUI : MonoBehaviour
                 Scores[i] = Scores[i+1];
                 Scores[i + 1] = tmp;
             }
+
+            
         }
         OrderPlaces();
     }
@@ -145,5 +154,42 @@ public class InGameUI : MonoBehaviour
     {
         InGameUIScreen.gameObject.SetActive(true);
         Countdown.gameObject.SetActive(true);
+    }
+
+    public List<int> quicksort(List<int> a)
+    {
+        List<int> less = new List<int>();
+        List<int> greater = new List<int>();
+        if (a.Count <= 1)
+            return a;
+        int pos = Random.Range(0, a.Count);
+
+        int pivot = a[pos];
+        a.RemoveAt(pos);
+        foreach (int x in a)
+        {
+            if (x <= pivot)
+            {
+                less.Add(x);
+            }
+            else
+            {
+                greater.Add(x);
+            }
+        }
+        return concat(quicksort(less), pivot, quicksort(greater));
+    }
+
+    public List<int> concat(List<int> less, int pivot, List<int> greater)
+    {
+        List<int> sorted = new List<int>(less);
+        sorted.Add(pivot);
+        foreach (int i in greater)
+        {
+
+            sorted.Add(i);
+        }
+
+        return sorted;
     }
 }

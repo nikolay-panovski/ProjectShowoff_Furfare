@@ -35,8 +35,7 @@ public class Player : MonoBehaviour
 
     private Vector2 moveInput;  // store OnMove results here
 
-    //UI Part Data
-    public InGameUI UI;
+    //UI Part
     public int PlayerID;
     public int amountX = 100;
     private Score _scoreManager;
@@ -232,8 +231,6 @@ public class Player : MonoBehaviour
     public void IncreaseScore(int enemyPlayerID, int amount)
     {
         int score = amount * amountX;
-        //UIScore
-        UI.UpdatePlace(_score, PlayerID);
 
         if (_scoreManager == null) _scoreManager = FindObjectOfType<Score>();
         _scoreManager.IncreaseScore(enemyPlayerID, score);

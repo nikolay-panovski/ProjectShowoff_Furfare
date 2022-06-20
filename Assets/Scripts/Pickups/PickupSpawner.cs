@@ -58,7 +58,6 @@ public class PickupSpawner : MonoBehaviour
             if (_allSpawnpoints[i].hasSpawnedPickup == false) availableSpawnpoints.Add(_allSpawnpoints[i]);
         }
         int randomNumber = Random.Range(0, availableSpawnpoints.Count);
-        Debug.Log(availableSpawnpoints.Count);
         availableSpawnpoints[randomNumber].SpawnPickup();
     }
 }
