@@ -210,6 +210,7 @@ public class Player : MonoBehaviour
         particles.PlayStunParticle(transform.position + new Vector3 (0,4,0));
         takeDamage();
         particles.PlayImpactParticle(transform.position);
+        animator.SetBool("IsStunned", true);
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
     }

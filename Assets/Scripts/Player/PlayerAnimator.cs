@@ -22,6 +22,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         // ~~Main idea for this part: To initiate throw/stun animation, set bool to true.
         // To stop it, rely on exit time in the animator. But bool needs to be reset too, for which try to also use when the animation ends.
+        /**/
         if (HasFinishedPlayingAnimation(throwAnimationName))
         {
             SetBool("IsThrowing", false);
@@ -30,6 +31,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             SetBool("IsStunned", false);
         }
+        /**/
     }
 
     public void SetFloat(string name, float value)
