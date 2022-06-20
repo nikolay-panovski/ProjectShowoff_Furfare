@@ -36,10 +36,10 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;  // store OnMove results here
 
     //UI Part Data
-    public Text MyPoints;
     public InGameUI UI;
     public int PlayerID;
     public int amountX = 100;
+    private Score _scoreManager;
     SoundManager sm;
     Rumble rmb;
     void Start()
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("IsThrowing", true);
-            rmb.RumbleConstant(1f, 1f, 0.5f);
+            //rmb.RumbleConstant(1f, 1f, 0.5f);
         }
     }
     #endregion
@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        projectile.owningPlayer.IncreaseScore(1);
+        IncreaseScore(projectile.owningPlayer.PlayerID, 1);
         ToggleInvincibility();
         ToggleStun();
         takeDamage();
@@ -229,13 +229,14 @@ public class Player : MonoBehaviour
         return _score;
     }
 
-    public void IncreaseScore(int amount)
+    public void IncreaseScore(int enemyPlayerID, int amount)
     {
-        _score += amount * amountX;
+        int score = amount * amountX;
         //UIScore
-        MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);
-        
+
+        if (_scoreManager == null) _scoreManager = FindObjectOfType<Score>();
+        _scoreManager.IncreaseScore(enemyPlayerID, score);
     }
 
     public void ToggleStun()
