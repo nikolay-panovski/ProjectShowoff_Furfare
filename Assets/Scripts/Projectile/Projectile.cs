@@ -105,15 +105,8 @@ public class Projectile : Item
     {
         if (state == ProjectileState.FIRED)
         {
-            // hack speed back to intended projectile speed, if it drops on collision
-            myRigidbody.velocity = myRigidbody.velocity.normalized;     // ~~normalizing the velocity works ONLY this way
-            myRigidbody.velocity *= speedBeforeCollision;
-
             incrementBounceCount();
             checkForMaxBounceCount();
-
-            // double hack: bouncy projectile velocity is modified during incrementBounceCount(), so this would have to be here
-            speedBeforeCollision = myRigidbody.velocity.magnitude;
         }
     }
 
