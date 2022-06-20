@@ -61,4 +61,25 @@ public class PlayerParticleController : MonoBehaviour
     {
         dustTrailPrefab.Stop();
     }
+
+    public void PlayStunParticle(Vector3 position)
+    {
+        stunPrefab.transform.position= position;
+        stunPrefab.Play();
+    }
+    public void StopStunParticles()
+    {
+        stunPrefab.Stop();
+    }
+
+    public void PlayImpactParticle(Vector3 position)
+    {
+        impactPrefab.transform.position = position;
+        impactPrefab.Play();
+    }
+
+    public void StopImpactParticles()
+    {
+        impactPrefab.Stop();
+    }
 }

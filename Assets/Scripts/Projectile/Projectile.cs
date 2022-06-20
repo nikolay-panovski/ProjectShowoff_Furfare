@@ -15,6 +15,8 @@ public enum ProjectileState
  */
 public class Projectile : Item
 {
+    private EventQueue eventQueue;
+
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
     [SerializeField] protected float _bounceCooldown = 0.05f;
@@ -32,7 +34,14 @@ public class Projectile : Item
     {
         myRigidbody = GetComponent<Rigidbody>();
 
-        //eventQueue = FindObjectOfType<EventQueue>();
+        eventQueue = FindObjectOfType<EventQueue>();
+
+        eventQueue.Subscribe(EventType.PICKUP_PICKED, onProjectilePicked);
+    }
+
+    protected void OnDestroy()
+    {
+        eventQueue.Unsubscribe(EventType.PICKUP_PICKED, onProjectilePicked);
     }
 
     protected virtual void Update()
@@ -105,6 +114,16 @@ public class Projectile : Item
         Destroy(gameObject);
     }
 
+    protected void onProjectilePicked(EventData eventData)
+    {
+        PickupPickedEventData data = (PickupPickedEventData)eventData;
+
+        if (data.pickup == this)
+        {
+            ParticleSystem particles = GetComponentInChildren<ParticleSystem>();
+            Destroy(particles.gameObject);
+        }
+    }
 
     private void ToggleJustBounced()
     {

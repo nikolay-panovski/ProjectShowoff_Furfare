@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
     public UnityEngine.UI.Text UIText;
     
-    [SerializeField] private float _stunDuration = 1;
+    [SerializeField] private float _stunDuration = 2;
     [SerializeField] private float _invincibilityDuration = 2;
     private int _score = 0;
     private bool stunned = false;
@@ -200,10 +200,12 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        projectile.owningPlayer.IncreaseScore(1);
+       // projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
+        particles.PlayStunParticle(transform.position + new Vector3 (0,4,0));
         takeDamage();
+        particles.PlayImpactParticle(transform.position);
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
     }
