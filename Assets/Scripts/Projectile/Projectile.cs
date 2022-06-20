@@ -28,10 +28,13 @@ public class Projectile : Item
 
     protected Rigidbody myRigidbody;
 
+    private float speedBeforeCollision;
+
     protected virtual void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
 
+        // up next: this (it's about time we receive events)
         //eventQueue = FindObjectOfType<EventQueue>();
     }
 
@@ -53,6 +56,8 @@ public class Projectile : Item
         Physics.IgnoreCollision(this.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
         state = ProjectileState.FIRED;
         SetVelocityInDirection(direction);
+
+        speedBeforeCollision = myRigidbody.velocity.magnitude;
     }
 
     public virtual void SetVelocityInDirection(Vector3 newDirection)
@@ -62,7 +67,7 @@ public class Projectile : Item
         myRigidbody.velocity = newDirection * _speed;
     }
 
-    private void checkForMaxBounceCount()
+    protected void checkForMaxBounceCount()
     {
         if (_bounceCount >= _maxBounces) onMaxBounceCount();
     }
@@ -76,7 +81,7 @@ public class Projectile : Item
         }
     }
 
-    private void setPositionRelativeToHoldingPlayer()
+    protected void setPositionRelativeToHoldingPlayer()
     {
         Transform player = owningPlayer.transform;
 
@@ -85,18 +90,19 @@ public class Projectile : Item
                                          player.position.z + player.forward.z * player.localScale.z);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (state == ProjectileState.FIRED)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Players"))
-            {
-                //Instantiate(Impact, transform.position, Quaternion.identity);
-                Debug.Log("particle");
-            }
-            
+            // hack speed back to intended projectile speed, if it drops on collision
+            myRigidbody.velocity = myRigidbody.velocity.normalized;     // ~~normalizing the velocity works ONLY this way
+            myRigidbody.velocity *= speedBeforeCollision;
+
             incrementBounceCount();
             checkForMaxBounceCount();
+
+            // double hack: bouncy projectile velocity is modified during incrementBounceCount(), so this would have to be here
+            speedBeforeCollision = myRigidbody.velocity.magnitude;
         }
     }
 
@@ -106,7 +112,7 @@ public class Projectile : Item
     }
 
 
-    private void ToggleJustBounced()
+    protected void ToggleJustBounced()
     {
         //Turns justBounced on and after a delay turns it back off
         _justBounced = !_justBounced;
