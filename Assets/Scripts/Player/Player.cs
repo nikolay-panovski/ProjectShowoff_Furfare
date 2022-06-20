@@ -104,19 +104,8 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent<Projectile>(out incomingProjectile))
         {
-            if (heldProjectile == null)
-            {
-                // try handle projectile pickup on any player-projectile collision, if player doesn't already have one
-                // (previously: picked static ones up from OnTriggerEnter)
-
-                // TODO: Consider returning to triggers for idle projectiles? Current alternative is layers magic.
-
-                // ~~design choice: should player be able to catch projectiles if it is already holding one? (currently: no)
-                // (if yes, send null check to pickProjectileUp and if it fails, keep the original heldProjectile reference)
-                handleProjectileCatch(incomingProjectile);
-            }
+            handleProjectileCatch(incomingProjectile);
         }
-        //else literally any other collision possible (even with generic walls)
     }
 
     private void OnTriggerEnter(Collider other)
@@ -135,7 +124,7 @@ public class Player : MonoBehaviour
     private void handleProjectileCatch(Projectile projectile)
     {
         if (stunned == true) return;
-        if (projectile.state == ProjectileState.IDLE)
+        if (projectile.state == ProjectileState.IDLE)   // is grabbing a pickup projectile that just floats in one place
         {
             pickProjectileUp(projectile);
         }
