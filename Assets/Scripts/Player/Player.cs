@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
     public void OnCatch(InputValue value)
     {
-        if (isAttemptingCatch == false) isAttemptingCatch = true;
+        ToggleAttemptingCatch();
         Debug.Log("Catch attempted.");
     }
 
@@ -187,14 +187,8 @@ public class Player : MonoBehaviour
         projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
-        takeDamage();
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
-    }
-
-    private void takeDamage()
-    {
-        Debug.Log("ouch!");
     }
 
     private void pickProjectileUp(Projectile projectile)
@@ -216,6 +210,13 @@ public class Player : MonoBehaviour
         //UIScore
         MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);
+    }
+
+    public void ToggleAttemptingCatch()
+    {
+        // Consider yourself attempting catch, and exit this state after the defined catch duration
+        isAttemptingCatch = !isAttemptingCatch;
+        if (isAttemptingCatch == true) Invoke("ToggleAttemptingCatch", bufferTime);
     }
 
     public void ToggleStun()
