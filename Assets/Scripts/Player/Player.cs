@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public int PlayerID;
     public int amountX = 100;
     SoundManager sm;
+    Rumble rmb;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
 
         //Sound Data
         sm = this.GetComponent<SoundManager>();
+        rmb = this.GetComponent<Rumble>();
     }
 
     void OnDestroy()
@@ -108,6 +110,7 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("IsThrowing", true);
+            rmb.RumbleConstant(1f, 1f, 0.5f);
         }
     }
     #endregion

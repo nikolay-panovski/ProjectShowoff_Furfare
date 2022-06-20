@@ -162,18 +162,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9048901650788614544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6721921014741877743}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3b4581177bc33f4f8a5d1b1fb0a8da9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4175782393787032785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +178,6 @@ MonoBehaviour:
   pro_Pick_Up: {fileID: 0}
   pro_Spawn: {fileID: 0}
   points: {fileID: 0}
-  event_On: {fileID: 0}
-  event_Off: {fileID: 0}
   countdown_Start: {fileID: 0}
   countdown_Finish: {fileID: 0}
   cancel_Button: {fileID: 0}
@@ -199,3 +185,27 @@ MonoBehaviour:
   snapping_Options: {fileID: 0}
   character_Stunned: {fileID: 0}
   IamAPortal: 0
+--- !u!114 &9048901650788614544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721921014741877743}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b4581177bc33f4f8a5d1b1fb0a8da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3705802303061121243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721921014741877743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa63ccb1ef0e3a7439dd0b711df448dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
