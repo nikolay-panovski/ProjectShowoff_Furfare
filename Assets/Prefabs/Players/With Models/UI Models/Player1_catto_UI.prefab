@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1914017674338778129, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799058604150074057, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879002, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_Name
       value: Player1_catto_UI
@@ -17,23 +25,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -50
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_LocalPosition.z

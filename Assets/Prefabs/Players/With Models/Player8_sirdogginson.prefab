@@ -103,10 +103,22 @@ PrefabInstance:
     - target: {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_Actions
       value: 
-      objectReference: {fileID: -944628639613478452, guid: f6b90e0b88324ef4e812db692b0d862a, type: 3}
-    - target: {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
+      objectReference: {fileID: -944628639613478452, guid: 160b868a35075fc4da0abfe8ff62b59e, type: 3}
+    - target: {fileID: 1514549403074450012, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450012, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450012, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514549403074450012, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_Center.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1514549403074450017, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: m_RootOrder

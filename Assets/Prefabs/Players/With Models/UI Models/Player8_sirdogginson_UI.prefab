@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 553963032181987815, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_Name
       value: Player8_sirdogginson_UI
@@ -17,23 +21,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -50
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalPosition.z

@@ -34,11 +34,12 @@ public class Player : MonoBehaviour
 
     private Vector2 moveInput;  // store OnMove results here
 
-    //UI Part Data
-    public Text MyPoints;
-    public InGameUI UI;
+    //UI Part
     public int PlayerID;
     public int amountX = 100;
+    private Score _scoreManager;
+    SoundManager sm;
+    Rumble rmb;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -47,6 +48,10 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<PlayerShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
         if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
         if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
+
+        //Sound Data
+        sm = this.GetComponent<SoundManager>();
+        rmb = this.GetComponent<Rumble>();
     }
 
     void OnDestroy()
@@ -103,6 +108,7 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("IsThrowing", true);
+            //rmb.RumbleConstant(1f, 1f, 0.5f);
         }
     }
     #endregion
@@ -184,7 +190,7 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        projectile.owningPlayer.IncreaseScore(1);
+        IncreaseScore(projectile.owningPlayer.PlayerID, 1);
         ToggleInvincibility();
         ToggleStun();
         Destroy(projectile.gameObject);
@@ -209,12 +215,12 @@ public class Player : MonoBehaviour
         return _score;
     }
 
-    public void IncreaseScore(int amount)
+    public void IncreaseScore(int enemyPlayerID, int amount)
     {
-        _score += amount * amountX;
-        //UIScore
-        MyPoints.text = _score.ToString();
-        UI.UpdatePlace(_score, PlayerID);
+        int score = amount * amountX;
+
+        if (_scoreManager == null) _scoreManager = FindObjectOfType<Score>();
+        _scoreManager.IncreaseScore(enemyPlayerID, score);
     }
 
     public void ToggleAttemptingCatch()

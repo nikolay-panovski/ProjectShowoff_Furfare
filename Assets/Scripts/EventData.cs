@@ -119,11 +119,11 @@ public class ControllerJoinedEventData : EventData
 
 public class PlayerRegisteredEventData : EventData
 {
-    public readonly int playerIndex;
+    public readonly PlayerConfig player;
 
-    public PlayerRegisteredEventData(int pPlayerIndex) : base(EventType.PLAYER_REGISTERED)
+    public PlayerRegisteredEventData(PlayerConfig pPlayer) : base(EventType.PLAYER_REGISTERED)
     {
-        playerIndex = pPlayerIndex;
+        player = pPlayer;
     }
 }
 

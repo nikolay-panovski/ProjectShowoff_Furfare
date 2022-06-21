@@ -126,6 +126,8 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3fb57bff95fe4af46ac280115725a88b, type: 2}
     m_RemovedComponents:
     - {fileID: -5192817002530907108, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+    - {fileID: 1667040873920598333, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
+    - {fileID: 5581333123251323658, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
 --- !u!1 &4994877136293775028 stripped
 GameObject:
@@ -137,6 +139,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4365142385433880052, guid: 3a8e2d644fa1f184aa2e4522b58ed097, type: 3}
   m_PrefabInstance: {fileID: 8774498156966273885}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &6348575830803175949
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994877136293775028}
+  m_Material: {fileID: 13400000, guid: 24dc7a9456865444a9a3ac33bb77f0fe, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: -0.2}
 --- !u!114 &4207809934098753190
 MonoBehaviour:
   m_ObjectHideFlags: 0

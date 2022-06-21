@@ -6,18 +6,15 @@ using UnityEngine.UI;
 public class BeginningCountdown : MonoBehaviour
 {
     public Text countdowns;
-    public int timerText;
+    public int timerText = 3;
     public GameObject[] players;
     public Spawnpoint[] spawns;
     public EventsSwitch eventsSwitch;
     public InGameUI ui;
+    
     void Start()
     {
         StartCoroutine(Countdown(timerText));
-    }
-    void Update()
-    {
-        
     }
     IEnumerator Countdown(int seconds)
     {
@@ -25,7 +22,8 @@ public class BeginningCountdown : MonoBehaviour
 
         while (count > 0)
         {
-            countdowns.text = count.ToString();
+            int countNew = count - 1;
+            countdowns.text = countNew.ToString();
             yield return new WaitForSeconds(1);
             count--;
             Debug.Log("count " + count);

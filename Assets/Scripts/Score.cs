@@ -5,25 +5,12 @@ public class Score : MonoBehaviour
 {
     private EventQueue eventQueue;
 
-    private void Start()
-    {
-        eventQueue = FindObjectOfType<EventQueue>();
-        eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
-    }
+    [SerializeField] private Text[] _allScoreText;
+    private int[] _allScores = new int[] { 0, 0, 0, 0 };
 
-    private void OnDestroy()
+    public void IncreaseScore(int playerID, int amount)
     {
-        eventQueue.Unsubscribe(EventType.PLAYER_HIT, OnPlayerHit);
-    }
-
-    private void OnPlayerHit(EventData eventData)
-    {
-        PlayerHitEventData data = (PlayerHitEventData)eventData;
-        IncreaseScore(data.byPlayer);
-    }
-
-    public void IncreaseScore(Player ofPlayer)
-    {
-        ofPlayer.UIText.text = ofPlayer.GetScore() + "Points: ";
+        _allScores[playerID] += amount;
+        _allScoreText[playerID].text = _allScores[playerID] + "";
     }
 }
