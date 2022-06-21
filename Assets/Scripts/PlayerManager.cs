@@ -105,7 +105,7 @@ public class PlayerManager : MonoBehaviour
         joinedPlayer.cursorObject = cursor;
         
         // send event with the index to allow the cursor to self-assign a sprite
-        eventQueue.AddEvent(new PlayerRegisteredEventData(joinedPlayer.playerIndex));
+        eventQueue.AddEvent(new PlayerRegisteredEventData(joinedPlayer));
     }
 
     // Assumed that controllers are not leaving in any way (there is no event for that and joinedPlayers will not be decremented).

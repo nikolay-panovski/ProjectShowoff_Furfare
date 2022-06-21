@@ -85,7 +85,11 @@ public class UICursorSelector : MonoBehaviour
     private void onPlayerRegistered(EventData eventData)
     {
         PlayerRegisteredEventData data = (PlayerRegisteredEventData)eventData;
-        assignCursorSprite(data.playerIndex);
+
+        if (data.player.cursorObject == this)
+        {
+            assignCursorSprite(data.player.playerIndex);
+        }
         collResizer.Resize();
     }
 
