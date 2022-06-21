@@ -33,9 +33,14 @@ public class Projectile : Item
     {
         myRigidbody = GetComponent<Rigidbody>();
 
-        // ~~event queue *does* work with a projectile, but I do not want to change the code strucure even more this late
-        // (for the sake of readability for others involved)
-        //eventQueue = FindObjectOfType<EventQueue>();
+        eventQueue = FindObjectOfType<EventQueue>();
+
+        eventQueue.Subscribe(EventType.PICKUP_PICKED, onProjectilePicked);
+    }
+
+    protected void OnDestroy()
+    {
+        eventQueue.Unsubscribe(EventType.PICKUP_PICKED, onProjectilePicked);
     }
 
     protected virtual void Update()
@@ -100,6 +105,18 @@ public class Projectile : Item
     protected virtual void onMaxBounceCount()
     {
         Destroy(gameObject);
+    }
+
+    protected void onProjectilePicked(EventData eventData)
+    {
+        PickupPickedEventData data = (PickupPickedEventData)eventData;
+        if (data.pickup == this)
+        {
+            if (TryGetComponent<ParticleSystem>(out ParticleSystem particles)
+            {
+                Destroy(particles.gameObject);
+            }
+        }
     }
 
     protected void setOwnLayer(string layer)

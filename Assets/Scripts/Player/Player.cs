@@ -15,13 +15,14 @@ public class Player : MonoBehaviour
     private PlayerShootController shooter;
     private SimpleMoveController mover;
     private PlayerAnimator animator;
+    private PlayerParticleController particles;
 
     private Projectile heldProjectile = null;
 
     // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
     public UnityEngine.UI.Text UIText;
     
-    [SerializeField] private float _stunDuration = 1;
+    [SerializeField] private float _stunDuration = 2;
     [SerializeField] private float _invincibilityDuration = 2;
     private int _score = 0;
     private bool stunned = false;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<PlayerShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
         if (!TryGetComponent<SimpleMoveController>(out mover)) throw new MissingComponentException("Player is missing a SimpleMoveController-type script!");
         if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
+        if (!TryGetComponent<PlayerParticleController>(out particles)) throw new MissingComponentException("Player is missing a ParticleController-type script!");
 
         //Sound Data
         sm = this.GetComponent<SoundManager>();
@@ -76,10 +78,12 @@ public class Player : MonoBehaviour
         if (movementSpeed > 0)
         {
             animator.SetFloat("Movement", movementSpeed);
+            particles.PlayDustTrailAtPositionAndRotation(transform.position - transform.forward, transform.rotation);
         }
         else
         {
             animator.SetFloat("Movement", 0.0f);
+            particles.StopDustTrail();
         }
     }
 
@@ -190,9 +194,13 @@ public class Player : MonoBehaviour
 
         //_scoreManager.IncreaseScore(enemyPlayerNumber);   // submit signal to GameManager or a ScoreManager?
         eventQueue.AddEvent(new PlayerHitEventData(this, projectile.owningPlayer));
-        IncreaseScore(projectile.owningPlayer.PlayerID, 1);
+       // projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
+        particles.PlayStunParticle(transform.position + new Vector3 (0,4,0));
+        takeDamage();
+        particles.PlayImpactParticle(transform.position);
+        animator.SetBool("IsStunned", true);
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
     }
@@ -234,7 +242,8 @@ public class Player : MonoBehaviour
     {
         //Turns stun on and after a delay turns it back off
         stunned = !stunned;
-        if (stunned == true) Invoke("ToggleStun", _stunDuration);
+        if (!stunned) animator.SetBool("IsStunned", false);
+        if (stunned) Invoke("ToggleStun", _stunDuration);
     }
 
     public void ToggleInvincibility()
