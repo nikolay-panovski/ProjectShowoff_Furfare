@@ -112,10 +112,8 @@ public class Projectile : Item
         PickupPickedEventData data = (PickupPickedEventData)eventData;
         if (data.pickup == this)
         {
-            if (TryGetComponent<ParticleSystem>(out ParticleSystem particles)
-            {
-                Destroy(particles.gameObject);
-            }
+            ParticleSystem particles = GetComponentInChildren<ParticleSystem>();
+            if (particles != null) Destroy(particles.gameObject);
         }
     }
 
