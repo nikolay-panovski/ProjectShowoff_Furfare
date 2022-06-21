@@ -1,12 +1,12 @@
 {
-    "name": "UI",
+    "name": "UI_Gamepad",
     "maps": [
         {
             "name": "NonGameplayUI",
             "id": "d95ab7b3-1c94-4543-a947-0c57e1fcd949",
             "actions": [
                 {
-                    "name": "ButtonPress",
+                    "name": "Click",
                     "type": "Button",
                     "id": "05affee4-dc7f-464b-b85d-09c32c1dd3ef",
                     "expectedControlType": "Button",
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "ButtonPress",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "ButtonPress",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "ButtonPress",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "ButtonPress",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
