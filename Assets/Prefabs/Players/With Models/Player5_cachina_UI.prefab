@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6842297117167225790, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
       propertyPath: m_Name
       value: Player5_cachina_UI
