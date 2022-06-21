@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Sky and Fog Settings Profile
+  m_Name: Sky and Fog Settings AdrianaRoom
   m_EditorClassIdentifier: 
   components:
   - {fileID: 7745278769485050996}
@@ -618,7 +618,6 @@ MonoBehaviour:
   - {fileID: -8663985590346545521}
   - {fileID: -7655153347761942332}
   - {fileID: -2595360642890386350}
-  - {fileID: 5133508033026315750}
 --- !u!114 &3864862591466449012
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -671,36 +670,6 @@ MonoBehaviour:
     m_Value: 1
     min: 0
     max: 1
---- !u!114 &5133508033026315750
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
-  m_Name: FilmGrain
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  type:
-    m_OverrideState: 1
-    m_Value: 9
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.32
-    min: 0
-    max: 1
-  response:
-    m_OverrideState: 1
-    m_Value: 0.222
-    min: 0
-    max: 1
-  texture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
 --- !u!114 &7745278769485050996
 MonoBehaviour:
   m_ObjectHideFlags: 3
