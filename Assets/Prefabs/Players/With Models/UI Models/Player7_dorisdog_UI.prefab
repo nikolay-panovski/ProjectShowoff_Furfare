@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 672805133537345836, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
       propertyPath: m_Name
       value: Player7_dorisdog_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6896220821185776084, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
       propertyPath: m_RootOrder

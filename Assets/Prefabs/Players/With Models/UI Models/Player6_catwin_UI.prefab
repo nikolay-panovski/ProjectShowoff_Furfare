@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 914895313708803070, guid: 7ede955db67467844a8bd8a67b183337, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 7ede955db67467844a8bd8a67b183337, type: 3}
       propertyPath: m_Name
       value: Player6_catwin_UI

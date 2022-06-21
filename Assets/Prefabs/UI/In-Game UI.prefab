@@ -3881,7 +3881,7 @@ MonoBehaviour:
   timerText: 4
   players: []
   spawns: []
-  eventsSwitch: {fileID: 0}
+  eventsSwitch: {fileID: 3230018422171903420, guid: eb75fc5616d40be46bb74627278b697b, type: 3}
   ui: {fileID: 5767994608998963082}
 --- !u!1 &7656275176425349629
 GameObject:
