@@ -43,15 +43,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cb4a89401dba8479dc2bcd44229179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalSource: {fileID: 0}
-  pro_Pick_Up: {fileID: 0}
-  pro_Spawn: {fileID: 0}
-  points: {fileID: 0}
-  event_On: {fileID: 0}
-  event_Off: {fileID: 0}
-  countdown_Start: {fileID: 0}
-  countdown_Finish: {fileID: 0}
-  cancel_Button: {fileID: 0}
-  selected_Button: {fileID: 0}
-  snapping_Options: {fileID: 0}
-  character_Stunned: {fileID: 0}
+  soundAudioClipArray:
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 0be23366b6084834d9e3840b9b6a2a61, type: 3}
+  - sound: 9
+    audioClip: {fileID: 8300000, guid: 48a13174103adbb4fb14a2ba0aedc8b3, type: 3}
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: c6214c51df371284294f6282164fd7c3, type: 3}
+  - sound: 11
+    audioClip: {fileID: 8300000, guid: 59c02686c7567504596055c9039ccac5, type: 3}
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: a397481bff6d6b745bd6db58ef39eb25, type: 3}
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: c608d23319e7c4d46a424def5d5e9922, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: c3192a9f4266dc54593ef4c3bc19a012, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 9ee380b9d83d98044a504184cb269526, type: 3}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: f89f309f21b30254c9d4b235f3b1a0df, type: 3}
