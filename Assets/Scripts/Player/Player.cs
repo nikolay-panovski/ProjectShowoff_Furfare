@@ -246,7 +246,8 @@ public class Player : MonoBehaviour
     {
         //Turns stun on and after a delay turns it back off
         stunned = !stunned;
-        if (stunned == true) Invoke("ToggleStun", _stunDuration);
+        if (!stunned) animator.SetBool("IsStunned", false);
+        if (stunned) Invoke("ToggleStun", _stunDuration);
     }
 
     public void ToggleInvincibility()
