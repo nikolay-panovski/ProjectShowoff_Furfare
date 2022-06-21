@@ -16,15 +16,15 @@ TagManager:
   - UI
   - Players
   - Floor
-  - PostProcessing
-  - Not in Reflection
-  - Projectiles
+  - 
+  - 
+  - Pickup Projectiles
   - Ignore Walls
   - Walls
-  - Ignore Projectiles
+  - Ignore Pickup Projectiles
   - Portals
-  - 
-  - 
+  - Props
+  - Fired Projectiles
   - 
   - 
   - 

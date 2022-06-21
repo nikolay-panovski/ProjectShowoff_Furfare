@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     private int _score = 0;
     private bool stunned = false;
     private bool invincible = false;
-    //private List<Powerup> powerups = new List<Powerup>();     // to game manager?
 
     [Tooltip("Time before and after collision with a fired projectile in which the player can pick it up instead of getting hurt.")]
     [SerializeField] private float bufferTime = 0.5f;
@@ -87,7 +86,7 @@ public class Player : MonoBehaviour
 
     public void OnCatch(InputValue value)
     {
-        if (isAttemptingCatch == false) isAttemptingCatch = true;
+        ToggleAttemptingCatch();
         Debug.Log("Catch attempted.");
     }
 
@@ -116,19 +115,8 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent<Projectile>(out incomingProjectile))
         {
-            if (heldProjectile == null)
-            {
-                // try handle projectile pickup on any player-projectile collision, if player doesn't already have one
-                // (previously: picked static ones up from OnTriggerEnter)
-
-                // TODO: Consider returning to triggers for idle projectiles? Current alternative is layers magic.
-
-                // ~~design choice: should player be able to catch projectiles if it is already holding one? (currently: no)
-                // (if yes, send null check to pickProjectileUp and if it fails, keep the original heldProjectile reference)
-                handleProjectileCatch(incomingProjectile);
-            }
+            handleProjectileCatch(incomingProjectile);
         }
-        //else literally any other collision possible (even with generic walls)
     }
 
     private void OnTriggerEnter(Collider other)
@@ -147,7 +135,7 @@ public class Player : MonoBehaviour
     private void handleProjectileCatch(Projectile projectile)
     {
         if (stunned == true) return;
-        if (projectile.state == ProjectileState.IDLE)
+        if (projectile.state == ProjectileState.IDLE)   // is grabbing a pickup projectile that just floats in one place
         {
             pickProjectileUp(projectile);
         }
@@ -199,22 +187,21 @@ public class Player : MonoBehaviour
         projectile.owningPlayer.IncreaseScore(1);
         ToggleInvincibility();
         ToggleStun();
-        takeDamage();
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
-    }
-
-    private void takeDamage()
-    {
-        Debug.Log("ouch!");
     }
 
     private void pickProjectileUp(Projectile projectile)
     {
         catcher.PickProjectileUp(projectile);
-        gameObject.layer = LayerMask.NameToLayer("Ignore Projectiles");    // ignore collisions with other projectiles while holding one
+        setOwnLayer("Ignore Pickup Projectiles");
         heldProjectile = projectile;
         eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
+    }
+
+    private void setOwnLayer(string layer)
+    {
+        this.gameObject.layer = LayerMask.NameToLayer(layer);
     }
 
     public int GetScore()
@@ -228,6 +215,13 @@ public class Player : MonoBehaviour
         //UIScore
         MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);
+    }
+
+    public void ToggleAttemptingCatch()
+    {
+        // Consider yourself attempting catch, and exit this state after the defined catch duration
+        isAttemptingCatch = !isAttemptingCatch;
+        if (isAttemptingCatch == true) Invoke("ToggleAttemptingCatch", bufferTime);
     }
 
     public void ToggleStun()

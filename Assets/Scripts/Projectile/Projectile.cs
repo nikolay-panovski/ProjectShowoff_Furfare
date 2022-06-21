@@ -15,12 +15,13 @@ public enum ProjectileState
  */
 public class Projectile : Item
 {
+    private EventQueue eventQueue;
+
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
     [SerializeField] protected float _bounceCooldown = 0.05f;
 
-    //[SerializeField] ParticleSystem Impact = null;
-    protected int _bounceCount;   // to only see in inspector, don't serialize, go to the vertical ... near the padlock > choose Debug view
+    protected int _bounceCount;
     protected bool _justBounced = false;
     public ProjectileState state { get; set; } = ProjectileState.IDLE;
 
@@ -32,6 +33,8 @@ public class Projectile : Item
     {
         myRigidbody = GetComponent<Rigidbody>();
 
+        // ~~event queue *does* work with a projectile, but I do not want to change the code strucure even more this late
+        // (for the sake of readability for others involved)
         //eventQueue = FindObjectOfType<EventQueue>();
     }
 
@@ -53,16 +56,16 @@ public class Projectile : Item
         Physics.IgnoreCollision(this.GetComponent<Collider>(), owningPlayer.GetComponent<Collider>());
         state = ProjectileState.FIRED;
         SetVelocityInDirection(direction);
+
+        setOwnLayer("Fired Projectiles");
     }
 
     public virtual void SetVelocityInDirection(Vector3 newDirection)
     {
-        // to Impulse if balls will have a difference by Mass... will it work?
-        //myRigidbody.AddForce(newDirection * _speed, ForceMode.VelocityChange);
         myRigidbody.velocity = newDirection * _speed;
     }
 
-    private void checkForMaxBounceCount()
+    protected void checkForMaxBounceCount()
     {
         if (_bounceCount >= _maxBounces) onMaxBounceCount();
     }
@@ -76,7 +79,7 @@ public class Projectile : Item
         }
     }
 
-    private void setPositionRelativeToHoldingPlayer()
+    protected void setPositionRelativeToHoldingPlayer()
     {
         Transform player = owningPlayer.transform;
 
@@ -85,16 +88,10 @@ public class Projectile : Item
                                          player.position.z + player.forward.z * player.localScale.z);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (state == ProjectileState.FIRED)
         {
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Players"))
-            {
-                //Instantiate(Impact, transform.position, Quaternion.identity);
-                Debug.Log("particle");
-            }
-            
             incrementBounceCount();
             checkForMaxBounceCount();
         }
@@ -105,8 +102,12 @@ public class Projectile : Item
         Destroy(gameObject);
     }
 
+    protected void setOwnLayer(string layer)
+    {
+        this.gameObject.layer = LayerMask.NameToLayer(layer);
+    }
 
-    private void ToggleJustBounced()
+    protected void ToggleJustBounced()
     {
         //Turns justBounced on and after a delay turns it back off
         _justBounced = !_justBounced;
