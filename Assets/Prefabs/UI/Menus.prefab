@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 3964675226527830211}
   - component: {fileID: 1776735420505167326}
   - component: {fileID: 1355832645613716874}
+  - component: {fileID: 7755246872630622921}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -842,6 +843,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!61 &7755246872630622921
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823917173964600037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 455, y: 149}
+  m_EdgeRadius: 0
 --- !u!1 &829820464460503976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1033,7 @@ GameObject:
   - component: {fileID: 8129039391896933506}
   - component: {fileID: 5249318639157382794}
   - component: {fileID: 1027890675368640721}
+  - component: {fileID: 5280880733917985247}
   m_Layer: 0
   m_Name: Controls Like Shown
   m_TagString: Untagged
@@ -1089,7 +1117,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1099,10 +1127,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 9b3106fc761fe36468c7f88b2031c38f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 9b3106fc761fe36468c7f88b2031c38f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 9b3106fc761fe36468c7f88b2031c38f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 9b3106fc761fe36468c7f88b2031c38f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1126,6 +1154,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!61 &5280880733917985247
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844380492963231646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 349, y: 115}
+  m_EdgeRadius: 0
 --- !u!1 &1135373765612461951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,7 +2838,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f265b00e78a5f247ae5f1ce2c5217f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMenu: {fileID: 4903234361329894861}
   CharacterSelection: {fileID: 7251219584277226798}
+  Settings: {fileID: 9085639031747790263}
   Infographic: {fileID: 484888444424887795}
 --- !u!1 &2886888262092031478
 GameObject:
@@ -5406,7 +5462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7689558458229020098
 RectTransform:
   m_ObjectHideFlags: 0

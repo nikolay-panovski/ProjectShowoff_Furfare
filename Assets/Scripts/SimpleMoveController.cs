@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-// Based on ThirdPersonController.
+// SmoothDampAngle for the rotation based on ThirdPersonController.
 [RequireComponent(typeof(Rigidbody))]
 public class SimpleMoveController : MonoBehaviour
 {
@@ -12,10 +11,6 @@ public class SimpleMoveController : MonoBehaviour
     [Range(0.0f, 0.3f)]
     [SerializeField] private float rotationSmoothTime = 0.12f;
 
-    //[Tooltip("Acceleration and deceleration")]
-    //[SerializeField] private float speedChangeRate = 10.0f;
-
-    //private float _speed;   // not needed with direct move with moveSpeed, preserving in case something messes up
     private float _targetRotation = 0.0f;
     private float _rotationVelocity;
 
@@ -29,14 +24,11 @@ public class SimpleMoveController : MonoBehaviour
     private void Awake()
     {
         _mainCamera = Camera.main;
-    }
 
-    private void Start()
-    {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Move(Vector2 input)
+    public float Move(Vector2 input)
     {
         Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y);
 
@@ -53,12 +45,16 @@ public class SimpleMoveController : MonoBehaviour
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            _rigidbody.velocity = inputDirection.magnitude * targetDirection * moveSpeed * speedX;
+            Vector3 finalMovement = inputDirection.magnitude * targetDirection * moveSpeed * speedX;
+            _rigidbody.velocity = finalMovement;
             //MovePosition(_rigidbody.position + targetDirection * (moveSpeed * Time.deltaTime));
+
+            return finalMovement.magnitude;
         } 
         else
         {
             StopVelocity();
+            return 0f;
         }
     }
 

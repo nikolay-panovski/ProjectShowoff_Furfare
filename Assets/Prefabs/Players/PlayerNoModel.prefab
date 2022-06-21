@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4026480662627611230}
   - component: {fileID: 8201012095644360462}
   - component: {fileID: 1514549403074450008}
+  - component: {fileID: 5328803503756724786}
   m_Layer: 6
   m_Name: PlayerNoModel
   m_TagString: Player
@@ -172,10 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26811a6adc47c240a9279ca8f5bd2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISlider: {fileID: 0}
+  UIText: {fileID: 0}
   _stunDuration: 1
   _invincibilityDuration: 2
   bufferTime: 0.5
+  MyPoints: {fileID: 0}
+  UI: {fileID: 0}
+  PlayerID: 0
+  amountX: 100
 --- !u!114 &4026480662627611230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +219,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotationSmoothTime: 0.009
+  speedX: 1
+--- !u!114 &5328803503756724786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514549403074450006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7568b74768befe84abdeb2b81b4d3571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwAnimationName: 
+  stunnedAnimationName: 

@@ -244,7 +244,15 @@ PrefabInstance:
     - target: {fileID: 4026480662627611230, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: _myAnimator
       value: 
-      objectReference: {fileID: 6087663444710243278}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: throwAnimationName
+      value: Cat_Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: stunnedAnimationName
+      value: Cat_Stunned
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
 --- !u!1 &8018565528803879002 stripped
@@ -353,25 +361,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &6087663444710243278
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8018565528803879002}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ca5622bcc3e44e488b1d6990435add1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4511400324699049156
 MonoBehaviour:
   m_ObjectHideFlags: 0
