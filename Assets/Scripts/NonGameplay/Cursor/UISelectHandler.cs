@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 
 /* Performs collider-based checks for overlaps between this item and the other one.
  * Currently the result is that if the first other item is strictly a Button, it should Select itself.
@@ -11,10 +11,16 @@ public class UISelectHandler : MonoBehaviour
 {
     public Collider2D CheckForColliderOverlap(Collider2D thisCollider)
     {
-        // prepare array to catch and return only 1st found overlap result - we have no reason to treat multiple
-        Collider2D[] results = new Collider2D[1];
+        // prepare list to put in as many overlaps as there are
+        List<Collider2D> results = new List<Collider2D>();
         thisCollider.OverlapCollider(new ContactFilter2D().NoFilter(), results);
-        return results[0];
+
+        foreach (Collider2D overlap in results)
+        {
+            if (overlap.TryGetComponent<Button>(out Button button)) return overlap; // ~~list nulls are apparently skipped better than array nulls?
+        }
+
+        return null;
     }
 
     public void OnColliderOverlap(Collider2D overlap, out Button button)
