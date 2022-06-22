@@ -95,7 +95,7 @@ public class UICursorSelector : MonoBehaviour
 
     private void assignCursorSprite(int fromIndex)
     {
-        spriteRenderer.sprite = PlayerManager.Instance.GetSpriteAtIndex(fromIndex);
+        spriteRenderer.sprite = PlayerManager.Instance.GetCursorSpriteAtIndex(fromIndex);
         // ~~if sprite is null after this, expect a fun stack trace traversal
     }
 

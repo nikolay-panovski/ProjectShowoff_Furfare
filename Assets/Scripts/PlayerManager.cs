@@ -9,9 +9,11 @@ public class PlayerManager : MonoBehaviour
     private EventQueue eventQueue;
 
     [Tooltip("Set of cursor sprites to be used for the players (specify not only the sprites but also the order in the ScriptableObject itself).")]
-    [SerializeField] private CursorSpriteContainer cursorSprites;
+    [SerializeField] private SpriteContainer cursorSprites;
     [Tooltip("Set of character models to be used for the players (specify not only the models but also the order in the ScriptableObject itself).")]
-    [SerializeField] private CharacterModelContainer characterModels;
+    [SerializeField] private ModelContainer characterModels;
+    [Tooltip("Set of player info cards to be used for the UI (specify not only the GameObjects hierarchy but also the order in the ScriptableObject itself).")]
+    [SerializeField] private ModelContainer playerCards;
 
     [SerializeField] private UICursorSelector cursorFunctionPrefab;
 
@@ -116,16 +118,22 @@ public class PlayerManager : MonoBehaviour
         else return joinedPlayers[index];
     }
 
-    public Sprite GetSpriteAtIndex(int index)   // NULLABLE
+    public Sprite GetCursorSpriteAtIndex(int index)   // NULLABLE
     {
-        if (index < 0 || index >= cursorSprites.cursorSprites.Count) return null;
-        else return cursorSprites.cursorSprites[index];
+        if (index < 0 || index >= cursorSprites.sprites.Count) return null;
+        else return cursorSprites.sprites[index];
+    }
+
+    public GameObject GetCardSpriteAtIndex(int index)   // NULLABLE
+    {
+        if (index < 0 || index >= playerCards.models.Count) return null;
+        else return playerCards.models[index];
     }
 
     public GameObject GetCharacterAtIndex(int index) // NULLABLE
     {
-        if (index < 0 || index >= characterModels.characterModels.Count) return null;
-        else return characterModels.characterModels[index];
+        if (index < 0 || index >= characterModels.models.Count) return null;
+        else return characterModels.models[index];
     }
 
     public bool GetAllPlayersReady()

@@ -14,10 +14,10 @@ public class InGameUI : MonoBehaviour
     private List<PlayerConfig> players = new List<PlayerConfig>();
     private EventQueue eventQueue;
 
-    [SerializeField] private Text[] _allScoreText;
+    //[SerializeField] private Text[] _allScoreText;
 
-    [SerializeField] Sprite[] Sprites;
-    [SerializeField] Image[] PlayerPlaces;
+    [Tooltip("Sprites used for 1st/2nd/3rd/4th place. Please insert in that order.")]
+    [SerializeField] Sprite[] RankingSprites;
 
     //Infographic
     public GameObject InGameUIScreen;
@@ -84,6 +84,8 @@ public class InGameUI : MonoBehaviour
             if (playerID == players[i].gameplayInput.GetComponent<Player>())
             {
                 players[i].score += amount;
+                // update the score in the relevant text field visually:
+                players[i].playerUICard.GetComponentInChildren<Text>().text = players[i].score.ToString();
             }
         }  
     }
@@ -104,9 +106,9 @@ public class InGameUI : MonoBehaviour
 
     private void AssignPlacements()
     {
-        for(int i = 0; i < PlayerPlaces.Length; i++)
+        for(int i = 0; i < players.Count; i++)
         {
-            PlayerPlaces[i].sprite = Sprites[i];
+            players[i].playerUICard.GetComponentInChildren<PlayerRankPlace>().gameObject.GetComponent<Image>().sprite = RankingSprites[i];
         }
     }
 
