@@ -34,7 +34,7 @@ public class InGameCardSpawner : MonoBehaviour
             // find the InGameUI prefab object (containing the same-named script), pass it for player cards to be attached as direct children:
             //Transform UIObjectParent = FindObjectOfType<InGameUI>().gameObject.transform;
 
-            GameObject functionalPlayerObject = Instantiate(
+            player.playerUICard = Instantiate(
                 PlayerManager.Instance.GetCardSpriteAtIndex(player.characterIndex), this.transform);
             //functionalPlayerObject.transform.position = this.transform.position;
 
