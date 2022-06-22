@@ -17,6 +17,7 @@ public class PlayerConfig
     /// </summary>
     public bool isReady { get; set; }
     public PlayerInput gameplayInput { get; set; }  // PlayerInput component attached to the functional Player script of the whole player structure.
+    public int score { get; set; }
 
     public PlayerConfig(PlayerInput controllerInput)
     {

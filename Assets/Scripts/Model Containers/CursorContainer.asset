@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227bd33ec6f0ff848985821c0ae9cdff, type: 3}
   m_Name: CursorContainer
   m_EditorClassIdentifier: 
-  cursorSprites:
-  - {fileID: 21300000, guid: 3cc47a6e5c34a324fbd6d5820aa47167, type: 3}
-  - {fileID: 21300000, guid: 7ee2267dc78bd8345a0da7c0b1d446b9, type: 3}
-  - {fileID: 21300000, guid: 40c4fddf95289544aa60190c6f55b31f, type: 3}
-  - {fileID: 21300000, guid: 434913a5a770609448aa8b8c21ca388b, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: e593afe45a0f3cc418625018c9226b3e, type: 3}
+  - {fileID: 21300000, guid: bc9a8d9d6700a854e9feb283483df6f3, type: 3}
+  - {fileID: 21300000, guid: d4289eda696cf7b47a3fe723a8611b49, type: 3}
+  - {fileID: 21300000, guid: 56e38c3591ce6a54ca54209329778b1e, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33608fd7117759b46af800df28dd58ec, type: 3}
+  m_Name: PlayerCardContainer
+  m_EditorClassIdentifier: 
+  models:
+  - {fileID: 4501646394574910002, guid: fc4f34913ade47444a18bc8b99ca2c8a, type: 3}
+  - {fileID: 935027687937036748, guid: b96e84158b1dec543b518512126c5875, type: 3}
+  - {fileID: 7665658204023983537, guid: 9562bb1d66cfec046a08a65abc4ff6a8, type: 3}
+  - {fileID: 6873665216907939397, guid: 06c6003179d31cf409bfd8fbfb1b04b7, type: 3}
+  - {fileID: 7276796379932706245, guid: e6e1f46a464a94f4e9a49a8bdbdc4e3d, type: 3}
+  - {fileID: 6703797427643372589, guid: 05b105d008eda6648965523feb775ebb, type: 3}
+  - {fileID: 204845320789874379, guid: d9dc661a0c57bab4d97aa3c0e2e6615b, type: 3}
+  - {fileID: 2952692589323874052, guid: 1f54c855a89c9c145b03281eb6a5c1aa, type: 3}

@@ -11,7 +11,7 @@ public class InGameUI : MonoBehaviour
     public Text timeText;
 
     //Places
-    private Player[] _allPlayers;
+    private List<PlayerConfig> players = new List<PlayerConfig>();
     int[] Scores;
     int[] Places;
     int[] WeirdPlaces;
@@ -24,7 +24,14 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _allPlayers = FindObjectsOfType<Player>();
+        for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+        {
+            players.Add(PlayerManager.Instance.GetPlayerAtIndex(i));
+        }
+
+        //players[0].score
+        players.Sort((a, b) => a.score.CompareTo(b.score));
+
         List<int> test = new List<int>() { 45, 111, 22, 10, };
         Debug.Log("Sort" + quicksort(test)[0]);
         Debug.Log("Sort" + quicksort(test)[1]);
