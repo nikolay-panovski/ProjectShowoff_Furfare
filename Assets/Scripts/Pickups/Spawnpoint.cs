@@ -35,6 +35,7 @@ public class Spawnpoint : MonoBehaviour
 
     private void OnPickupPicked(EventData eventData)
     {
+        SoundPlay.PlaySound(SoundPlay.Sound.projectile);
         PickupPickedEventData data = (PickupPickedEventData)eventData;
         if (data.originalSpawnpoint == this)
         {

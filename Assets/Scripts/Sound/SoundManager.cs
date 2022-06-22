@@ -9,7 +9,6 @@ public class SoundManager : MonoBehaviour
     {
         get
         {
-            if (_i == null) _i = Instantiate(Resources.Load<SoundManager>("SoundManager"));
             return _i;
         }
     }
@@ -20,5 +19,19 @@ public class SoundManager : MonoBehaviour
     {
         public SoundPlay.Sound sound;
         public AudioClip audioClip;
+    }
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+        if (i != null && i != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            _i = this;
+        }
     }
 }

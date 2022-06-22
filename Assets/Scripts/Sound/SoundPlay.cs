@@ -22,12 +22,13 @@ public static class SoundPlay
     }
     public static void PlaySound(Sound sound)
     {
-        GameObject soundGameObject = new GameObject("Sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        GameObject soundGameObject = GameObject.FindGameObjectWithTag("SoundManager");
+        AudioSource audioSource = soundGameObject.GetComponent<AudioSource>();
         audioSource.PlayOneShot(GetAudioClip(sound));
     }
     private static AudioClip GetAudioClip(Sound sound)
     {
+        Debug.Log("Sound Called: " + sound);
         foreach (SoundManager.SoundAudioClip soundAudioClip in SoundManager.i.soundAudioClipArray)
         {
             if(soundAudioClip.sound == sound)

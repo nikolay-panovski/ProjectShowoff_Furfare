@@ -40,8 +40,8 @@ public class Player : MonoBehaviour
     public InGameUI UI;
     public int PlayerID;
     public int amountX = 100;
-    SoundManager sm;
-    Rumble rmb;
+    //Rumble rmb;
+    RandomVoiceLine rnd;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -52,8 +52,7 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<PlayerAnimator>(out animator)) throw new MissingComponentException("Player is missing a PlayerAnimator-type script!");
 
         //Sound Data
-        sm = this.GetComponent<SoundManager>();
-        rmb = this.GetComponent<Rumble>();
+        rnd = this.GetComponent<RandomVoiceLine>();
     }
 
     void OnDestroy()
@@ -110,7 +109,8 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("IsThrowing", true);
-            rmb.RumbleConstant(1f, 1f, 0.5f);
+            //rmb.RumbleConstant(1f, 1f, 0.5f);
+            rnd.Throw();
         }
     }
     #endregion
@@ -147,6 +147,7 @@ public class Player : MonoBehaviour
             if (collidedPortal.GetActiveStatus() == true)
             {
                 TeleportToPortal(collidedPortal);
+                SoundPlay.PlaySound(SoundPlay.Sound.portalSource);
             }
         }
     }
@@ -209,6 +210,8 @@ public class Player : MonoBehaviour
         takeDamage();
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
+        //Voice Line
+        rnd.WinOrGetsHit();
     }
 
     private void takeDamage()
@@ -235,7 +238,6 @@ public class Player : MonoBehaviour
         //UIScore
         MyPoints.text = _score.ToString();
         UI.UpdatePlace(_score, PlayerID);
-        
     }
 
     public void ToggleStun()

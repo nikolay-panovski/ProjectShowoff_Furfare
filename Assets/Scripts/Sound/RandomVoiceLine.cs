@@ -11,12 +11,21 @@ public class RandomVoiceLine : MonoBehaviour
     {
         _as = this.GetComponent<AudioSource>();
     }
-    private void ChooseCharacterOrThrow()
+    public void Throw()
+    {
+        int num = Random.Range(0, 2);
+        if (num == 1)
+        {
+            _as.clip = CharChooseOrThrow[Random.Range(0, CharChooseOrThrow.Length)];
+            _as.PlayOneShot(_as.clip);
+        }
+    }
+    public void ChooseCharacter()
     {
         _as.clip = CharChooseOrThrow[Random.Range(0, CharChooseOrThrow.Length)];
         _as.PlayOneShot(_as.clip);
     }
-    private void WinOrGetsHit()
+    public void WinOrGetsHit()
     {
         _as.clip = WinOrHit[Random.Range(0, WinOrHit.Length)];
         _as.PlayOneShot(_as.clip);
