@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerConfig
 {
+    public int score { get; set; }
     public PlayerInput UIInput { get; set; }    // starting PlayerInput component attached to the InputObject instantiated prefab.
                                                 // If it is needed to access a GameObject/transform of something for parenting or
                                                 // otherwise positioning, access this one's gameObject property explicitly.

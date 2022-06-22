@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     //UI Part
     public int PlayerID;
     public int amountX = 100;
-    private Score _scoreManager;
     SoundManager sm;
     Rumble rmb;
     void Start()
@@ -54,11 +53,6 @@ public class Player : MonoBehaviour
         //Sound Data
         sm = this.GetComponent<SoundManager>();
         rmb = this.GetComponent<Rumble>();
-    }
-
-    void OnDestroy()
-    {
-        
     }
 
     private void Update()
@@ -220,14 +214,6 @@ public class Player : MonoBehaviour
     public int GetScore()
     {
         return _score;
-    }
-
-    public void IncreaseScore(int enemyPlayerID, int amount)
-    {
-        int score = amount * amountX;
-
-        if (_scoreManager == null) _scoreManager = FindObjectOfType<Score>();
-        _scoreManager.IncreaseScore(enemyPlayerID, score);
     }
 
     public void ToggleAttemptingCatch()
