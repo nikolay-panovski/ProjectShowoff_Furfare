@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8851063243653779794}
   - component: {fileID: 6715355682311300504}
   - component: {fileID: 4899762175749207560}
+  - component: {fileID: -7453401626213407489}
   m_Layer: 0
   m_Name: Tree_Low_v1_Jade
   m_TagString: Untagged
@@ -96,3 +97,20 @@ CapsuleCollider:
   m_Height: 601.8202
   m_Direction: 1
   m_Center: {x: 5, y: 0, z: 10}
+--- !u!114 &-7453401626213407489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057894336226608205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064be72cfff4535419846a8f29af19b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BushSound: 0
+  WoodSound: 1
+  CouchSound: 0
+  SackSound: 0
+  WateringCanSound: 0

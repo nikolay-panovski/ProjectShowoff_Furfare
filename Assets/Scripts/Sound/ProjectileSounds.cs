@@ -10,10 +10,6 @@ public class ProjectileSounds : MonoBehaviour
     {
         if(collision.gameObject.tag == "ProjectilePickup")
         {
-            if (BushSound)
-            {
-                SoundPlay.PlaySound(SoundPlay.Sound.bush);
-            }
             if (WoodSound)
             {
                 SoundPlay.PlaySound(SoundPlay.Sound.wood);
@@ -29,6 +25,16 @@ public class ProjectileSounds : MonoBehaviour
             if (WateringCanSound)
             {
                 SoundPlay.PlaySound(SoundPlay.Sound.wateringCan);
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "ProjectilePickup")
+        {
+            if (BushSound)
+            {
+                SoundPlay.PlaySound(SoundPlay.Sound.bush);
             }
         }
     }

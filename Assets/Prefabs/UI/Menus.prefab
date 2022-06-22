@@ -1155,6 +1155,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &5280880733917985247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2446,6 +2458,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1358969010977217585}
         m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
         m_MethodName: MusicToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4706,10 +4730,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: d5b2483478eb51f48933d014ab9a30fa, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5335,6 +5359,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1358969010977217585}
         m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
         m_MethodName: MusicToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: BackButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6661,6 +6697,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: BackButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &2378366109761857466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7370,6 +7418,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1358969010977217585}
         m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
         m_MethodName: SoundToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1875840200230722647}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

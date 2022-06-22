@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cb4a89401dba8479dc2bcd44229179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FilipMusic: {fileID: 8300000, guid: f1cd68b68b45b794b96c2f38809c86c2, type: 3}
+  AdriMusic: {fileID: 8300000, guid: 32cc364bfea539d41afcb360ba6a99dd, type: 3}
+  MonaMusic: {fileID: 8300000, guid: 32cc364bfea539d41afcb360ba6a99dd, type: 3}
   soundAudioClipArray:
   - sound: 2
     audioClip: {fileID: 8300000, guid: 0be23366b6084834d9e3840b9b6a2a61, type: 3}
@@ -77,11 +80,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8e695094351d3444394952212e67fe0f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
