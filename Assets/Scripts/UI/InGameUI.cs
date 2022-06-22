@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     //Timer
-    public float roundTime;
+    public int _timeRemaining;
     public bool timeIsLeft;
     public Text timeText;
 
     //Places
     private List<PlayerConfig> players = new List<PlayerConfig>();
-    int[] Scores;
-    int[] Places;
-    int[] WeirdPlaces;
+    private EventQueue eventQueue;
+
+    [SerializeField] private Text[] _allScoreText;
+
     [SerializeField] Sprite[] Sprites;
     [SerializeField] Image[] PlayerPlaces;
 
@@ -24,129 +25,36 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        GetAllPlayers();
+
+        timeIsLeft = true;
+
+        eventQueue = FindObjectOfType<EventQueue>();
+        eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
+        Invoke("DecreaseTimer", 1f);
+    }
+
+    private void GetAllPlayers()
+    {
         for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
         {
             players.Add(PlayerManager.Instance.GetPlayerAtIndex(i));
         }
-
-        //players[0].score
-        players.Sort((a, b) => a.score.CompareTo(b.score));
-
-        List<int> test = new List<int>() { 45, 111, 22, 10, };
-        Debug.Log("Sort" + quicksort(test)[0]);
-        Debug.Log("Sort" + quicksort(test)[1]);
-        Debug.Log("Sort" + quicksort(test)[2]);
-        Debug.Log("Sort" + quicksort(test)[3]);
-        timeIsLeft = true;
-
-        Scores = new int[4];
-        Places = new int[4];
-        WeirdPlaces = new int[4];
-        Places[0] = 0;
-        Places[1] = 1;
-        Places[2] = 2;
-        Places[3] = 3;
-    }
-    void Update()
-    {
-        timer();
     }
 
-    void OrderPlaces()
+    public void StartCountDown()
     {
-        bool Weird = false;
-        Debug.Log(Places[0]+ " " + Places[1]+ " " + Places[2]+" "+ Places[3]);
-        WeirdPlaces = Places;
-        for (int i = 0; i < 3; i++)
-        {
-            if (Scores[i] == Scores[i + 1])
-            {
-                Debug.Log("Matching Scores: " + i + " " + (i+1) +"\n" + Scores[i]);
-                int a = 0, b = 0;
-                for (int j = 0; j < 3; j++)
-                {
-                    if (Places[j] == i)
-                    {
-                        a = j;
-                        Debug.Log("A is set!");
-                    }
-                    else if (Places[j] == i + 1)
-                    {
-                        b = j;
-                        Debug.Log("B is set!");
-                    }
-                }
-                Debug.Log(a + "\n" + b);
-                Weird = true;
-                WeirdPlaces[b] = WeirdPlaces[a];
-            }
-        }
-        if (Weird)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerPlaces[i].sprite = Sprites[WeirdPlaces[i]];
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerPlaces[i].sprite = Sprites[Places[i]];
-            }
-        }
-    }
-    public void UpdatePlace(int Score, int PlayerID)
-    {
-        Scores[Places[PlayerID]] = Score;
-        for(int i = 2; i >= 0 ; i--)
-        {
-            if (Scores[i + 1] > Scores[i])
-            {
-                int a = 0, b = 0;
-                for (int j = 3; j >= 0; j--)
-                {
-                    if (Places[j] == i)
-                    {
-                        a = j;
-                    }
-                    else if (Places[j] == i + 1)
-                    {
-                        b = j;
-                    }
-                }
-                int tmp = Places[a];
-                Places[a] = Places[b];
-                Places[b] = tmp;
-
-                tmp = Scores[i];
-                Scores[i] = Scores[i+1];
-                Scores[i + 1] = tmp;
-            }
-
-            
-        }
-        OrderPlaces();
+        InGameUIScreen.gameObject.SetActive(true);
+        Countdown.gameObject.SetActive(true);
     }
 
-    void timer()
+    private void DecreaseTimer()
     {
-        if (timeIsLeft)
-        {
-            if (roundTime > 0)
-            {
-                roundTime -= Time.deltaTime;
-                DisplayTime(roundTime);
-            }
-            else
-            {
-                //game ends
-                Debug.Log("Time Ran out");
-                roundTime = 0;
-                timeIsLeft = false;
-            }
-            //MyPointsText.text = time;
-        }
+        _timeRemaining -= 1;
+        DisplayTime(_timeRemaining);
+        CheckForMatchEnd();
+        if (_timeRemaining > 0) Invoke("DecreaseTimer", 1f);
     }
 
     void DisplayTime(float timeToDisplay)
@@ -157,46 +65,59 @@ public class InGameUI : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void StartCountDown()
+    private void CheckForMatchEnd()
     {
-        InGameUIScreen.gameObject.SetActive(true);
-        Countdown.gameObject.SetActive(true);
+        if (_timeRemaining <= 0) DetermineWinner();
     }
 
-    public List<int> quicksort(List<int> a)
+    private void OnPlayerHit(EventData eventData)
     {
-        List<int> less = new List<int>();
-        List<int> greater = new List<int>();
-        if (a.Count <= 1)
-            return a;
-        int pos = Random.Range(0, a.Count);
-
-        int pivot = a[pos];
-        a.RemoveAt(pos);
-        foreach (int x in a)
-        {
-            if (x <= pivot)
-            {
-                less.Add(x);
-            }
-            else
-            {
-                greater.Add(x);
-            }
-        }
-        return concat(quicksort(less), pivot, quicksort(greater));
+        PlayerHitEventData data = (PlayerHitEventData)eventData;
+        IncreaseScore(data.byPlayer, 100);
+        SortPlayerList();
     }
 
-    public List<int> concat(List<int> less, int pivot, List<int> greater)
+    public void IncreaseScore(Player playerID, int amount)
     {
-        List<int> sorted = new List<int>(less);
-        sorted.Add(pivot);
-        foreach (int i in greater)
+        for (int i = 0; i < players.Count; i++)
         {
+            if (playerID == players[i].gameplayInput.GetComponent<Player>())
+            {
+                players[i].score += amount;
+            }
+        }  
+    }
 
-            sorted.Add(i);
+    private void SortPlayerList()
+    {
+        for (int i = 0; i < players.Count - 1; i++)
+        {
+            PlayerConfig player0 = players[i];
+            PlayerConfig player1 = players[i + 1];
+            if (player0.score > player1.score) i = 0;
+            players.Sort((player0, player1) => player0.score.CompareTo(player1.score));
         }
 
-        return sorted;
+        players.Reverse();
+        AssignPlacements();
+    }
+
+    private void AssignPlacements()
+    {
+        for(int i = 0; i < PlayerPlaces.Length; i++)
+        {
+            PlayerPlaces[i].sprite = Sprites[i];
+        }
+    }
+
+    private void DetermineWinner()
+    {
+        SortPlayerList();
+        Debug.Log("The winner is" + players[0]);
+    }
+
+    private void OnDestroy()
+    {
+        eventQueue.Unsubscribe(EventType.PLAYER_HIT, OnPlayerHit);
     }
 }
