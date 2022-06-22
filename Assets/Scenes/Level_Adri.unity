@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3813.712, g: 1816.4912, b: 882.62695, a: 1}
+  m_IndirectSpecularColor: {r: 3594.8848, g: 1600.7119, b: 651.93066, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,6 +240,10 @@ PrefabInstance:
       value: couch_single (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -429,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Name
       value: coffee_table (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -646,6 +654,10 @@ PrefabInstance:
       value: couch_single_lightblue
       objectReference: {fileID: 0}
     - target: {fileID: 8382404613053858373, guid: c106b7664c680364e99b790265a587e1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382404613053858373, guid: c106b7664c680364e99b790265a587e1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -774,6 +786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
 --- !u!4 &117974108 stripped
@@ -847,6 +863,10 @@ PrefabInstance:
     - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
       propertyPath: m_Name
       value: CactusPot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
@@ -922,6 +942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bookshelf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d16b9f87d574424c972505de9e5a8e5, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d16b9f87d574424c972505de9e5a8e5, type: 3}
 --- !u!4 &135285967 stripped
@@ -936,6 +960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -1000,6 +1028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandingLamp (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
 --- !u!4 &151273255 stripped
@@ -1014,6 +1046,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -1077,6 +1113,10 @@ PrefabInstance:
     - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Name
       value: StandingLamp (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
@@ -1157,6 +1197,10 @@ PrefabInstance:
     - target: {fileID: 245164571232257731, guid: 086486effcb9c764fbcc05b781d0b4cb, type: 3}
       propertyPath: m_Name
       value: drawer_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 245164571232257731, guid: 086486effcb9c764fbcc05b781d0b4cb, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 589179131623578745, guid: 086486effcb9c764fbcc05b781d0b4cb, type: 3}
       propertyPath: m_RootOrder
@@ -1336,6 +1380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CactusPot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
 --- !u!4 &239537795 stripped
@@ -1353,6 +1401,10 @@ PrefabInstance:
     - target: {fileID: 5940318865123757707, guid: 4f34c7e0956937b4cbcb6e2733c90dbd, type: 3}
       propertyPath: m_Name
       value: TV (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940318865123757707, guid: 4f34c7e0956937b4cbcb6e2733c90dbd, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6429891379357324337, guid: 4f34c7e0956937b4cbcb6e2733c90dbd, type: 3}
       propertyPath: m_RootOrder
@@ -1731,6 +1783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bookshelf (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d16b9f87d574424c972505de9e5a8e5, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d16b9f87d574424c972505de9e5a8e5, type: 3}
 --- !u!4 &295304111 stripped
@@ -1878,6 +1934,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
       propertyPath: m_Name
       value: Rug_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2178,6 +2238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
 --- !u!4 &364771916 stripped
@@ -2262,6 +2326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -2326,6 +2394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandingLamp (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
 --- !u!4 &375457118 stripped
@@ -2343,6 +2415,10 @@ PrefabInstance:
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_Name
       value: couch_single (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2683,6 +2759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FramedPicture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1425884102238937575, guid: 4f7c495fee27e2a4d94180ecf920c865, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1765994507358468957, guid: 4f7c495fee27e2a4d94180ecf920c865, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2756,6 +2836,10 @@ PrefabInstance:
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_Name
       value: couch_single_green (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3277,6 +3361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bookshelf_lightblue
       objectReference: {fileID: 0}
+    - target: {fileID: 2181056044707887157, guid: 82070bdea8244fb479c8e81c6bf25014, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82070bdea8244fb479c8e81c6bf25014, type: 3}
 --- !u!4 &508214142 stripped
@@ -3417,6 +3505,10 @@ PrefabInstance:
       value: couch_single (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -3442,7 +3534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235634586965087904, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 71
+      value: 101.5
       objectReference: {fileID: 0}
     - target: {fileID: 5235634586965087904, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3569,6 +3661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -3633,6 +3729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandingLamp (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
 --- !u!4 &549580390 stripped
@@ -3650,6 +3750,10 @@ PrefabInstance:
     - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_Name
       value: BookPile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
@@ -3707,6 +3811,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
 --- !u!4 &559888770 stripped
@@ -3721,6 +3837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 1224484194222174653, guid: a363e1c5b0c1491408f147dafbbca39f, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8438116302801547724, guid: a363e1c5b0c1491408f147dafbbca39f, type: 3}
       propertyPath: m_RootOrder
       value: 68
@@ -3780,6 +3900,10 @@ PrefabInstance:
     - target: {fileID: 9102310028217117558, guid: a363e1c5b0c1491408f147dafbbca39f, type: 3}
       propertyPath: m_Name
       value: nightstand_lamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102310028217117558, guid: a363e1c5b0c1491408f147dafbbca39f, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a363e1c5b0c1491408f147dafbbca39f, type: 3}
@@ -4114,6 +4238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drawer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3103686874057814099, guid: bd66083de08f295479fca036b5299c16, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd66083de08f295479fca036b5299c16, type: 3}
 --- !u!4 &674764240 stripped
@@ -4131,6 +4259,10 @@ PrefabInstance:
     - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_Name
       value: BookPile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
@@ -4187,6 +4319,18 @@ PrefabInstance:
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
@@ -4323,6 +4467,10 @@ PrefabInstance:
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Name
       value: coffee_table (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -4534,6 +4682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CactusPot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
 --- !u!4 &747987514 stripped
@@ -4551,6 +4703,10 @@ PrefabInstance:
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_Name
       value: couch_single_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4626,6 +4782,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -4690,6 +4850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandingLamp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
 --- !u!4 &754592181 stripped
@@ -4707,6 +4871,10 @@ PrefabInstance:
     - target: {fileID: 7468753214928255912, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_Name
       value: bookshelf_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468753214928255912, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7849079082131824914, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_RootOrder
@@ -4730,7 +4898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7849079082131824914, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 73
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 7849079082131824914, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4781,6 +4949,10 @@ PrefabInstance:
     - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_Name
       value: BookPile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
@@ -4837,6 +5009,18 @@ PrefabInstance:
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
@@ -4974,6 +5158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
 --- !u!4 &833147083 stripped
@@ -5052,6 +5240,10 @@ PrefabInstance:
     - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_Name
       value: CactusPot_lightblue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8975398421499717218, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_RootOrder
@@ -5318,6 +5510,10 @@ PrefabInstance:
     - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
       propertyPath: m_Name
       value: CactusPot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
@@ -5894,6 +6090,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -5958,6 +6158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StandingLamp (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
 --- !u!4 &966283555 stripped
@@ -5975,6 +6179,10 @@ PrefabInstance:
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_Name
       value: couch_single (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4891864972843142170, guid: 7da5033265e7a5c4e8ab5e74065e1e8a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6050,6 +6258,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -6113,6 +6325,10 @@ PrefabInstance:
     - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Name
       value: StandingLamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
@@ -6447,6 +6663,10 @@ PrefabInstance:
       value: Rug_Red (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -6467,6 +6687,10 @@ PrefabInstance:
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_Name
       value: couch_single_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8551317989688681252, guid: f74ab3b7997337849a677cec0bcd3bce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6602,6 +6826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
 --- !u!4 &1089232330 stripped
@@ -6675,6 +6903,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
       propertyPath: m_Name
       value: Rug_Red (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d788a3e96bb18d142a631064be135486, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6754,6 +6986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drawer_double_lightblue
       objectReference: {fileID: 0}
+    - target: {fileID: 5316663090282024394, guid: 74e20846d1ed3cd4982bba5aae885b34, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e20846d1ed3cd4982bba5aae885b34, type: 3}
 --- !u!1001 &1121075694
@@ -6766,6 +7002,10 @@ PrefabInstance:
     - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_Name
       value: BookPile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
@@ -6822,6 +7062,18 @@ PrefabInstance:
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
@@ -6991,6 +7243,10 @@ PrefabInstance:
     - target: {fileID: 6315206387697128802, guid: 96807bbd5b576dc45a26dbbfb99f477d, type: 3}
       propertyPath: m_Name
       value: couch_lightblue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315206387697128802, guid: 96807bbd5b576dc45a26dbbfb99f477d, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6315206387697128802, guid: 96807bbd5b576dc45a26dbbfb99f477d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7376,6 +7632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookPile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -7431,6 +7691,18 @@ PrefabInstance:
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
@@ -7654,6 +7926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table_green
       objectReference: {fileID: 0}
+    - target: {fileID: 721782126713969834, guid: 88166a8c8a8f6c0429c50f3f06c7326d, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88166a8c8a8f6c0429c50f3f06c7326d, type: 3}
 --- !u!4 &1292896354 stripped
@@ -7671,6 +7947,10 @@ PrefabInstance:
     - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_Name
       value: CactusPot_lightblue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8975398421499717218, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_RootOrder
@@ -7984,6 +8264,10 @@ PrefabInstance:
     - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_Name
       value: CactusPot_lightblue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630257957380553944, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8975398421499717218, guid: aa5ce73edd35a0649a7e4807de32f81a, type: 3}
       propertyPath: m_RootOrder
@@ -8557,6 +8841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 4275042672715188939, guid: 7577b43f6b8fb954383f52629f8079d9, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7577b43f6b8fb954383f52629f8079d9, type: 3}
 --- !u!1001 &1420925417
@@ -8625,6 +8913,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
       propertyPath: m_Name
       value: Rug_Blue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9003,6 +9295,10 @@ PrefabInstance:
     - target: {fileID: 7468753214928255912, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_Name
       value: bookshelf_green (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468753214928255912, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7849079082131824914, guid: f7034b75d7445cf4398cd6dc864a510c, type: 3}
       propertyPath: m_RootOrder
@@ -9606,6 +9902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5940318865123757707, guid: 4f34c7e0956937b4cbcb6e2733c90dbd, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6429891379357324337, guid: 4f34c7e0956937b4cbcb6e2733c90dbd, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -9737,6 +10037,10 @@ PrefabInstance:
       value: Rug_Blue (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -9852,6 +10156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drawer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3103686874057814099, guid: bd66083de08f295479fca036b5299c16, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd66083de08f295479fca036b5299c16, type: 3}
 --- !u!1001 &1592319120
@@ -9861,6 +10169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -9924,6 +10236,10 @@ PrefabInstance:
     - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Name
       value: StandingLamp (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
@@ -10332,6 +10648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookPile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -10387,6 +10707,18 @@ PrefabInstance:
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
@@ -10535,6 +10867,10 @@ PrefabInstance:
     - target: {fileID: 7789640087761277109, guid: 5a8b1e0ccdded1e4382332cadc5261c8, type: 3}
       propertyPath: m_Name
       value: coffee_table_lightblue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789640087761277109, guid: 5a8b1e0ccdded1e4382332cadc5261c8, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8b1e0ccdded1e4382332cadc5261c8, type: 3}
@@ -10901,6 +11237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CactusPot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
 --- !u!4 &1802689503 stripped
@@ -11127,6 +11467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffee_table (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
 --- !u!4 &1819669334 stripped
@@ -11141,6 +11485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530352659}
     m_Modifications:
+    - target: {fileID: 86652065020528259, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 142129632237716167, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Intensity
       value: 159154.94
@@ -11204,6 +11552,10 @@ PrefabInstance:
     - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
       propertyPath: m_Name
       value: StandingLamp (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423140326133139765, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cdd62ee83632a84688567c5b0d430c2, type: 3}
@@ -11278,6 +11630,10 @@ PrefabInstance:
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Name
       value: coffee_table (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -11368,6 +11724,10 @@ PrefabInstance:
     - target: {fileID: 1425884102238937575, guid: 4f7c495fee27e2a4d94180ecf920c865, type: 3}
       propertyPath: m_Name
       value: FramedPicture
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425884102238937575, guid: 4f7c495fee27e2a4d94180ecf920c865, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1765994507358468957, guid: 4f7c495fee27e2a4d94180ecf920c865, type: 3}
       propertyPath: m_RootOrder
@@ -11651,6 +12011,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
       propertyPath: m_Name
       value: Rug_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a89e018caea2e5a4ba6b2b6d0aacb1b3, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11943,6 +12307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookPile (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1398703858155435569, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1739199878004927627, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -11999,6 +12367,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3753623732114855496, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893612389110608389, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053286390752769698, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfb377d0bd7b884f9bf63a5a4f96eda, type: 3}
 --- !u!4 &2125749712 stripped
@@ -12035,7 +12415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2828955409704494588, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2828955409704494588, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12072,6 +12452,10 @@ PrefabInstance:
     - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
       propertyPath: m_Name
       value: CactusPot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173251410777833286, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a2d85444bb433449bc639f5a3dbaa79, type: 3}

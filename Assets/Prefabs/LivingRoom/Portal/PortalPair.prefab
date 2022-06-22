@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7418637703966261160}
   - component: {fileID: 8512875264837324045}
   - component: {fileID: 412958614161586059}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PortalMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1579521547749753906}
   - component: {fileID: 1870842714891902807}
   - component: {fileID: 3662356765669412591}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PortalRays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,7 +4904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2233881518223211912}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4939,7 @@ GameObject:
   - component: {fileID: 6233928294311891225}
   - component: {fileID: 6233928294311891227}
   - component: {fileID: 6233928294311891226}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PortalRays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9751,7 +9751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233928295217459287}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PortalPair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9785,7 +9785,7 @@ GameObject:
   - component: {fileID: 6233928295239577959}
   - component: {fileID: 6233928295239577958}
   - component: {fileID: 6233928295239577957}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PortalMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9868,7 +9868,7 @@ GameObject:
   - component: {fileID: 9157045841607584708}
   - component: {fileID: 4707100419562853458}
   - component: {fileID: 5213633128241128956}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Portal_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10034,7 +10034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5045673557431902581}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10071,7 +10071,7 @@ GameObject:
   - component: {fileID: 2001637414956795937}
   - component: {fileID: 8260135043283610107}
   - component: {fileID: 6350197505064235755}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Portal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10291,6 +10291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_green
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c5e8d7906c37ec4b970ac85e7a0ccd3, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5e8d7906c37ec4b970ac85e7a0ccd3, type: 3}
 --- !u!4 &5839450988246250928 stripped
@@ -10360,6 +10364,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2c5e8d7906c37ec4b970ac85e7a0ccd3, type: 3}
       propertyPath: m_Name
       value: Door_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c5e8d7906c37ec4b970ac85e7a0ccd3, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5e8d7906c37ec4b970ac85e7a0ccd3, type: 3}
