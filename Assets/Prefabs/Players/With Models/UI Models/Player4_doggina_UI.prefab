@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5943356991843046474, guid: b1d0194718d7ab24fa837786fe35748d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: b1d0194718d7ab24fa837786fe35748d, type: 3}
       propertyPath: m_Name
       value: Player4_doggina_UI

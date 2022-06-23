@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5510700482725659450, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
       propertyPath: m_Name
       value: Player7_dorisdog_UI

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5981082086007349054, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_Name
       value: Player8_sirdogginson_UI
