@@ -83,7 +83,6 @@ public class EventQueue : MonoBehaviour
         for (int i = eventList.Count - 1; i >= 0; i--)
         {
             EventData data = eventList[i];
-            Debug.Log(data);
             if (subscriberDict.ContainsKey(data.eventType))
             {
                 subscriberDict[data.eventType]?.Invoke(data);

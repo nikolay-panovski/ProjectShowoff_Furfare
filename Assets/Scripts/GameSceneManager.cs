@@ -92,7 +92,7 @@ public class GameSceneManager : MonoBehaviour
     private void findAndTogglePlayerInputManager(bool activeState)
     {
         // ~~can change to hold reference to it instead since it is DontDestroyOnLoad, if such optimization is needed
-        FindObjectOfType<PlayerInputManager>().gameObject.SetActive(activeState);
+        FindObjectOfType<PlayerInputManager>(true).gameObject.SetActive(activeState);
     }
 
     private void toggleExistingPlayerCursors(bool activeState)
