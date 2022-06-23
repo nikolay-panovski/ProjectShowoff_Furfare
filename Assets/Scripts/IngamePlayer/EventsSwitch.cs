@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EventsSwitch : MonoBehaviour
 {
-    public GameObject[] players;
-    public GameObject[] x2;
-    public GameObject[] reflexes;
+    GameObject[] players;
+    GameObject[] x2;
+    GameObject[] reflexes;
     int pwr;
     Rumble rmb;
     private void Start()

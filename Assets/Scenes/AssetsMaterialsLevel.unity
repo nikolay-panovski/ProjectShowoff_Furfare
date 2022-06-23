@@ -3090,6 +3090,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3230018422171903420, guid: eb75fc5616d40be46bb74627278b697b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7245022205252902459, guid: eb75fc5616d40be46bb74627278b697b, type: 3}
       propertyPath: m_Name
       value: Events Switch
