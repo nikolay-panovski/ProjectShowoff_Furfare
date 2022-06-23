@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private PlayerAnimator animator;
     private PlayerParticleController particles;
 
-    private Projectile heldProjectile = null;
+    public Projectile heldProjectile = null;
 
     // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
     public UnityEngine.UI.Text UIText;

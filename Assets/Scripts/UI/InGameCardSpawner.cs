@@ -36,6 +36,7 @@ public class InGameCardSpawner : MonoBehaviour
 
             player.playerUICard = Instantiate(
                 PlayerManager.Instance.GetCardSpriteAtIndex(player.characterIndex), this.transform);
+            player.playerUICard.GetComponent<AssignProjectileIcons>().SetConnectedPlayer(player);
             //functionalPlayerObject.transform.position = this.transform.position;
 
             //eventQueue.AddEvent(new PlayerSpawnedInGameplayEventData(player));

@@ -49,6 +49,7 @@ MonoBehaviour:
   _speed: 30
   _maxBounces: 3
   _bounceCooldown: 0.05
+  _displaySprite: {fileID: 21300000, guid: 68f4710814d542443ae583b16db555fa, type: 3}
 --- !u!54 &7978371026716103676
 Rigidbody:
   m_ObjectHideFlags: 0

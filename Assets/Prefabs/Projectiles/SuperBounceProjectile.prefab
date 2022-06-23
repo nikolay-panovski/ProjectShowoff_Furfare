@@ -79,6 +79,7 @@ MonoBehaviour:
   _speed: 20
   _maxBounces: 5
   _bounceCooldown: 0.05
+  _displaySprite: {fileID: 21300000, guid: 4ab0bc3a9875a12498df47478903fb92, type: 3}
   _speedIncrease: 0.3
 --- !u!1 &5760048184696021005
 GameObject:

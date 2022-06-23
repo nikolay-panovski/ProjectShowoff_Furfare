@@ -306,3 +306,4 @@ MonoBehaviour:
   _speed: 30
   _maxBounces: 3
   _bounceCooldown: 0.05
+  _displaySprite: {fileID: 21300000, guid: 69b64100aa860c142a194318a38fcf6e, type: 3}

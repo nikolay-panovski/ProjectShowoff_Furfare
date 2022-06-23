@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ProjectileState
 {
@@ -20,6 +21,7 @@ public class Projectile : Item
     [SerializeField] protected int _speed;
     [SerializeField] protected int _maxBounces = 3;
     [SerializeField] protected float _bounceCooldown = 0.05f;
+    [SerializeField] public Sprite _displaySprite;
 
     protected int _bounceCount;
     protected bool _justBounced = false;

@@ -209,6 +209,7 @@ MonoBehaviour:
   _speed: 20
   _maxBounces: 1
   _bounceCooldown: 0.05
+  _displaySprite: {fileID: 21300000, guid: 7cea077fa25807946aa16202faba0f3a, type: 3}
   numOfProjectiles: 5
   scatterAngle: 15
 --- !u!1001 &7727292596598197753

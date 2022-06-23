@@ -176,6 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6229440030696542222}
+  - component: {fileID: 5724272772582230107}
   m_Layer: 0
   m_Name: Player 8
   m_TagString: Untagged
@@ -205,6 +206,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5724272772582230107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952692589323874052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b8fd595a5514b4384165fefc42e936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mySprite: {fileID: 5229698730671350956}
 --- !u!1 &3515018999350084981
 GameObject:
   m_ObjectHideFlags: 0
