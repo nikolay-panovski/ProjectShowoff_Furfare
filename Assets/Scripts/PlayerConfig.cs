@@ -16,7 +16,8 @@ public class PlayerConfig
     /// A ready player has selected a character and has a character model assigned.
     /// </summary>
     public bool isReady { get; set; }
-    public PlayerInput gameplayInput { get; set; }  // PlayerInput component attached to the functional Player script of the whole player structure.
+
+    //public PlayerInput gameplayInput { get; set; }  // DEPRECATED - PlayerInput component attached to the functional Player script of the whole player structure.
     public Player player { get; set; }
     public int score { get; set; }
     public GameObject playerUICard { get; set; }

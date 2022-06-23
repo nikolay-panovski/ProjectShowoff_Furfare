@@ -33,7 +33,7 @@ public class AssignPlayersToCinemachine : MonoBehaviour
     {
         PlayerSpawnedInGameplayEventData data = (PlayerSpawnedInGameplayEventData)eventData;
 
-        Transform functionalPlayerObjectTransform = data.spawnedPlayer.gameplayInput.transform;
+        Transform functionalPlayerObjectTransform = data.spawnedPlayer.player.transform;
         targetGroup.AddMember(functionalPlayerObjectTransform, targetsWeight, targetsRadius);
     }
 }

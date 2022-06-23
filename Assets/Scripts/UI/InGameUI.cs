@@ -82,7 +82,7 @@ public class InGameUI : MonoBehaviour
     {
         for (int i = 0; i < players.Count; i++)
         {
-            if (playerID == players[i].gameplayInput.GetComponent<Player>())
+            if (playerID == players[i].player)
             {
                 players[i].score += amount;
                 // update the score in the relevant text field visually:
@@ -131,7 +131,7 @@ public class InGameUI : MonoBehaviour
 
         for (int i = 0; i < allPlayers.Count; i++)
         {
-            Destroy(allPlayers[i].gameplayInput.GetComponent<Player>().gameObject);
+            Destroy(allPlayers[i].player.gameObject);
         }
     }
 
