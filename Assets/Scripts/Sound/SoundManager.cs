@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioClip MainMenu;
     public AudioClip FilipMusic;
     public AudioClip AdriMusic;
     public AudioClip MonaMusic;
-    AudioSource Source;
+    public AudioClip WinningScreen;
+    static AudioSource Source;
+    public AudioSource SoundtrackSource;
+    public bool MusicIsOn;
+    public bool SoundIsOn;
 
     private static SoundManager _i;
     public static SoundManager i
@@ -18,15 +23,90 @@ public class SoundManager : MonoBehaviour
             return _i;
         }
     }
-    /*private void Start()
+    void OnEnable()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        Debug.Log(scene);
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+       
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+        Debug.Log("MusicIsOn: " + MusicIsOn);
+        if (scene.name == "MainMenuVisual")
+        {
+            SoundtrackSource.clip = MainMenu;
+
+        }
         if (scene.name == "AssetsMaterialsLevel")
         {
-            Source.clip = FilipMusic;
+            SoundtrackSource.clip = FilipMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
         }
-    }*/
+        if (scene.name == "Level_Adri")
+        {
+            SoundtrackSource.clip = AdriMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
+        }
+        if (scene.name == "GardenFlat")
+        {
+            SoundtrackSource.clip = MonaMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
+        }
+        if (scene.name == "WinningArt")
+        {
+            SoundtrackSource.clip = WinningScreen;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
+        }
+        
+    }
+    public void MusicToggle()
+    {
+        Debug.Log("MusicIsOn: " + MusicIsOn);
+        if (MusicIsOn)
+        {
+            SoundtrackSource.Stop();
+        }
+        if (MusicIsOn == false)
+        {
+            SoundtrackSource.Play();
+        }
+    }
+    public void SoundToggle()
+    {
+        Debug.Log("MusicIsOn: " + MusicIsOn);
+        if (SoundIsOn)
+        {
+            Source.enabled = false;
+        }
+        if (MusicIsOn == false)
+        {
+            Source.enabled = true;
+        }
+    }
+    // called when the game is terminated
+    void OnDisable()
+    {
+        Debug.Log("OnDisable");
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     public SoundAudioClip[] soundAudioClipArray;
     [System.Serializable]
     public class SoundAudioClip
@@ -47,5 +127,6 @@ public class SoundManager : MonoBehaviour
         {
             _i = this;
         }
+        Source = this.GetComponent<AudioSource>();
     }
 }

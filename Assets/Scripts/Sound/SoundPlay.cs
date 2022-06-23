@@ -18,7 +18,10 @@ public static class SoundPlay
         couch,
         sack,
         wateringCan,
-        wood
+        wood,
+        eventActivates,
+        countdownBeep,
+        countdownFinalBeep
     }
     public static void PlaySound(Sound sound)
     {

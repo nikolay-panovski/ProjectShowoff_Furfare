@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EventsSwitch : MonoBehaviour
 {
-    public GameObject[] players;
-    public GameObject[] x2;
-    public GameObject[] reflexes;
+    GameObject[] players;
+    GameObject[] x2;
+    GameObject[] reflexes;
     int pwr;
-    AudioSource _as;
-    public AudioClip event_On;
     Rumble rmb;
     private void Start()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
+        x2 = GameObject.FindGameObjectsWithTag("2X");
+        reflexes = GameObject.FindGameObjectsWithTag("Reflexes");
         ChooseEvent(1);
-        _as = this.GetComponent<AudioSource>();
         rmb = this.GetComponent<Rumble>();
     }
     public void ChooseEvent(int current)
@@ -34,10 +34,10 @@ public class EventsSwitch : MonoBehaviour
                         reflexes[j].gameObject.SetActive(false);
                         x2[j].gameObject.SetActive(false);
                     }
-                    _as.PlayOneShot(event_On);
+                    SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Debug.Log("No Event On");
                     Invoke("NoEventOff", 10f);
-                    rmb.RumbleConstant(1f, 1f, 1f);
+                    //rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
 
@@ -61,9 +61,9 @@ public class EventsSwitch : MonoBehaviour
                         Debug.Log("AmountX: " + pl.amountX);
                         Debug.Log("2x Event On");
                     }
-                    _as.PlayOneShot(event_On);
+                    SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Invoke("X2Off", 10f);
-                    rmb.RumbleConstant(1f, 1f, 1f);
+                    //rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
             case 3:
@@ -86,9 +86,9 @@ public class EventsSwitch : MonoBehaviour
                         reflexes[j].gameObject.SetActive(true);
                         x2[j].gameObject.SetActive(false);
                     }
-                    _as.PlayOneShot(event_On);
+                    SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Invoke("ReflexesOff", 10f);
-                    rmb.RumbleConstant(1f, 1f, 1f);
+                    //rmb.RumbleConstant(1f, 1f, 1f);
                 }
                 break;
         }

@@ -6,16 +6,15 @@ public class SoundSettings : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject settings;
-    bool MusicIsOn = true;
-    bool SoundIsOn = true;
     public GameObject SoundSwitchOn;
     public GameObject SoundSwitchOff;
     public GameObject MusicSwitchOn;
     public GameObject MusicSwitchOff;
+    SoundManager SoundManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -23,47 +22,59 @@ public class SoundSettings : MonoBehaviour
     {
         mainMenu.gameObject.SetActive(false);
         settings.gameObject.SetActive(true);
-        if (MusicIsOn)
+        if (SoundManager.MusicIsOn)
         {
             MusicSwitchOn.gameObject.SetActive(true);
             MusicSwitchOff.gameObject.SetActive(false);
         }
-        if (MusicIsOn == false)
+        if (SoundManager.MusicIsOn == false)
         {
             MusicSwitchOn.gameObject.SetActive(false);
             MusicSwitchOff.gameObject.SetActive(true);
+        }
+        if (SoundManager.SoundIsOn)
+        {
+            SoundSwitchOn.gameObject.SetActive(true);
+            SoundSwitchOff.gameObject.SetActive(false);
+        }
+        if (SoundManager.SoundIsOn == false)
+        {
+            SoundSwitchOn.gameObject.SetActive(false);
+            SoundSwitchOff.gameObject.SetActive(true);
         }
     }
 
     public void MusicToggle()
     {
-        if (MusicIsOn)
+        if (SoundManager.MusicIsOn == false)
+        {
+            Debug.Log("MusicOn");
+            MusicSwitchOn.gameObject.SetActive(true);
+            MusicSwitchOff.gameObject.SetActive(false);  
+        }
+        if (SoundManager.MusicIsOn)
         {
             MusicSwitchOn.gameObject.SetActive(false);
             MusicSwitchOff.gameObject.SetActive(true);
-            MusicIsOn = false;
+            Debug.Log("MusicOff");
         }
-        if (MusicIsOn == false)
-        {
-            MusicSwitchOn.gameObject.SetActive(true);
-            MusicSwitchOff.gameObject.SetActive(false);
-            MusicIsOn = true;
-        }
+        SoundManager.MusicToggle();
+        SoundManager.MusicIsOn = !SoundManager.MusicIsOn;
     }
     public void SoundToggle()
     {
-        if (SoundIsOn)
+        if (SoundManager.SoundIsOn)
         {
-            MusicSwitchOn.gameObject.SetActive(false);
-            MusicSwitchOff.gameObject.SetActive(true);
-            SoundIsOn = false;
+            SoundSwitchOn.gameObject.SetActive(false);
+            SoundSwitchOff.gameObject.SetActive(true);
         }
-        if (SoundIsOn == false)
+        if (SoundManager.SoundIsOn == false)
         {
-            MusicSwitchOn.gameObject.SetActive(true);
-            MusicSwitchOff.gameObject.SetActive(false);
-            SoundIsOn = true;
+            SoundSwitchOn.gameObject.SetActive(true);
+            SoundSwitchOff.gameObject.SetActive(false);
         }
+        SoundManager.SoundToggle();
+        SoundManager.SoundIsOn = !SoundManager.SoundIsOn;
     }
     void Awake()
     {

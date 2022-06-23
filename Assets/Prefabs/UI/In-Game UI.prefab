@@ -515,7 +515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 2:00
+  m_Text: 1:00
 --- !u!1 &1339153943386263234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3657675820961432119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87da1a3388cca0a41b3eb0f8d5ea726c, type: 3}
   m_Name: 
@@ -2361,7 +2361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdowns: {fileID: 8574379696962638368}
   timerText: 4
-  players: []
   spawns: []
   eventsSwitch: {fileID: 3230018422171903420, guid: eb75fc5616d40be46bb74627278b697b, type: 3}
   ui: {fileID: 5767994608998963082}

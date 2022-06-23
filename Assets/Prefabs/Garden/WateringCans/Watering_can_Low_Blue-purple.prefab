@@ -109,6 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064be72cfff4535419846a8f29af19b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BushSound: 0
+  WoodSound: 0
+  CouchSound: 0
+  SackSound: 0
+  WateringCanSound: 1
 --- !u!54 &3825341661273495381
 Rigidbody:
   m_ObjectHideFlags: 0

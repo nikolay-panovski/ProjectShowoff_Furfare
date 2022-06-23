@@ -17,11 +17,11 @@ public class CountdownBeeps : MonoBehaviour
     }
     public void CountDownBeep()
     {
-        _as.PlayOneShot(countdown);
+        SoundPlay.PlaySound(SoundPlay.Sound.countdownBeep);
     }
     public void CountDownLastBeep()
     {
-        _as.PlayOneShot(countdownFinalBeep);
+        SoundPlay.PlaySound(SoundPlay.Sound.countdownFinalBeep);
     }
     public void GOText()
     {

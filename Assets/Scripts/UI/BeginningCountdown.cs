@@ -7,7 +7,7 @@ public class BeginningCountdown : MonoBehaviour
 {
     public Text countdowns;
     public int timerText = 3;
-    public GameObject[] players;
+    GameObject[] players;
     public Spawnpoint[] spawns;
     public EventsSwitch eventsSwitch;
     public InGameUI ui;
@@ -15,6 +15,7 @@ public class BeginningCountdown : MonoBehaviour
     void Start()
     {
         StartCoroutine(Countdown(timerText));
+        players = GameObject.FindGameObjectsWithTag("Player");
     }
     IEnumerator Countdown(int seconds)
     {

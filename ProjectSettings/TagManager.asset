@@ -7,6 +7,9 @@ TagManager:
   - ProjectilePickup
   - PickupSpawnpoint
   - SoundSettings
+  - SoundManager
+  - 2X
+  - Reflexes
   layers:
   - Default
   - TransparentFX
