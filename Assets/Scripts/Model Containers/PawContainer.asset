@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227bd33ec6f0ff848985821c0ae9cdff, type: 3}
+  m_Name: PawContainer
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f90c19e8e72da7145967e2929a44aa10, type: 3}
+  - {fileID: 21300000, guid: 2a719de4bd7d1664ebe0086687d0e4dc, type: 3}
+  - {fileID: 21300000, guid: 75868c73b1076ce4a82d16a5898ce2a4, type: 3}
+  - {fileID: 21300000, guid: 9f36c00c6c56a294982e3c458764e233, type: 3}

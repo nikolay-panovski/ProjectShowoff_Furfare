@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour
 
     [Tooltip("Set of cursor sprites to be used for the players (specify not only the sprites but also the order in the ScriptableObject itself).")]
     [SerializeField] private SpriteContainer cursorSprites;
+    [Tooltip("Set of sprites to be used for the players paw indicators in gameplay.")]
+    [SerializeField] private SpriteContainer gameplayPawSprites;
     [Tooltip("Set of character models to be used for the players (specify not only the models but also the order in the ScriptableObject itself).")]
     [SerializeField] private ModelContainer characterModels;
     [Tooltip("Set of player info cards to be used for the UI (specify not only the GameObjects hierarchy but also the order in the ScriptableObject itself).")]
@@ -122,6 +124,12 @@ public class PlayerManager : MonoBehaviour
     {
         if (index < 0 || index >= cursorSprites.sprites.Count) return null;
         else return cursorSprites.sprites[index];
+    }
+
+    public Sprite GetPawSpriteAtIndex(int index)   // NULLABLE
+    {
+        if (index < 0 || index >= gameplayPawSprites.sprites.Count) return null;
+        else return gameplayPawSprites.sprites[index];
     }
 
     public GameObject GetCardSpriteAtIndex(int index)   // NULLABLE

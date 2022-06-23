@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 /* At a minimum level, serves as a specific reference to an object at a certain position where a player should spawn.
@@ -36,6 +37,10 @@ public class PlayerSpawnpoint : MonoBehaviour
 
             GameObject functionalPlayerObject = Instantiate(
                 PlayerManager.Instance.GetCharacterAtIndex(player.characterIndex), player.UIInput.transform);
+
+            // dirty replace paw sprite in prefab structure with the correct one according to player ID:
+            functionalPlayerObject.GetComponentInChildren<Image>().sprite = PlayerManager.Instance.GetPawSpriteAtIndex(player.playerIndex);
+
             functionalPlayerObject.transform.position = this.transform.position;
 
             //andAssignGameplayInputReference():
