@@ -1,38 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventsSwitch : MonoBehaviour
 {
-    GameObject[] players;
-    GameObject[] x2;
-    GameObject[] reflexes;
-    int pwr;
+    GameObject[] Event;
     Rumble rmb;
+    List<Player> playersList = new List<Player>();
+    [SerializeField] private Sprite X2;
+    [SerializeField] private Sprite Reflexes;
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        x2 = GameObject.FindGameObjectsWithTag("2X");
-        reflexes = GameObject.FindGameObjectsWithTag("Reflexes");
-        ChooseEvent(1);
+        GetAllPlayers();
+        
         rmb = this.GetComponent<Rumble>();
+        Event = GameObject.FindGameObjectsWithTag("Event");
+    }
+    private void GetAllPlayers()
+    {
+        for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+        {
+            playersList.Add(PlayerManager.Instance.GetPlayerAtIndex(i).player);
+        }
+        ChooseEvent(1);
     }
     public void ChooseEvent(int current)
     {
+        
         switch (Random.Range(1, 4))
         {
             case 1:
                 if (current == 1)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    Debug.Log("pwr is the same as before: " + current);
                     ChooseEvent(1);
                 }
                 else
                 {
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < playersList.Count; j++)
                     {
-                        reflexes[j].gameObject.SetActive(false);
-                        x2[j].gameObject.SetActive(false);
+                        Event[j].GetComponent<Image>().sprite = null;
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Debug.Log("No Event On");
@@ -44,21 +52,19 @@ public class EventsSwitch : MonoBehaviour
             case 2:
                 if (current == 2)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    Debug.Log("pwr is the same as before: " + current);
                     ChooseEvent(2);
                 }
                 else
                 {
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < playersList.Count; j++)
                     {
-                        reflexes[j].gameObject.SetActive(false);
-                        x2[j].gameObject.SetActive(true);
+                        Event[j].GetComponent<Image>().sprite = X2;
                     }
-                    for (int i = 0; i < players.Length; i++)
+                    for (int i = 0; i < playersList.Count; i++)
                     {
-                        Player pl = players[i].GetComponent<Player>();
-                        pl.amountX = 200;
-                        Debug.Log("AmountX: " + pl.amountX);
+                        playersList[i].amountX = 200;
+                        Debug.Log("AmountX: " + playersList[i].amountX);
                         Debug.Log("2x Event On");
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
@@ -69,22 +75,21 @@ public class EventsSwitch : MonoBehaviour
             case 3:
                 if (current == 3)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    Debug.Log("pwr is the same as before: " + current);
                     ChooseEvent(3);
                 }
                 else
                 {
-                    for (int i = 0; i < reflexes.Length; i++)
+                    for (int i = 0; i < playersList.Count; i++)
                     {
-                        SimpleMoveController pl = players[i].GetComponent<SimpleMoveController>();
+                        SimpleMoveController pl = playersList[i].GetComponent<SimpleMoveController>();
                         pl.speedX = 2;
                         Debug.Log("SpeedX: " + pl.speedX);
                         Debug.Log("Fast Reflexes Event On");
                     }
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < Event.Length; j++)
                     {
-                        reflexes[j].gameObject.SetActive(true);
-                        x2[j].gameObject.SetActive(false);
+                        Event[j].GetComponent<Image>().sprite = Reflexes;
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Invoke("ReflexesOff", 10f);
@@ -101,9 +106,9 @@ public class EventsSwitch : MonoBehaviour
 
     void X2Off()
     {
-        for (int z = 0; z < players.Length; z++)
+        for (int z = 0; z < playersList.Count; z++)
         {
-            Player pl = players[z].GetComponent<Player>();
+            Player pl = playersList[z].GetComponent<Player>();
             pl.amountX = 100;
             Debug.Log("AmountX after wait: " + pl.amountX);
             Debug.Log("No Event Off");
@@ -113,9 +118,9 @@ public class EventsSwitch : MonoBehaviour
 
     void ReflexesOff()
     {
-        for (int z = 0; z < players.Length; z++)
+        for (int z = 0; z < playersList.Count; z++)
         {
-            SimpleMoveController pl = players[z].GetComponent<SimpleMoveController>();
+            SimpleMoveController pl = playersList[z].GetComponent<SimpleMoveController>();
             pl.speedX = 1;
             Debug.Log("SpeedX after wait: " + pl.speedX);
             Debug.Log("Fast Reflexes Event Off");
