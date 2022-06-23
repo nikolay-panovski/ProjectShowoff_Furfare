@@ -6184,6 +6184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3120344765217265738, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
+      propertyPath: inputForGameplay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3120344765217265739, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
       propertyPath: m_Name
       value: Scene Properties
@@ -6305,7 +6309,7 @@ Transform:
   m_Children:
   - {fileID: 544005421}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509238860
 GameObject:
@@ -6337,7 +6341,7 @@ Transform:
   - {fileID: 851094962}
   - {fileID: 1660350583}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &515757012
 PrefabInstance:
@@ -6991,7 +6995,7 @@ Transform:
   - {fileID: 63359324}
   - {fileID: 1661231585}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &815266854
 PrefabInstance:
@@ -7170,7 +7174,7 @@ Transform:
   - {fileID: 1654981099}
   - {fileID: 1036995818}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851094961
 GameObject:
@@ -13770,7 +13774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1528217751031081396, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1528217751031081396, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19127,7 +19131,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 1027043576}
-  - {fileID: 1916166567}
+  - {fileID: 515757013}
   - {fileID: 1854688371}
   - {fileID: 126592314}
   - {fileID: 153626988}
@@ -19144,7 +19148,7 @@ Transform:
   - {fileID: 332238579}
   - {fileID: 1360718366}
   - {fileID: 425711488}
-  - {fileID: 515757013}
+  - {fileID: 1916166567}
   - {fileID: 2146794547}
   - {fileID: 750315659}
   m_Father: {fileID: 779701367}
@@ -19334,7 +19338,7 @@ Transform:
   - {fileID: 1869532900}
   - {fileID: 1131334093}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1750995851
 MonoBehaviour:
