@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 8136417842507329216}
   m_Layer: 0
   m_Name: Fast Reflexes
-  m_TagString: Untagged
+  m_TagString: Reflexes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 3463313077400421963}
   m_Layer: 0
   m_Name: 2x
-  m_TagString: Untagged
+  m_TagString: 2X
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

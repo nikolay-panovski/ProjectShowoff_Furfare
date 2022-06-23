@@ -31,36 +31,46 @@ public class SoundSettings : MonoBehaviour
             MusicSwitchOn.gameObject.SetActive(false);
             MusicSwitchOff.gameObject.SetActive(true);
         }
+        if (SoundPlay.SoundIsOn)
+        {
+            SoundSwitchOn.gameObject.SetActive(true);
+            SoundSwitchOff.gameObject.SetActive(false);
+        }
+        if (SoundPlay.SoundIsOn == false)
+        {
+            SoundSwitchOn.gameObject.SetActive(false);
+            SoundSwitchOff.gameObject.SetActive(true);
+        }
     }
 
     public void MusicToggle()
     {
         if (SoundPlay.MusicIsOn)
         {
-            Debug.Log("MusicOff");
-            MusicSwitchOn.gameObject.SetActive(false);
-            MusicSwitchOff.gameObject.SetActive(true);
+            Debug.Log("MusicOn");
+            MusicSwitchOn.gameObject.SetActive(true);
+            MusicSwitchOff.gameObject.SetActive(false);  
         }
         if (SoundPlay.MusicIsOn == false)
         {
-            MusicSwitchOn.gameObject.SetActive(true);
-            MusicSwitchOff.gameObject.SetActive(false);
-            Debug.Log("MusicOn");
+            MusicSwitchOn.gameObject.SetActive(false);
+            MusicSwitchOff.gameObject.SetActive(true);
+            Debug.Log("MusicOff");
         }
+        SoundManager.MusicToggle();
         SoundPlay.MusicIsOn = !SoundPlay.MusicIsOn;
     }
     public void SoundToggle()
     {
         if (SoundPlay.SoundIsOn)
         {
-            MusicSwitchOn.gameObject.SetActive(false);
-            MusicSwitchOff.gameObject.SetActive(true);
-            SoundManager.SoundToggle();
+            SoundSwitchOn.gameObject.SetActive(false);
+            SoundSwitchOff.gameObject.SetActive(true);
         }
         if (SoundPlay.SoundIsOn == false)
         {
-            MusicSwitchOn.gameObject.SetActive(true);
-            MusicSwitchOff.gameObject.SetActive(false);
+            SoundSwitchOn.gameObject.SetActive(true);
+            SoundSwitchOff.gameObject.SetActive(false);
         }
         SoundPlay.SoundIsOn = !SoundPlay.SoundIsOn;
     }

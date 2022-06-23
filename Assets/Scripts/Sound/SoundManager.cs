@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip MonaMusic;
     public AudioClip WinningScreen;
     static AudioSource Source;
+    
 
     private static SoundManager _i;
     public static SoundManager i
@@ -27,8 +28,10 @@ public class SoundManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+       
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
+        Debug.Log("MusicIsOn: " + SoundPlay.MusicIsOn);
         if (scene.name == "MainMenuVisual")
         {
             Source.clip = MainMenu;
@@ -52,19 +55,20 @@ public class SoundManager : MonoBehaviour
         if (SoundPlay.MusicIsOn)
         {
             Source.Play();
+            Debug.Log("Play Music");
         }
     }
-    public static void SoundToggle()
+    public static void MusicToggle()
     {
+        Debug.Log("MusicIsOn: " + SoundPlay.MusicIsOn);
         if (SoundPlay.MusicIsOn)
-        {
-            Source.Stop();
-        }
-        if (SoundPlay.MusicIsOn == false)
         {
             Source.Play();
         }
-        SoundPlay.MusicIsOn = !SoundPlay.MusicIsOn;
+        if (SoundPlay.MusicIsOn == false)
+        {
+            Source.Stop();
+        }
     }
     // called when the game is terminated
     void OnDisable()

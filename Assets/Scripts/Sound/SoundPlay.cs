@@ -4,6 +4,9 @@ using UnityEngine;
 
 public static class SoundPlay
 {
+    public static bool MusicIsOn = true;
+    public static bool SoundIsOn = true;
+
     public enum Sound
     {
         portalSource,
@@ -18,10 +21,10 @@ public static class SoundPlay
         couch,
         sack,
         wateringCan,
-        wood
+        wood,
+        eventActivates
     }
-    public static bool MusicIsOn;
-    public static bool SoundIsOn;
+    
     public static void PlaySound(Sound sound)
     {
         if (SoundIsOn)
