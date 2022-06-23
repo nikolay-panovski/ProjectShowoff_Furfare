@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioClip MainMenu;
     public AudioClip FilipMusic;
     public AudioClip AdriMusic;
     public AudioClip MonaMusic;
     public AudioClip WinningScreen;
-    AudioSource Source;
+    static AudioSource Source;
 
     private static SoundManager _i;
     public static SoundManager i
@@ -24,33 +25,47 @@ public class SoundManager : MonoBehaviour
         Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
+        if (scene.name == "MainMenuVisual")
+        {
+            Source.clip = MainMenu;
+        }
         if (scene.name == "AssetsMaterialsLevel")
         {
             Source.clip = FilipMusic;
-            Source.Play();
         }
         if (scene.name == "Level_Adri")
         {
             Source.clip = AdriMusic;
-            Source.Play();
         }
         if (scene.name == "GardenFlat")
         {
             Source.clip = MonaMusic;
-            Source.Play();
         }
         if (scene.name == "WinningArt")
         {
             Source.clip = WinningScreen;
+        }
+        if (SoundPlay.MusicIsOn)
+        {
             Source.Play();
         }
     }
-
+    public static void SoundToggle()
+    {
+        if (SoundPlay.MusicIsOn)
+        {
+            Source.Stop();
+        }
+        if (SoundPlay.MusicIsOn == false)
+        {
+            Source.Play();
+        }
+        SoundPlay.MusicIsOn = !SoundPlay.MusicIsOn;
+    }
     // called when the game is terminated
     void OnDisable()
     {
@@ -77,5 +92,6 @@ public class SoundManager : MonoBehaviour
         {
             _i = this;
         }
+        Source = this.GetComponent<AudioSource>();
     }
 }

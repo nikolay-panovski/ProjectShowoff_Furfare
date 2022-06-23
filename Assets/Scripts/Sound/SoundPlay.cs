@@ -20,11 +20,16 @@ public static class SoundPlay
         wateringCan,
         wood
     }
+    public static bool MusicIsOn;
+    public static bool SoundIsOn;
     public static void PlaySound(Sound sound)
     {
-        GameObject soundGameObject = GameObject.FindGameObjectWithTag("SoundManager");
-        AudioSource audioSource = soundGameObject.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(GetAudioClip(sound));
+        if (SoundIsOn)
+        {
+            GameObject soundGameObject = GameObject.FindGameObjectWithTag("SoundManager");
+            AudioSource audioSource = soundGameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(GetAudioClip(sound));
+        }
     }
     private static AudioClip GetAudioClip(Sound sound)
     {
