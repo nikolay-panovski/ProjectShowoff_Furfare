@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private PlayerAnimator animator;
     private PlayerParticleController particles;
 
-    private Projectile heldProjectile = null;
+    public Projectile heldProjectile = null;
     
     [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
