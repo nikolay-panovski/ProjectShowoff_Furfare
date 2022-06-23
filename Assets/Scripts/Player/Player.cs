@@ -18,13 +18,9 @@ public class Player : MonoBehaviour
     private PlayerParticleController particles;
 
     private Projectile heldProjectile = null;
-
-    // dirty connection to UI / for later on, the event-based problem is that a player needs a connection to a specific slider
-    public UnityEngine.UI.Text UIText;
     
-    [SerializeField] private float _stunDuration = 2;
+    [SerializeField] private float _stunDuration = 1;
     [SerializeField] private float _invincibilityDuration = 2;
-    private int _score = 0;
     private bool stunned = false;
     private bool invincible = false;
 
@@ -36,7 +32,6 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;  // store OnMove results here
 
     //UI Part
-    public int PlayerID;
     public int amountX = 100;
     //Rumble rmb;
     RandomVoiceLine rnd;
@@ -113,7 +108,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (stunned == true || invincible == true) return;
+        if (stunned == true) return;
         // TODO: Treat collision with all relevant entities (right now: pickups)
         Projectile incomingProjectile;
 
@@ -139,7 +134,6 @@ public class Player : MonoBehaviour
 
     private void handleProjectileCatch(Projectile projectile)
     {
-        if (stunned == true) return;
         if (projectile.state == ProjectileState.IDLE)   // is grabbing a pickup projectile that just floats in one place
         {
             pickProjectileUp(projectile);
@@ -212,11 +206,6 @@ public class Player : MonoBehaviour
     private void setOwnLayer(string layer)
     {
         this.gameObject.layer = LayerMask.NameToLayer(layer);
-    }
-
-    public int GetScore()
-    {
-        return _score;
     }
 
     public void ToggleAttemptingCatch()
