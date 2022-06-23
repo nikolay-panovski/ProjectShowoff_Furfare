@@ -190,7 +190,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1294446979815003229, guid: 4c1109aa62711b248b7252ba45aba206, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c1109aa62711b248b7252ba45aba206, type: 3}
 --- !u!4 &14547199 stripped
 Transform:
@@ -405,7 +406,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -919328063604160731, guid: 080b892db01c7d546abfd9de7a294a8f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 080b892db01c7d546abfd9de7a294a8f, type: 3}
 --- !u!4 &96530809 stripped
 Transform:
@@ -484,7 +486,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3545755225503932655, guid: 0b0df64d5a2b9f9429ec244232cdeb61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b0df64d5a2b9f9429ec244232cdeb61, type: 3}
 --- !u!1001 &149139060
 PrefabInstance:
@@ -1033,6 +1036,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
+    - target: {fileID: 369703577550333104, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 921435859515149701, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1044,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: 8018565528803879002, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_Name
       value: Player1_catto
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018565528803879002, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8018565528803879021, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_RootOrder
@@ -1247,7 +1258,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3545755225503932655, guid: 0b0df64d5a2b9f9429ec244232cdeb61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b0df64d5a2b9f9429ec244232cdeb61, type: 3}
 --- !u!1 &376061341
 GameObject:
@@ -1360,6 +1372,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
     - target: {fileID: 1011990545985612322, guid: b1d0194718d7ab24fa837786fe35748d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834853370817363108, guid: b1d0194718d7ab24fa837786fe35748d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943356991843046474, guid: b1d0194718d7ab24fa837786fe35748d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2649,7 +2669,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1294446979815003229, guid: 4c1109aa62711b248b7252ba45aba206, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c1109aa62711b248b7252ba45aba206, type: 3}
 --- !u!1001 &742305597
 PrefabInstance:
@@ -2915,7 +2936,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog_House_Low_Purple
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2117801243734869469, guid: 172d23d40aa1f7e4a87466594e8a3832, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 172d23d40aa1f7e4a87466594e8a3832, type: 3}
 --- !u!1 &764920662
 GameObject:
@@ -3608,7 +3630,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parkour_Low_Blue-purple
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3938882463215449142, guid: a5bfca2c8c55e074d819fa3a8e7f2760, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a5bfca2c8c55e074d819fa3a8e7f2760, type: 3}
 --- !u!4 &912736727 stripped
 Transform:
@@ -4027,6 +4050,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7377932291108709685, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985502655957532753, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6896220821185776094, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
     - {fileID: 6896220821185776088, guid: 5ccf3a40ef3ad0043a22b30788f70b1c, type: 3}
@@ -4283,7 +4314,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3717784193807964788, guid: def3e6e9ae8c070428829b30d6c2e33b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: def3e6e9ae8c070428829b30d6c2e33b, type: 3}
 --- !u!4 &1088190185 stripped
 Transform:
@@ -4961,6 +4993,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 672805133537345836, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510700482725659450, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 76020cbd6754a044ebd04c7b7641c3f7, type: 3}
       propertyPath: m_Name
       value: Player7_dorisdog
@@ -5615,7 +5655,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_Low_Green-yellow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8201554201794402131, guid: 8ccbce5263db96f478aec524b2304465, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ccbce5263db96f478aec524b2304465, type: 3}
 --- !u!1 &1420669041
 GameObject:
@@ -5743,6 +5784,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
+    - target: {fileID: 914895313708803070, guid: 7ede955db67467844a8bd8a67b183337, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748559311525905909, guid: 7ede955db67467844a8bd8a67b183337, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 7ede955db67467844a8bd8a67b183337, type: 3}
       propertyPath: m_Name
       value: Player6_catwin
@@ -5823,6 +5872,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5981082086007349054, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776084, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_Name
       value: Player8_sirdogginson
@@ -5869,6 +5922,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6896220821185776099, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355204863343149883, guid: 353cd1592bf066d4fae943e57253ca77, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -6278,7 +6335,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
+    - target: {fileID: 420303863158095170, guid: 60660c7ec88f635499280fbc6c2a0a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4896789107176649186, guid: 60660c7ec88f635499280fbc6c2a0a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285167255339041577, guid: 60660c7ec88f635499280fbc6c2a0a77, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -6614,7 +6679,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 541530827416677830, guid: 03ef2429fc12b804a8e553bd29b1762e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 03ef2429fc12b804a8e553bd29b1762e, type: 3}
 --- !u!4 &1676932837 stripped
 Transform:
@@ -6912,7 +6978,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jumps_Low_Blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8547508107721200241, guid: 419df82a7d920984c8b2d2deced1c4c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 419df82a7d920984c8b2d2deced1c4c0, type: 3}
 --- !u!1 &1824245594
 GameObject:
@@ -7369,7 +7436,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1310942678430598386, guid: 94c5bb84a449c654999e9788e38e5faf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94c5bb84a449c654999e9788e38e5faf, type: 3}
 --- !u!1001 &1875330449
 PrefabInstance:
@@ -8079,7 +8147,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1310942678430598386, guid: 94c5bb84a449c654999e9788e38e5faf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94c5bb84a449c654999e9788e38e5faf, type: 3}
 --- !u!4 &1999534953 stripped
 Transform:
@@ -8760,7 +8829,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
+    - target: {fileID: 8494695515975176552, guid: 21cf694ec1f9e4642980eefc378cabcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8889017490920538128, guid: 21cf694ec1f9e4642980eefc378cabcf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939308998747166879, guid: 21cf694ec1f9e4642980eefc378cabcf, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
