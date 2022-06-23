@@ -34,6 +34,11 @@ public class InGameUI : MonoBehaviour
         eventQueue = FindObjectOfType<EventQueue>();
         eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
         Invoke("DecreaseTimer", 1f);
+
+        foreach (PlayerConfig player in players)
+        {
+            player.playerUICard.GetComponentInChildren<Text>().text = player.score.ToString();
+        }
     }
 
     private void GetAllPlayers()
