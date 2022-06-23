@@ -8,9 +8,15 @@ public class Menus : MonoBehaviour
     public GameObject CharacterSelection;
     public GameObject Settings;
     public GameObject Infographic;
+    AudioSource sm;
+    private void Start()
+    {
+        sm = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>();
+    }
     public void CharacterSelectionOn()
     {
-        CharacterSelection.gameObject.SetActive(true);
+        ForwardButtonSound();
+        GotoScene.OnSceneChangeButton("CharacterSelectVisual - Copy");
     }
     public void SettingsOn()
     {
@@ -25,5 +31,13 @@ public class Menus : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    public void ForwardButtonSound()
+    {
+        SoundPlay.PlaySound(SoundPlay.Sound.selected_Button);
+    }
+    public void BackButtonSound()
+    {
+        SoundPlay.PlaySound(SoundPlay.Sound.cancel_Button);
     }
 }

@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 8646981074679266972, guid: 3da1393f293be4b40a96130132a9d2bc, type: 3}
-  characterID: 6
+  characterID: 0
 --- !u!4 &207793876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6124957552579348346, guid: a85a553350225e8478ccaa0bc76ab7c2, type: 3}
@@ -894,6 +894,7 @@ RectTransform:
   - {fileID: 2105144729}
   - {fileID: 1824245595}
   - {fileID: 1226598360}
+  - {fileID: 1069514169}
   - {fileID: 1018770935}
   m_Father: {fileID: 1968361261}
   m_RootOrder: 0
@@ -1033,6 +1034,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764920663}
     m_Modifications:
+    - target: {fileID: 921435859515149701, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7799058604150074057, guid: 4c37bbf6e562a0f4bb369fbe09187131, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2508,7 +2513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5135583667661462337, guid: d411a54c0ca637649a48e2576aea3707, type: 3}
-  characterID: 7
+  characterID: 0
 --- !u!1001 &708782595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3464,7 +3469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5934890367811059511, guid: 5c55ccc457636724fa8f6a5f8a90097a, type: 3}
-  characterID: 2
+  characterID: 0
 --- !u!1001 &834495231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3628,7 +3633,7 @@ GameObject:
   - component: {fileID: 921358236}
   - component: {fileID: 921358235}
   m_Layer: 5
-  m_Name: P1 None Selected
+  m_Name: P3 None Selected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3843,7 +3848,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018770934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -336.87784}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 245028577}
@@ -4531,7 +4536,7 @@ GameObject:
   - component: {fileID: 1149108173}
   - component: {fileID: 1149108172}
   m_Layer: 5
-  m_Name: P1 Frame
+  m_Name: P3 Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4576,7 +4581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 795e71b9f6ce6b144b52d243e23bcb8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63e0c0e8eb3bc4d43b22003dd463f704, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4726,7 +4731,7 @@ GameObject:
   - component: {fileID: 1182863856}
   - component: {fileID: 1182863855}
   m_Layer: 5
-  m_Name: P2 None Selected
+  m_Name: P4 None Selected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5178,7 +5183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 157230683855596803, guid: baff538fdbdd7b147bebb0c7c962aef6, type: 3}
-  characterID: 5
+  characterID: 0
 --- !u!1 &1359474634
 GameObject:
   m_ObjectHideFlags: 0
@@ -5335,7 +5340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 6025047016171398672, guid: 682df42e0187cb14ead10d0f50614995, type: 3}
-  characterID: 1
+  characterID: 0
 --- !u!1001 &1372170762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5670,7 +5675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 795e71b9f6ce6b144b52d243e23bcb8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecc6687690747bd4499813a88cad4e49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7826,7 +7831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 1091228790641785062, guid: 7cc71ce35405210488bf13dc01a944da, type: 3}
-  characterID: 3
+  characterID: 0
 --- !u!4 &1966080697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7361886318268138950, guid: d25e22f22b408f94ba4df68fa6911b64, type: 3}
@@ -7944,7 +7949,7 @@ GameObject:
   - component: {fileID: 1980299310}
   - component: {fileID: 1980299309}
   m_Layer: 5
-  m_Name: P2 Frame
+  m_Name: P4 Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7989,7 +7994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 795e71b9f6ce6b144b52d243e23bcb8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9980a97713657694aa1f83ca6da91bc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8242,7 +8247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterModel: {fileID: 5116138281481010184, guid: d41b75975a597f544860405196baf240, type: 3}
-  characterID: 4
+  characterID: 0
 --- !u!224 &2001696890
 RectTransform:
   m_ObjectHideFlags: 0

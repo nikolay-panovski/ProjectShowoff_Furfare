@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
     //UI Part
     public int PlayerID;
     public int amountX = 100;
-    SoundManager sm;
-    Rumble rmb;
+    //Rumble rmb;
+    RandomVoiceLine rnd;
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
@@ -51,8 +51,7 @@ public class Player : MonoBehaviour
         if (!TryGetComponent<PlayerParticleController>(out particles)) throw new MissingComponentException("Player is missing a ParticleController-type script!");
 
         //Sound Data
-        sm = this.GetComponent<SoundManager>();
-        rmb = this.GetComponent<Rumble>();
+        rnd = this.GetComponent<RandomVoiceLine>();
     }
 
     private void Update()
@@ -107,6 +106,7 @@ public class Player : MonoBehaviour
 
             animator.SetBool("IsThrowing", true);
             //rmb.RumbleConstant(1f, 1f, 0.5f);
+            rnd.Throw();
         }
     }
     #endregion
@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
             if (collidedPortal.GetActiveStatus() == true)
             {
                 TeleportToPortal(collidedPortal);
+                SoundPlay.PlaySound(SoundPlay.Sound.portalSource);
             }
         }
     }
@@ -196,6 +197,8 @@ public class Player : MonoBehaviour
         animator.SetBool("IsStunned", true);
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
+        //Voice Line
+        rnd.WinOrGetsHit();
     }
 
     private void pickProjectileUp(Projectile projectile)

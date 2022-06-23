@@ -109,18 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064be72cfff4535419846a8f29af19b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalSource: {fileID: 0}
-  pro_Pick_Up: {fileID: 0}
-  pro_Spawn: {fileID: 0}
-  points: {fileID: 0}
-  event_On: {fileID: 0}
-  event_Off: {fileID: 0}
-  countdown_Start: {fileID: 0}
-  countdown_Finish: {fileID: 0}
-  cancel_Button: {fileID: 0}
-  selected_Button: {fileID: 0}
-  snapping_Options: {fileID: 0}
-  character_Stunned: {fileID: 0}
+  BushSound: 0
+  WoodSound: 1
+  CouchSound: 0
+  SackSound: 0
+  WateringCanSound: 0
 --- !u!82 &4139726762087367386
 AudioSource:
   m_ObjectHideFlags: 0
