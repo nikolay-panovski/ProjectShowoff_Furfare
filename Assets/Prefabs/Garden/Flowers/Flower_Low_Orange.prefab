@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7395294992460296315}
   - component: {fileID: 5840753137221976030}
   - component: {fileID: 8568785768079543060}
-  - component: {fileID: 3592799057070486085}
   m_Layer: 0
   m_Name: Flower_Low_Orange
   m_TagString: Untagged
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3592799057070486085
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7920298138431285953}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 153.4104, y: 129.05743, z: 149.4654}
-  m_Center: {x: 0, y: 0, z: 0}

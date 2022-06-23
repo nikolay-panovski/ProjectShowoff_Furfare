@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2600168609527170042}
   - component: {fileID: 1421585004864080991}
   - component: {fileID: 3773606706431588501}
-  - component: {fileID: -2113842307896349188}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Jumps_Low_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-2113842307896349188
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3413296677582100800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 477.9624, y: 138.06396, z: 205.70758}
-  m_Center: {x: 0, y: 0, z: 0}
