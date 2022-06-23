@@ -26,7 +26,6 @@ public class BeginningCountdown : MonoBehaviour
             countdowns.text = countNew.ToString();
             yield return new WaitForSeconds(1);
             count--;
-            Debug.Log("count " + count);
         }
         StartGame();
     }
