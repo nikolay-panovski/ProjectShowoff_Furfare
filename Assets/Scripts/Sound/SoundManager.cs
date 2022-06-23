@@ -11,7 +11,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip MonaMusic;
     public AudioClip WinningScreen;
     static AudioSource Source;
-    
+    public AudioSource SoundtrackSource;
+    public bool MusicIsOn;
+    public bool SoundIsOn;
 
     private static SoundManager _i;
     public static SoundManager i
@@ -31,43 +33,72 @@ public class SoundManager : MonoBehaviour
        
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
-        Debug.Log("MusicIsOn: " + SoundPlay.MusicIsOn);
+        Debug.Log("MusicIsOn: " + MusicIsOn);
         if (scene.name == "MainMenuVisual")
         {
-            Source.clip = MainMenu;
+            SoundtrackSource.clip = MainMenu;
+
         }
         if (scene.name == "AssetsMaterialsLevel")
         {
-            Source.clip = FilipMusic;
+            SoundtrackSource.clip = FilipMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
         }
         if (scene.name == "Level_Adri")
         {
-            Source.clip = AdriMusic;
+            SoundtrackSource.clip = AdriMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
         }
         if (scene.name == "GardenFlat")
         {
-            Source.clip = MonaMusic;
+            SoundtrackSource.clip = MonaMusic;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
         }
         if (scene.name == "WinningArt")
         {
-            Source.clip = WinningScreen;
+            SoundtrackSource.clip = WinningScreen;
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+                Debug.Log("Play Music");
+            }
         }
-        if (SoundPlay.MusicIsOn)
+        
+    }
+    public void MusicToggle()
+    {
+        Debug.Log("MusicIsOn: " + MusicIsOn);
+        if (MusicIsOn)
         {
-            Source.Play();
-            Debug.Log("Play Music");
+            SoundtrackSource.Stop();
+        }
+        if (MusicIsOn == false)
+        {
+            SoundtrackSource.Play();
         }
     }
-    public static void MusicToggle()
+    public void SoundToggle()
     {
-        Debug.Log("MusicIsOn: " + SoundPlay.MusicIsOn);
-        if (SoundPlay.MusicIsOn)
+        Debug.Log("MusicIsOn: " + MusicIsOn);
+        if (SoundIsOn)
         {
-            Source.Play();
+            Source.enabled = false;
         }
-        if (SoundPlay.MusicIsOn == false)
+        if (MusicIsOn == false)
         {
-            Source.Stop();
+            Source.enabled = true;
         }
     }
     // called when the game is terminated

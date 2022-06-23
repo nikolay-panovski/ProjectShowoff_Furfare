@@ -10,10 +10,11 @@ public class SoundSettings : MonoBehaviour
     public GameObject SoundSwitchOff;
     public GameObject MusicSwitchOn;
     public GameObject MusicSwitchOff;
+    SoundManager SoundManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -21,22 +22,22 @@ public class SoundSettings : MonoBehaviour
     {
         mainMenu.gameObject.SetActive(false);
         settings.gameObject.SetActive(true);
-        if (SoundPlay.MusicIsOn)
+        if (SoundManager.MusicIsOn)
         {
             MusicSwitchOn.gameObject.SetActive(true);
             MusicSwitchOff.gameObject.SetActive(false);
         }
-        if (SoundPlay.MusicIsOn == false)
+        if (SoundManager.MusicIsOn == false)
         {
             MusicSwitchOn.gameObject.SetActive(false);
             MusicSwitchOff.gameObject.SetActive(true);
         }
-        if (SoundPlay.SoundIsOn)
+        if (SoundManager.SoundIsOn)
         {
             SoundSwitchOn.gameObject.SetActive(true);
             SoundSwitchOff.gameObject.SetActive(false);
         }
-        if (SoundPlay.SoundIsOn == false)
+        if (SoundManager.SoundIsOn == false)
         {
             SoundSwitchOn.gameObject.SetActive(false);
             SoundSwitchOff.gameObject.SetActive(true);
@@ -45,34 +46,35 @@ public class SoundSettings : MonoBehaviour
 
     public void MusicToggle()
     {
-        if (SoundPlay.MusicIsOn)
+        if (SoundManager.MusicIsOn == false)
         {
             Debug.Log("MusicOn");
             MusicSwitchOn.gameObject.SetActive(true);
             MusicSwitchOff.gameObject.SetActive(false);  
         }
-        if (SoundPlay.MusicIsOn == false)
+        if (SoundManager.MusicIsOn)
         {
             MusicSwitchOn.gameObject.SetActive(false);
             MusicSwitchOff.gameObject.SetActive(true);
             Debug.Log("MusicOff");
         }
         SoundManager.MusicToggle();
-        SoundPlay.MusicIsOn = !SoundPlay.MusicIsOn;
+        SoundManager.MusicIsOn = !SoundManager.MusicIsOn;
     }
     public void SoundToggle()
     {
-        if (SoundPlay.SoundIsOn)
+        if (SoundManager.SoundIsOn)
         {
             SoundSwitchOn.gameObject.SetActive(false);
             SoundSwitchOff.gameObject.SetActive(true);
         }
-        if (SoundPlay.SoundIsOn == false)
+        if (SoundManager.SoundIsOn == false)
         {
             SoundSwitchOn.gameObject.SetActive(true);
             SoundSwitchOff.gameObject.SetActive(false);
         }
-        SoundPlay.SoundIsOn = !SoundPlay.SoundIsOn;
+        SoundManager.SoundToggle();
+        SoundManager.SoundIsOn = !SoundManager.SoundIsOn;
     }
     void Awake()
     {

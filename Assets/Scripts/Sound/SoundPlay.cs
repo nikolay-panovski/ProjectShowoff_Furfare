@@ -4,9 +4,6 @@ using UnityEngine;
 
 public static class SoundPlay
 {
-    public static bool MusicIsOn = true;
-    public static bool SoundIsOn = true;
-
     public enum Sound
     {
         portalSource,
@@ -22,17 +19,15 @@ public static class SoundPlay
         sack,
         wateringCan,
         wood,
-        eventActivates
+        eventActivates,
+        countdownBeep,
+        countdownFinalBeep
     }
-    
     public static void PlaySound(Sound sound)
     {
-        if (SoundIsOn)
-        {
-            GameObject soundGameObject = GameObject.FindGameObjectWithTag("SoundManager");
-            AudioSource audioSource = soundGameObject.GetComponent<AudioSource>();
-            audioSource.PlayOneShot(GetAudioClip(sound));
-        }
+        GameObject soundGameObject = GameObject.FindGameObjectWithTag("SoundManager");
+        AudioSource audioSource = soundGameObject.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(GetAudioClip(sound));
     }
     private static AudioClip GetAudioClip(Sound sound)
     {

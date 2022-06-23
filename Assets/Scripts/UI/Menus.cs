@@ -8,11 +8,6 @@ public class Menus : MonoBehaviour
     public GameObject CharacterSelection;
     public GameObject Settings;
     public GameObject Infographic;
-    AudioSource sm;
-    private void Start()
-    {
-        sm = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<AudioSource>();
-    }
     public void CharacterSelectionOn()
     {
         ForwardButtonSound();
