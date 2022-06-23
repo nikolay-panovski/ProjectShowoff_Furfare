@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3625866618825964069}
   - component: {fileID: 1564258920279674607}
   - component: {fileID: -2906341786361418223}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Feeding_Station_Low_Purple-red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

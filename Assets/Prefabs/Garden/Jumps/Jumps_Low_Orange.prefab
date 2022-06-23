@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 6873256742392520702}
   - component: {fileID: 7551812005834936411}
   - component: {fileID: 5704260054119785617}
-  - component: {fileID: -110569584003493931}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Jumps_Low_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-110569584003493931
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6064490780291827012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 477.9624, y: 138.06396, z: 205.70772}
-  m_Center: {x: 0, y: 0, z: 0}
