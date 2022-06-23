@@ -5355,7 +5355,6 @@ Transform:
   - {fileID: 1660095918}
   - {fileID: 1430857498}
   - {fileID: 465045366}
-  - {fileID: 960250850}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6326,10 +6325,6 @@ PrefabInstance:
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Name
       value: coffee_table (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -7632,10 +7627,6 @@ PrefabInstance:
     - target: {fileID: 934233425726845842, guid: 88a88f8cc84a5a441b50336de8048732, type: 3}
       propertyPath: m_Name
       value: drawer_skewed
-      objectReference: {fileID: 0}
-    - target: {fileID: 934233425726845842, guid: 88a88f8cc84a5a441b50336de8048732, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a88f8cc84a5a441b50336de8048732, type: 3}

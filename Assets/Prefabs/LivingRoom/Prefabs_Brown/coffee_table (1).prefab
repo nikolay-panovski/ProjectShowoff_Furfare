@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5818154350492526635}
   - component: {fileID: 5152022522340933552}
   - component: {fileID: 5152022522340933555}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: coffee_table (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

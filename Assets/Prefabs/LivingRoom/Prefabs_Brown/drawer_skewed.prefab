@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 15333273778904291}
   - component: {fileID: 15333273778904292}
   - component: {fileID: 1038887269760937809}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: drawer_skewed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

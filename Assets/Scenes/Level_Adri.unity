@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3816.7695, g: 1818.3096, b: 883.2832, a: 1}
+  m_IndirectSpecularColor: {r: 3586.7114, g: 1598.4824, b: 651.6572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -787,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -2239,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -4343,7 +4343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -5030,10 +5030,6 @@ PrefabInstance:
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Name
       value: coffee_table (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -6701,7 +6697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -7801,7 +7797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721782126713969834, guid: 88166a8c8a8f6c0429c50f3f06c7326d, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88166a8c8a8f6c0429c50f3f06c7326d, type: 3}
@@ -10743,7 +10739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7789640087761277109, guid: 5a8b1e0ccdded1e4382332cadc5261c8, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8b1e0ccdded1e4382332cadc5261c8, type: 3}
@@ -11342,7 +11338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
@@ -11506,7 +11502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458011997640559102, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491849c647c2b97409cbeba0b1bd16d1, type: 3}
