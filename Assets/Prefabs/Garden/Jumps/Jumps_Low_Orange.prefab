@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7551812005834936411}
   - component: {fileID: 5704260054119785617}
   - component: {fileID: -110569584003493931}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Jumps_Low_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

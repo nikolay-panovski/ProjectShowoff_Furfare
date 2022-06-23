@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3192402170972789940}
   - component: {fileID: 840281513694341246}
   - component: {fileID: 7234741855650411659}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Parkour_Low_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

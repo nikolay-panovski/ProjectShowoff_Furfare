@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2117801243734869469}
   - component: {fileID: -5336190653086469364}
   - component: {fileID: -4309661668906925797}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Dog_House_Low_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,15 +205,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064be72cfff4535419846a8f29af19b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalSource: {fileID: 0}
-  pro_Pick_Up: {fileID: 0}
-  pro_Spawn: {fileID: 0}
-  points: {fileID: 0}
-  event_On: {fileID: 0}
-  event_Off: {fileID: 0}
-  countdown_Start: {fileID: 0}
-  countdown_Finish: {fileID: 0}
-  cancel_Button: {fileID: 0}
-  selected_Button: {fileID: 0}
-  snapping_Options: {fileID: 0}
-  character_Stunned: {fileID: 0}

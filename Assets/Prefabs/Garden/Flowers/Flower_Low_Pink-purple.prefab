@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3338360976657355918}
   - component: {fileID: 1872343008104356651}
   - component: {fileID: 4476315531366887393}
-  - component: {fileID: -3092366926984983594}
   m_Layer: 0
   m_Name: Flower_Low_Pink-purple
   m_TagString: Untagged
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-3092366926984983594
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2675117504480693812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 153.4104, y: 129.05743, z: 149.4654}
-  m_Center: {x: 0, y: 0, z: 0}
