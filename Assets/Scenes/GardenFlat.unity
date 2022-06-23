@@ -9711,11 +9711,11 @@ PrefabInstance:
     - target: {fileID: 4702542377257488095, guid: 4fc5ed5e5cee18a46b51f540831f4ed8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 638ce33ef2441af478af53afd31e978f, type: 2}
+      objectReference: {fileID: 2100000, guid: 3adf8af5628579549881c5fb2a92b6f2, type: 2}
     - target: {fileID: 4713932917221215383, guid: 4fc5ed5e5cee18a46b51f540831f4ed8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 638ce33ef2441af478af53afd31e978f, type: 2}
+      objectReference: {fileID: 2100000, guid: 3adf8af5628579549881c5fb2a92b6f2, type: 2}
     - target: {fileID: 6233928294311891224, guid: 4fc5ed5e5cee18a46b51f540831f4ed8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
