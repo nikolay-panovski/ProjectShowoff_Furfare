@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class InGameUI : MonoBehaviour
 
     private void CheckForMatchEnd()
     {
-        if (_timeRemaining <= 0) DetermineWinner();
+        if (_timeRemaining <= 0) GoToNextLevel();
     }
 
     private void OnPlayerHit(EventData eventData)
@@ -109,6 +110,28 @@ public class InGameUI : MonoBehaviour
         for(int i = 0; i < players.Count; i++)
         {
             players[i].playerUICard.GetComponentInChildren<PlayerRankPlace>().gameObject.GetComponent<Image>().sprite = RankingSprites[i];
+        }
+    }
+
+    private void GoToNextLevel()
+    {
+        DestroyAllPlayerInstances();
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    private void DestroyAllPlayerInstances()
+    {
+        List<PlayerConfig> allPlayers = new List<PlayerConfig>();
+
+        for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+        {
+            allPlayers.Add(PlayerManager.Instance.GetPlayerAtIndex(i));
+        }
+
+        for (int i = 0; i < allPlayers.Count; i++)
+        {
+            Destroy(allPlayers[i].gameplayInput.GetComponent<Player>().gameObject);
         }
     }
 
