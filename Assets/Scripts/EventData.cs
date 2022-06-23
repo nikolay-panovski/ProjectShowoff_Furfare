@@ -74,10 +74,12 @@ public class PickupSpawnedEventData : EventData
 public class PickupPickedEventData : EventData
 {
     // TODO: Projectile -> Item
+    public readonly Player playerWhoPicked;
     public readonly Projectile pickup;
     public readonly Spawnpoint originalSpawnpoint;
-    public PickupPickedEventData(Projectile pPickup, Spawnpoint pOriginalSpawnpoint) : base(EventType.PICKUP_PICKED)
+    public PickupPickedEventData(Player pPlayer, Projectile pPickup, Spawnpoint pOriginalSpawnpoint) : base(EventType.PICKUP_PICKED)
     {
+        playerWhoPicked = pPlayer;
         pickup = pPickup;
         originalSpawnpoint = pOriginalSpawnpoint;
     }

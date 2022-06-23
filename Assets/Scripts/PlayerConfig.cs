@@ -11,12 +11,13 @@ public class PlayerConfig
     public UICursorSelector cursorObject { get; set; }
     public GameObject characterModel { get; set; }  // UI character model (CharacterSelection screen).
     public int characterIndex { get; set; } // index of the character (WITH INPUTS) as part of the corresponding PlayerManager array.
-    
+
     /// <summary>
     /// A ready player has selected a character and has a character model assigned.
     /// </summary>
     public bool isReady { get; set; }
     public PlayerInput gameplayInput { get; set; }  // PlayerInput component attached to the functional Player script of the whole player structure.
+    public Player player { get; set; }
     public int score { get; set; }
     public GameObject playerUICard { get; set; }
 

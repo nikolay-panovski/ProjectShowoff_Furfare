@@ -45,6 +45,7 @@ public class PlayerSpawnpoint : MonoBehaviour
 
             //andAssignGameplayInputReference():
             player.gameplayInput = functionalPlayerObject.GetComponent<PlayerInput>();
+            player.player = functionalPlayerObject.GetComponent<Player>();
             //player.gameplayInput.enabled = true;
 
             eventQueue.AddEvent(new PlayerSpawnedInGameplayEventData(player));

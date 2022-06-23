@@ -206,7 +206,7 @@ public class Player : MonoBehaviour
         catcher.PickProjectileUp(projectile);
         setOwnLayer("Ignore Pickup Projectiles");
         heldProjectile = projectile;
-        eventQueue.AddEvent(new PickupPickedEventData(projectile, projectile.originalSpawnpoint));
+        eventQueue.AddEvent(new PickupPickedEventData(this, projectile, projectile.originalSpawnpoint));
     }
 
     private void setOwnLayer(string layer)

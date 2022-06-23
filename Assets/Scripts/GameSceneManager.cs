@@ -66,7 +66,7 @@ public class GameSceneManager : MonoBehaviour
             toggleExistingPlayerCursors(true);
             togglePlayersUIInput(true);
             // ~~not consistent with above, but skip events and invalidate gameplay inputs on gameplay exit ourselves:
-            setPlayersGameplayInput(null);
+            setPlayersGameplayInput(null, null);
         }
 
         /// ON RESET PLAYERS READY STATE
@@ -78,11 +78,11 @@ public class GameSceneManager : MonoBehaviour
         /// ON RESET SCORES
         if (loadedSceneProperties.shouldResetScores == true)
         {
-            // UNDEFINED - players do not preserve scores (yet)
+            resetPlayersScore();
         }
         else //if (loadedSceneProperties.shouldResetScores == false)
         {
-            // UNDEFINED - players do not preserve scores (yet)
+            // ~~just chill
         }
 
         // happens on EACH new scene load, unless filtered:
@@ -122,12 +122,22 @@ public class GameSceneManager : MonoBehaviour
         }
     }
 
-    private void setPlayersGameplayInput(PlayerInput input)
+    private void setPlayersGameplayInput(PlayerInput input, Player pPlayer)
     {
         for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
         {
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
             player.gameplayInput = input;
+            player.player = pPlayer;
+        }
+    }
+
+    private void resetPlayersScore()
+    {
+        for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+        {
+            PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+            player.score = 0;
         }
     }
 }
