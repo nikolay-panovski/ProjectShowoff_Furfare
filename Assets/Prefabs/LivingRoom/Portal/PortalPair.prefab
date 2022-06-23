@@ -9916,7 +9916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _linkedPortal: {fileID: 2001637414956795937}
-  _cooldownDuration: 2
+  _cooldownDuration: 0.5
 --- !u!114 &4707100419562853458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10119,7 +10119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _linkedPortal: {fileID: 9157045841607584708}
-  _cooldownDuration: 2
+  _cooldownDuration: 0.5
 --- !u!114 &8260135043283610107
 MonoBehaviour:
   m_ObjectHideFlags: 0

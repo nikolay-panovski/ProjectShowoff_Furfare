@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2166548384348965732}
   - component: {fileID: 2166548384348965735}
   - component: {fileID: 2166548384348965734}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SwitchWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,6 +174,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb1e9af1037f915419be4910bab54ef9, type: 3}
       propertyPath: m_Name
       value: Switching_Wall_Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb1e9af1037f915419be4910bab54ef9, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1e9af1037f915419be4910bab54ef9, type: 3}

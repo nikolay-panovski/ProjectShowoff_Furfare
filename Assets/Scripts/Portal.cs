@@ -5,7 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     [SerializeField] private Portal _linkedPortal;
-    [SerializeField] private float _cooldownDuration = 2;
+    [SerializeField] private float _cooldownDuration = 0.5f;
     private bool _active = true;
 
     public void ToggleActive()

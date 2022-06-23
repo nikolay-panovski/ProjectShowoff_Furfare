@@ -43,6 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7e3786db59e9c4787066a9f3019cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickupSpawnInterval: 10
-  _maximumPickups: 4
-  _allSpawnpoints: []
+  _pickupSpawnInterval: 2
+  _maximumPickups: 6
