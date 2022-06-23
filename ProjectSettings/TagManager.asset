@@ -8,8 +8,9 @@ TagManager:
   - PickupSpawnpoint
   - SoundSettings
   - SoundManager
-  - 2X
+  - Event
   - Reflexes
+  - 2X
   layers:
   - Default
   - TransparentFX

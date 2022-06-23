@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EventsSwitch : MonoBehaviour
 {
-    GameObject[] Event;
+    /*GameObject[] Event;
     Rumble rmb;
     List<Player> playersList = new List<Player>();
     [SerializeField] private Sprite X2;
@@ -126,5 +126,5 @@ public class EventsSwitch : MonoBehaviour
             Debug.Log("Fast Reflexes Event Off");
         }
         ChooseEvent(3);
-    }
+    }*/
 }

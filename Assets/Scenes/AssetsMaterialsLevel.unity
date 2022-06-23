@@ -2957,6 +2957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: In-Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4255832013470535635, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
+      propertyPath: m_Text
+      value: Round 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
 --- !u!1001 &825810372
