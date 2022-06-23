@@ -10,6 +10,7 @@ public class ScatterProjectile : Projectile
     {
         for (int i = 0; i < numOfProjectiles; i++)
         {
+            setOwnLayer("Fired Projectiles");
             // rotate each bullet after the first one, based on the first one
             // (currently left hand-biased, can refine based on numOfProjectiles % 2 if needed)
             Vector3 offsetDirection = setScatterOffset(direction, i);
