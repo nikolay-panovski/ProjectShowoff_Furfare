@@ -47,6 +47,7 @@ MonoBehaviour:
   FilipMusic: {fileID: 8300000, guid: f1cd68b68b45b794b96c2f38809c86c2, type: 3}
   AdriMusic: {fileID: 8300000, guid: 32cc364bfea539d41afcb360ba6a99dd, type: 3}
   MonaMusic: {fileID: 8300000, guid: 32cc364bfea539d41afcb360ba6a99dd, type: 3}
+  WinningScreen: {fileID: 8300000, guid: 84e1a0e4f6f20cd439824f85c7ff7594, type: 3}
   soundAudioClipArray:
   - sound: 2
     audioClip: {fileID: 8300000, guid: 0be23366b6084834d9e3840b9b6a2a61, type: 3}
