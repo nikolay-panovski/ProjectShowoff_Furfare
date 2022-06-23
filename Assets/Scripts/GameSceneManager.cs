@@ -118,6 +118,7 @@ public class GameSceneManager : MonoBehaviour
         for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
         {
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+            player.characterModel = null;
             player.isReady = false;
         }
     }
