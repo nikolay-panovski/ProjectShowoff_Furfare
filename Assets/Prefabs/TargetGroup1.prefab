@@ -61,4 +61,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetsWeight: 1
-  targetsRadius: 6
+  targetsRadius: 8

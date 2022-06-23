@@ -13,7 +13,7 @@ public class AssignPlayersToCinemachine : MonoBehaviour
     private CinemachineTargetGroup targetGroup;
 
     [SerializeField] private float targetsWeight = 1;
-    [SerializeField] private float targetsRadius = 6;
+    [SerializeField] private float targetsRadius = 8;
 
     private void Awake()
     {
