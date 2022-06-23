@@ -34,8 +34,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -46,16 +44,24 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         }
 
-        eventQueue = FindObjectOfType<EventQueue>();
+        DontDestroyOnLoad(this.gameObject);
 
-        eventQueue.Subscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
-        eventQueue.Subscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
+        if (eventQueue == null) 
+        {
+            eventQueue = FindObjectOfType<EventQueue>();
+
+            eventQueue.Subscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
+            eventQueue.Subscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
+        }
     }
 
     private void OnDestroy()
     {
-        eventQueue.Unsubscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
-        eventQueue.Unsubscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
+        if (eventQueue != null)
+        {
+            eventQueue.Unsubscribe(EventType.CONTROLLER_JOINED, onControllerJoined);
+            eventQueue.Unsubscribe(EventType.CHARACTER_SELECTED, onCharacterSelected);
+        }
     }
 
     private void onControllerJoined(EventData eventData)
@@ -150,8 +156,11 @@ public class PlayerManager : MonoBehaviour
 
         foreach (PlayerConfig player in joinedPlayers)
         {
-            if (player.isReady == false) allPlayersReady = false;
-            break;
+            if (player.isReady == false)
+            {
+                allPlayersReady = false;
+                //break;    // ~~not even that important when the players are intended to be max 4
+            }
         }
 
         return allPlayersReady;

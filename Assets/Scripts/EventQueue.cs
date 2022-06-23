@@ -22,8 +22,6 @@ public class EventQueue : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -32,6 +30,8 @@ public class EventQueue : MonoBehaviour
         {
             instance = this;
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
     #endregion
 

@@ -18,8 +18,6 @@ public class GameSceneManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -30,10 +28,12 @@ public class GameSceneManager : MonoBehaviour
             instance = this;
         }
 
+        DontDestroyOnLoad(this.gameObject);
+
         //SceneManager.activeSceneChanged += onSceneChanged;
         SceneManager.sceneLoaded += onSceneChanged;
 
-        eventQueue = FindObjectOfType<EventQueue>();
+        if (eventQueue == null) eventQueue = FindObjectOfType<EventQueue>();
     }
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)

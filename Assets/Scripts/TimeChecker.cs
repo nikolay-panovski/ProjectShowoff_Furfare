@@ -44,7 +44,7 @@ public class TimeChecker : MonoBehaviour
         for (int i = 0; i < allPlayers.Length; i++)
         {
             if (playerWithHighestScore == null) playerWithHighestScore = allPlayers[i];
-            else if (allPlayers[i].GetScore() > playerWithHighestScore.GetScore()) playerWithHighestScore = allPlayers[i];
+            //else if (allPlayers[i].GetScore() > playerWithHighestScore.GetScore()) playerWithHighestScore = allPlayers[i];
         }
 
         Debug.Log(playerWithHighestScore + " Is the winner");
