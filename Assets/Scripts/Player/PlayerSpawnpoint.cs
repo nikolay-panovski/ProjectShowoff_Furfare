@@ -44,7 +44,7 @@ public class PlayerSpawnpoint : MonoBehaviour
             functionalPlayerObject.transform.position = this.transform.position;
 
             //andAssignGameplayInputReference():
-            player.gameplayInput = functionalPlayerObject.GetComponent<PlayerInput>();
+            //player.gameplayInput = functionalPlayerObject.GetComponent<PlayerInput>();
             player.player = functionalPlayerObject.GetComponent<Player>();
             //player.gameplayInput.enabled = true;
 

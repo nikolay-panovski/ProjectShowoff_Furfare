@@ -420,7 +420,8 @@ PrefabInstance:
       propertyPath: stunnedAnimationName
       value: Dog_Stunned
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
 --- !u!1 &9216615838459318509 stripped
 GameObject:

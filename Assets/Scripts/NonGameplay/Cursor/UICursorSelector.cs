@@ -24,7 +24,11 @@ public class UICursorSelector : MonoBehaviour
 
     void Start()
     {
-        eventQueue = FindObjectOfType<EventQueue>();
+        if (eventQueue == null)
+        {
+            eventQueue = FindObjectOfType<EventQueue>();
+            eventQueue.Subscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
+        }
 
         #region TRYGETCOMPONENTS
         if (!TryGetComponent<SpriteRenderer>(out spriteRenderer))
@@ -45,12 +49,16 @@ public class UICursorSelector : MonoBehaviour
         hasRectTransform = TryGetComponent<RectTransform>(out rectTransform);
         #endregion
 
-        eventQueue.Subscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
     }
 
     private void OnDestroy()
     {
-        eventQueue.Unsubscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
+        if (eventQueue != null) eventQueue.Unsubscribe(EventType.PLAYER_REGISTERED, onPlayerRegistered);
+    }
+
+    private void OnDisable()
+    {
+        inputVector = Vector2.zero;
     }
 
     #region ON INPUT EVENTS

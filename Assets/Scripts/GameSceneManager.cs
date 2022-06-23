@@ -18,8 +18,6 @@ public class GameSceneManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -30,10 +28,12 @@ public class GameSceneManager : MonoBehaviour
             instance = this;
         }
 
+        DontDestroyOnLoad(this.gameObject);
+
         //SceneManager.activeSceneChanged += onSceneChanged;
         SceneManager.sceneLoaded += onSceneChanged;
 
-        eventQueue = FindObjectOfType<EventQueue>();
+        if (eventQueue == null) eventQueue = FindObjectOfType<EventQueue>();
     }
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
@@ -57,14 +57,26 @@ public class GameSceneManager : MonoBehaviour
         if (loadedSceneProperties.isInputForGameplay == true)
         {
             toggleExistingPlayerCursors(false);
-            togglePlayersUIInput(false);
+            //togglePlayersUIInput(false);
+            for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+            {
+                PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+                player.UIInput.actions.FindActionMap("NonGameplayUI", true).Disable();
+                player.UIInput.actions.FindActionMap("Player", true).Enable();
+            }
             //an instantiateFunctionalPlayers() + set gameplayInput references - a job of PlayerSpawnpoint s:
             eventQueue.AddEvent(new PlayersEnteringGameplayEventData(PlayerManager.Instance.numJoinedPlayers));
         }
         else //if (loadedSceneProperties.isInputForGameplay == false)
         {
             toggleExistingPlayerCursors(true);
-            togglePlayersUIInput(true);
+            //togglePlayersUIInput(true);
+            for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
+            {
+                PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+                player.UIInput.actions.FindActionMap("Player", true).Disable();
+                player.UIInput.actions.FindActionMap("NonGameplayUI", true).Enable();
+            }
             // ~~not consistent with above, but skip events and invalidate gameplay inputs on gameplay exit ourselves:
             setPlayersGameplayInput(null, null);
         }
@@ -118,6 +130,7 @@ public class GameSceneManager : MonoBehaviour
         for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
         {
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
+            player.characterModel = null;
             player.isReady = false;
         }
     }
@@ -127,7 +140,7 @@ public class GameSceneManager : MonoBehaviour
         for (int i = 0; i < PlayerManager.Instance.numJoinedPlayers; i++)
         {
             PlayerConfig player = PlayerManager.Instance.GetPlayerAtIndex(i);
-            player.gameplayInput = input;
+            //player.gameplayInput = input;
             player.player = pPlayer;
         }
     }

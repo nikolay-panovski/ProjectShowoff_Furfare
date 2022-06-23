@@ -78,6 +78,7 @@ public class SoundSettings : MonoBehaviour
     }
     void Awake()
     {
+        /**
         GameObject[] objs = GameObject.FindGameObjectsWithTag("SoundSettings");
 
         if (objs.Length > 1)
@@ -86,5 +87,6 @@ public class SoundSettings : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+        /**/
     }
 }

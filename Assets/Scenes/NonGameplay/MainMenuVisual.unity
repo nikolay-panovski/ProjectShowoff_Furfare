@@ -6250,7 +6250,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3120344765217265738, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
+      propertyPath: resetScores
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120344765217265738, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
       propertyPath: allowPlayersToJoin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3120344765217265738, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
+      propertyPath: resetPlayersReadyState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3120344765217265739, guid: 40bc4349c6d096a48926794cbc87ed9a, type: 3}
