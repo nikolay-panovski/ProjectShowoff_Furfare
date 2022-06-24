@@ -19,7 +19,7 @@ public class SimpleMoveController : MonoBehaviour
     private Camera _mainCamera;     // used to make movements relative to the camera
 
     //Data Events
-    public int speedX = 3;
+    public float speedX = 1;
 
     private void Awake()
     {

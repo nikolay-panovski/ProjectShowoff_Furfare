@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventsSwitch : MonoBehaviour
 {
     GameObject[] players;
-    GameObject[] x2;
-    GameObject[] reflexes;
+    GameObject[] events;
+    [SerializeField] Sprite X2;
+    [SerializeField] Sprite Reflexes;
     int pwr;
     Rumble rmb;
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        x2 = GameObject.FindGameObjectsWithTag("2X");
-        reflexes = GameObject.FindGameObjectsWithTag("Reflexes");
-        ChooseEvent(1);
         rmb = this.GetComponent<Rumble>();
+        Invoke("AssigningPlayersAndSprites", 5f);
+    }
+    public void AssigningPlayersAndSprites()
+    {
+        Debug.Log("AssigningPlayersAndSprites");
+        players = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log(players);
+        events = GameObject.FindGameObjectsWithTag("Events");
+        ChooseEvent(1);
     }
     public void ChooseEvent(int current)
     {
@@ -29,10 +36,9 @@ public class EventsSwitch : MonoBehaviour
                 }
                 else
                 {
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < events.Length; j++)
                     {
-                        reflexes[j].gameObject.SetActive(false);
-                        x2[j].gameObject.SetActive(false);
+                        events[j].GetComponent<Image>().sprite = null;
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Debug.Log("No Event On");
@@ -49,16 +55,14 @@ public class EventsSwitch : MonoBehaviour
                 }
                 else
                 {
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < events.Length; j++)
                     {
-                        reflexes[j].gameObject.SetActive(false);
-                        x2[j].gameObject.SetActive(true);
+                        events[j].GetComponent<Image>().sprite = X2;
                     }
                     for (int i = 0; i < players.Length; i++)
                     {
-                        Player pl = players[i].GetComponent<Player>();
-                        pl.amountX = 200;
-                        Debug.Log("AmountX: " + pl.amountX);
+                        InGameUI.ScoreX = 2;
+                        Debug.Log("AmountX: " + InGameUI.ScoreX);
                         Debug.Log("2x Event On");
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
@@ -74,17 +78,16 @@ public class EventsSwitch : MonoBehaviour
                 }
                 else
                 {
-                    for (int i = 0; i < reflexes.Length; i++)
+                    for (int i = 0; i < players.Length; i++)
                     {
                         SimpleMoveController pl = players[i].GetComponent<SimpleMoveController>();
-                        pl.speedX = 2;
+                        pl.speedX = 1.5f;
                         Debug.Log("SpeedX: " + pl.speedX);
                         Debug.Log("Fast Reflexes Event On");
                     }
-                    for (int j = 0; j < x2.Length; j++)
+                    for (int j = 0; j < events.Length; j++)
                     {
-                        reflexes[j].gameObject.SetActive(true);
-                        x2[j].gameObject.SetActive(false);
+                        events[j].GetComponent<Image>().sprite = Reflexes;
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Invoke("ReflexesOff", 10f);
@@ -103,9 +106,8 @@ public class EventsSwitch : MonoBehaviour
     {
         for (int z = 0; z < players.Length; z++)
         {
-            Player pl = players[z].GetComponent<Player>();
-            pl.amountX = 100;
-            Debug.Log("AmountX after wait: " + pl.amountX);
+            InGameUI.ScoreX = 1;
+            Debug.Log("AmountX after wait: " + InGameUI.ScoreX);
             Debug.Log("No Event Off");
         }
         ChooseEvent(2);

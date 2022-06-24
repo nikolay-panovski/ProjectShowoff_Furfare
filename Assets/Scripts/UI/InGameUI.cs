@@ -11,6 +11,7 @@ public class InGameUI : MonoBehaviour
     public bool timeIsLeft;
     public Text timeText;
 
+    public static int ScoreX = 1;
     //Places
     private List<PlayerConfig> players = new List<PlayerConfig>();
     private EventQueue eventQueue;
@@ -49,12 +50,6 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-    public void StartCountDown()
-    {
-        InGameUIScreen.gameObject.SetActive(true);
-        Countdown.gameObject.SetActive(true);
-    }
-
     private void DecreaseTimer()
     {
         _timeRemaining -= 1;
@@ -79,7 +74,7 @@ public class InGameUI : MonoBehaviour
     private void OnPlayerHit(EventData eventData)
     {
         PlayerHitEventData data = (PlayerHitEventData)eventData;
-        IncreaseScore(data.byPlayer, 100);
+        IncreaseScore(data.byPlayer, 100* ScoreX);
         SortPlayerList();
     }
 

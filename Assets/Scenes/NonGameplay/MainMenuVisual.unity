@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1067.8013, g: 2163.9766, b: 2971.6406, a: 1}
+  m_IndirectSpecularColor: {r: 1067.333, g: 2163.621, b: 2971.5312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -686,6 +686,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1376459168736489995, guid: 38f555d6a353d3f4cbe715a1f4b8a192, type: 3}
   m_PrefabInstance: {fileID: 159004888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &162094204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2795721033505462732, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+  m_PrefabInstance: {fileID: 862756839}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &190752486
 PrefabInstance:
@@ -2254,6 +2259,34 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 162094204}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Menus, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355832645613716874, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1528217751031081396, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2445,6 +2478,30 @@ PrefabInstance:
     - target: {fileID: 5068243978848032986, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 162094204}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Menus, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974976890343080450, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5974976890343080454, guid: 28e8e5c16eeb9bc4d97d0cfaf7bb8506, type: 3}
       propertyPath: resizeMode

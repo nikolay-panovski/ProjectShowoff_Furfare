@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Rumble : MonoBehaviour
 {
-    /*public enum RumblePattern
+   /* public enum RumblePattern
     {
         Constant,
         Pulse,

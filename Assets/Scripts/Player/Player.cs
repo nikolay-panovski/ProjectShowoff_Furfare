@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
         //Sound Data
         rnd = this.GetComponent<RandomVoiceLine>();
+        //rmb = this.GetComponent<Rumble>();
     }
 
     private void Update()
