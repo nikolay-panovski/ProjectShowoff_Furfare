@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     //UI Part
     public int amountX = 100;
-    //Rumble rmb;
+    Rumble rmb;
     RandomVoiceLine rnd;
     void Start()
     {
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("IsThrowing", true);
-            //rmb.RumbleConstant(1f, 1f, 0.5f);
+            rmb.RumbleConstant(1f, 1f, 0.5f);
             rnd.Throw();
         }
     }
