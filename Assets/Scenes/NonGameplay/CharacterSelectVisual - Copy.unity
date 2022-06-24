@@ -6510,6 +6510,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1968361262}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AssetsMaterialsLevel
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1372170763}
         m_TargetAssemblyTypeName: GotoScene, Assembly-CSharp
         m_MethodName: OnSceneChangeButton
@@ -8684,6 +8696,7 @@ GameObject:
   - component: {fileID: 1968361260}
   - component: {fileID: 1968361259}
   - component: {fileID: 1968361258}
+  - component: {fileID: 1968361262}
   m_Layer: 5
   m_Name: --- UI CANVAS ---
   m_TagString: Untagged
@@ -8773,6 +8786,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1968361262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968361257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f265b00e78a5f247ae5f1ce2c5217f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenu: {fileID: 0}
+  CharacterSelection: {fileID: 0}
+  Settings: {fileID: 0}
+  Infographic: {fileID: 0}
 --- !u!1 &1980299307
 GameObject:
   m_ObjectHideFlags: 0
@@ -9574,6 +9603,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: AssetsMaterialsLevel
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1968361262}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: ForwardButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2105144731
