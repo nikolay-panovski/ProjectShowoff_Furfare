@@ -81,7 +81,7 @@ public class EventsSwitch : MonoBehaviour
                     for (int i = 0; i < players.Length; i++)
                     {
                         SimpleMoveController pl = players[i].GetComponent<SimpleMoveController>();
-                        pl.speedX = 2;
+                        pl.speedX = 1.5f;
                         Debug.Log("SpeedX: " + pl.speedX);
                         Debug.Log("Fast Reflexes Event On");
                     }

@@ -50,12 +50,6 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-    public void StartCountDown()
-    {
-        InGameUIScreen.gameObject.SetActive(true);
-        Countdown.gameObject.SetActive(true);
-    }
-
     private void DecreaseTimer()
     {
         _timeRemaining -= 1;
