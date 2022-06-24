@@ -61,9 +61,8 @@ public class EventsSwitch : MonoBehaviour
                     }
                     for (int i = 0; i < players.Length; i++)
                     {
-                        Player pl = players[i].GetComponent<Player>();
-                        pl.amountX = 200;
-                        Debug.Log("AmountX: " + pl.amountX);
+                        InGameUI.ScoreX = 2;
+                        Debug.Log("AmountX: " + InGameUI.ScoreX);
                         Debug.Log("2x Event On");
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
@@ -107,9 +106,8 @@ public class EventsSwitch : MonoBehaviour
     {
         for (int z = 0; z < players.Length; z++)
         {
-            Player pl = players[z].GetComponent<Player>();
-            pl.amountX = 100;
-            Debug.Log("AmountX after wait: " + pl.amountX);
+            InGameUI.ScoreX = 1;
+            Debug.Log("AmountX after wait: " + InGameUI.ScoreX);
             Debug.Log("No Event Off");
         }
         ChooseEvent(2);
