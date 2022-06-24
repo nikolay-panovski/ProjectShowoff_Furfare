@@ -44,10 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db77eeaffc51dab4285ece2becf0f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  x2: []
-  reflexes: []
-  event_On: {fileID: 8300000, guid: b5e90caae19ac6c43ad8dde5d42e0690, type: 3}
+  X2: {fileID: 21300000, guid: 5cf250f04ca58ab4681aba8026b2847e, type: 3}
+  Reflexes: {fileID: 21300000, guid: f3e370600c6253d4c9232297597784e1, type: 3}
 --- !u!114 &3162752940397771066
 MonoBehaviour:
   m_ObjectHideFlags: 0

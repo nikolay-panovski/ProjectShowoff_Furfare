@@ -25,15 +25,11 @@ public class SoundManager : MonoBehaviour
     }
     void OnEnable()
     {
-        Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-       
-        Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
-        Debug.Log("MusicIsOn: " + MusicIsOn);
         if (scene.name == "MainMenuVisual")
         {
             SoundtrackSource.clip = MainMenu;
@@ -45,7 +41,6 @@ public class SoundManager : MonoBehaviour
             if (MusicIsOn)
             {
                 SoundtrackSource.Play();
-                Debug.Log("Play Music");
             }
         }
         if (scene.name == "Level_Adri")
@@ -54,7 +49,6 @@ public class SoundManager : MonoBehaviour
             if (MusicIsOn)
             {
                 SoundtrackSource.Play();
-                Debug.Log("Play Music");
             }
         }
         if (scene.name == "GardenFlat")
@@ -63,7 +57,6 @@ public class SoundManager : MonoBehaviour
             if (MusicIsOn)
             {
                 SoundtrackSource.Play();
-                Debug.Log("Play Music");
             }
         }
         if (scene.name == "WinningArt")
@@ -72,14 +65,12 @@ public class SoundManager : MonoBehaviour
             if (MusicIsOn)
             {
                 SoundtrackSource.Play();
-                Debug.Log("Play Music");
             }
         }
         
     }
     public void MusicToggle()
     {
-        Debug.Log("MusicIsOn: " + MusicIsOn);
         if (MusicIsOn)
         {
             SoundtrackSource.Stop();
@@ -91,7 +82,6 @@ public class SoundManager : MonoBehaviour
     }
     public void SoundToggle()
     {
-        Debug.Log("MusicIsOn: " + MusicIsOn);
         if (SoundIsOn)
         {
             Source.enabled = false;
@@ -104,7 +94,6 @@ public class SoundManager : MonoBehaviour
     // called when the game is terminated
     void OnDisable()
     {
-        Debug.Log("OnDisable");
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     public SoundAudioClip[] soundAudioClipArray;
