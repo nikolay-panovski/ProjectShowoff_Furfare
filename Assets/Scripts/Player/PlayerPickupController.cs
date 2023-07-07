@@ -8,6 +8,6 @@ public class PlayerPickupController : PickupController
         projectile.owningPlayer = this.gameObject.GetComponent<Player>();
         projectile.state = ProjectileState.HELD;
 
-        Debug.Log("Catch successful.");
+        //Debug.Log("Catch successful.");
     }
 }

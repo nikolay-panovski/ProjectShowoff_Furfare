@@ -18,9 +18,7 @@ public class EventsSwitch : MonoBehaviour
     }
     public void AssigningPlayersAndSprites()
     {
-        Debug.Log("AssigningPlayersAndSprites");
         players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players);
         events = GameObject.FindGameObjectsWithTag("Events");
         ChooseEvent(1);
     }
@@ -31,7 +29,7 @@ public class EventsSwitch : MonoBehaviour
             case 1:
                 if (current == 1)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    //Debug.Log("pwr is the same as before: " + pwr);
                     ChooseEvent(1);
                 }
                 else
@@ -41,7 +39,7 @@ public class EventsSwitch : MonoBehaviour
                         events[j].GetComponent<Image>().sprite = null;
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
-                    Debug.Log("No Event On");
+                    //Debug.Log("No Event On");
                     Invoke("NoEventOff", 10f);
                     //rmb.RumbleConstant(1f, 1f, 1f);
                 }
@@ -50,7 +48,7 @@ public class EventsSwitch : MonoBehaviour
             case 2:
                 if (current == 2)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    //Debug.Log("pwr is the same as before: " + pwr);
                     ChooseEvent(2);
                 }
                 else
@@ -62,8 +60,8 @@ public class EventsSwitch : MonoBehaviour
                     for (int i = 0; i < players.Length; i++)
                     {
                         InGameUI.ScoreX = 2;
-                        Debug.Log("AmountX: " + InGameUI.ScoreX);
-                        Debug.Log("2x Event On");
+                        //Debug.Log("AmountX: " + InGameUI.ScoreX);
+                        //Debug.Log("2x Event On");
                     }
                     SoundPlay.PlaySound(SoundPlay.Sound.eventActivates);
                     Invoke("X2Off", 10f);
@@ -73,7 +71,7 @@ public class EventsSwitch : MonoBehaviour
             case 3:
                 if (current == 3)
                 {
-                    Debug.Log("pwr is the same as before: " + pwr);
+                    //Debug.Log("pwr is the same as before: " + pwr);
                     ChooseEvent(3);
                 }
                 else
@@ -82,8 +80,8 @@ public class EventsSwitch : MonoBehaviour
                     {
                         SimpleMoveController pl = players[i].GetComponent<SimpleMoveController>();
                         pl.speedX = 1.5f;
-                        Debug.Log("SpeedX: " + pl.speedX);
-                        Debug.Log("Fast Reflexes Event On");
+                        //Debug.Log("SpeedX: " + pl.speedX);
+                        //Debug.Log("Fast Reflexes Event On");
                     }
                     for (int j = 0; j < events.Length; j++)
                     {
@@ -98,7 +96,7 @@ public class EventsSwitch : MonoBehaviour
     }
     void NoEventOff()
     {
-        Debug.Log("No Event Off");
+        //Debug.Log("No Event Off");
         ChooseEvent(1);
     }
 
@@ -107,8 +105,8 @@ public class EventsSwitch : MonoBehaviour
         for (int z = 0; z < players.Length; z++)
         {
             InGameUI.ScoreX = 1;
-            Debug.Log("AmountX after wait: " + InGameUI.ScoreX);
-            Debug.Log("No Event Off");
+            //Debug.Log("AmountX after wait: " + InGameUI.ScoreX);
+            //Debug.Log("No Event Off");
         }
         ChooseEvent(2);
     }
@@ -119,8 +117,8 @@ public class EventsSwitch : MonoBehaviour
         {
             SimpleMoveController pl = players[z].GetComponent<SimpleMoveController>();
             pl.speedX = 1;
-            Debug.Log("SpeedX after wait: " + pl.speedX);
-            Debug.Log("Fast Reflexes Event Off");
+            //Debug.Log("SpeedX after wait: " + pl.speedX);
+            //Debug.Log("Fast Reflexes Event Off");
         }
         ChooseEvent(3);
     }

@@ -29,7 +29,6 @@ public class SoundManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log(mode);
         if (scene.name == "MainMenuVisual")
         {
             SoundtrackSource.clip = MainMenu;

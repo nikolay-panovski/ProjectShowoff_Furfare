@@ -31,7 +31,6 @@ public static class SoundPlay
     }
     private static AudioClip GetAudioClip(Sound sound)
     {
-        Debug.Log("Sound Called: " + sound);
         foreach (SoundManager.SoundAudioClip soundAudioClip in SoundManager.i.soundAudioClipArray)
         {
             if(soundAudioClip.sound == sound)
