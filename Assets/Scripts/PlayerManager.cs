@@ -98,6 +98,12 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    // ONLY CALL IN TEST SCRIPTS / MANUAL SCENES!
+    public void UpdatePlayerListWithJoiningManual(PlayerConfig joiningPlayer)
+    {
+        updatePlayerListWithJoining(joiningPlayer);
+    }
+
     private void updatePlayerListWithJoining(PlayerConfig joiningPlayer)
     {
         joiningPlayer.playerIndex = numJoinedPlayers;   // assign index before adding self, because Lists are 0-indexed for 1st item

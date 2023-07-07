@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
 
             animator.SetBool("IsThrowing", true);
             //rmb.RumbleConstant(1f, 1f, 0.5f);
-            rnd.Throw();
+            if (rnd != null) rnd.Throw();
         }
     }
     #endregion
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour
         Destroy(projectile.gameObject);
         Utils.resetTimer(ref timeBetweenCatchAndCollision);
         //Voice Line
-        rnd.WinOrGetsHit();
+        if (rnd != null) rnd.WinOrGetsHit();
     }
 
     private void pickProjectileUp(Projectile projectile)

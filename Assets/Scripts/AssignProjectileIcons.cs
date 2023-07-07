@@ -16,7 +16,8 @@ public class AssignProjectileIcons : MonoBehaviour
 
     private void UpdateSprite()
     {
-        if (_myPlayer.player.heldProjectile != null) _mySprite.sprite = _myPlayer.player.heldProjectile._displaySprite;
+        if (_myPlayer != null && // for testing usage
+            _myPlayer.player.heldProjectile != null) _mySprite.sprite = _myPlayer.player.heldProjectile._displaySprite;
         else _mySprite.sprite = null;
     }
 
