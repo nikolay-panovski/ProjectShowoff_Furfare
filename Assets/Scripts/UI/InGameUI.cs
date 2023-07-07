@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using DG.Tweening;
+
 public class InGameUI : MonoBehaviour
 {
     //Timer
@@ -24,7 +26,10 @@ public class InGameUI : MonoBehaviour
     //Infographic
     public GameObject InGameUIScreen;
     public GameObject Countdown;
-    // Start is called before the first frame update
+
+
+    //private ScoreModifier scoreModifier;
+
     void Start()
     {
 
@@ -78,6 +83,20 @@ public class InGameUI : MonoBehaviour
         SortPlayerList();
     }
 
+    public void Test_IncreaseScorePlayer1()
+    {
+        players[0].score += 100;    // constant value for the testing??
+        // update the score in the relevant text field visually:
+        /**
+        Text playerText = players[0].playerUICard.GetComponentInChildren<Text>();
+        playerText.text = players[0].score.ToString();
+        playerText.transform.DOScale(new Vector3(playerText.transform.localScale.x * 1.2f,
+                                                 playerText.transform.localScale.y * 1.2f,
+                                                 playerText.transform.localScale.z * 1f), 0.2f).SetEase(Ease.InElastic).SetLoops(2, LoopType.Yoyo);
+        playerText.DOColor(new Color(0.7f, 0.4f, 0.4f), 0.2f);
+        /**/
+    }
+
     public void IncreaseScore(Player playerID, int amount)
     {
         for (int i = 0; i < players.Count; i++)
@@ -86,7 +105,11 @@ public class InGameUI : MonoBehaviour
             {
                 players[i].score += amount;
                 // update the score in the relevant text field visually:
-                players[i].playerUICard.GetComponentInChildren<Text>().text = players[i].score.ToString();
+                Text playerText = players[i].playerUICard.GetComponentInChildren<Text>();
+                playerText.text = players[i].score.ToString();
+                // TODO: swap out all magic values (+ enums) for variables, separate the tween calls to another script
+                playerText.transform.DOScale(playerText.transform.localScale * 1.6f, 0.25f).SetEase(Ease.InQuad).SetLoops(2, LoopType.Yoyo);
+                playerText.DOColor(new Color(0.7f, 0.4f, 0.4f), 0.25f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
             }
         }  
     }
