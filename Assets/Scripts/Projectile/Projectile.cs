@@ -31,9 +31,12 @@ public class Projectile : Item
 
     protected Rigidbody myRigidbody;
 
+    private ImpactParticleEffect impactParticleEffect;
+
     protected virtual void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        impactParticleEffect = FindObjectOfType<ImpactParticleEffect>();
 
         eventQueue = FindObjectOfType<EventQueue>();
 
@@ -101,6 +104,7 @@ public class Projectile : Item
         {
             incrementBounceCount();
             checkForMaxBounceCount();
+            if (impactParticleEffect != null) impactParticleEffect.PlayOnImpact(collision);
         }
     }
 
