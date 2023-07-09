@@ -28,7 +28,7 @@ public class InGameUI : MonoBehaviour
     public GameObject Countdown;
 
 
-    //private ScoreModifier scoreModifier;
+    private ScoreAnimationEffect scoreAnimationEffect;
 
     void Start()
     {
@@ -36,6 +36,8 @@ public class InGameUI : MonoBehaviour
         GetAllPlayers();
 
         timeIsLeft = true;
+
+        scoreAnimationEffect = FindObjectOfType<ScoreAnimationEffect>();
 
         eventQueue = FindObjectOfType<EventQueue>();
         eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
@@ -83,20 +85,6 @@ public class InGameUI : MonoBehaviour
         SortPlayerList();
     }
 
-    public void Test_IncreaseScorePlayer1()
-    {
-        players[0].score += 100;    // constant value for the testing??
-        // update the score in the relevant text field visually:
-        /**
-        Text playerText = players[0].playerUICard.GetComponentInChildren<Text>();
-        playerText.text = players[0].score.ToString();
-        playerText.transform.DOScale(new Vector3(playerText.transform.localScale.x * 1.2f,
-                                                 playerText.transform.localScale.y * 1.2f,
-                                                 playerText.transform.localScale.z * 1f), 0.2f).SetEase(Ease.InElastic).SetLoops(2, LoopType.Yoyo);
-        playerText.DOColor(new Color(0.7f, 0.4f, 0.4f), 0.2f);
-        /**/
-    }
-
     public void IncreaseScore(Player playerID, int amount)
     {
         for (int i = 0; i < players.Count; i++)
@@ -104,12 +92,17 @@ public class InGameUI : MonoBehaviour
             if (playerID == players[i].player)
             {
                 players[i].score += amount;
-                // update the score in the relevant text field visually:
+
                 Text playerText = players[i].playerUICard.GetComponentInChildren<Text>();
-                playerText.text = players[i].score.ToString();
-                // TODO: swap out all magic values (+ enums) for variables, separate the tween calls to another script
-                playerText.transform.DOScale(playerText.transform.localScale * 1.6f, 0.25f).SetEase(Ease.InQuad).SetLoops(2, LoopType.Yoyo);
-                playerText.DOColor(new Color(0.7f, 0.4f, 0.4f), 0.25f).SetEase(Ease.Linear).SetLoops(2, LoopType.Yoyo);
+
+                if (scoreAnimationEffect != null)
+                {
+                    scoreAnimationEffect.SetVisualScore(playerText, players[i].score);
+                }
+                else
+                {
+                    playerText.text = players[i].score.ToString();  // no animation defined, so set score text directly
+                }
             }
         }  
     }
