@@ -3407,18 +3407,18 @@ MonoBehaviour:
   scoreModifyMode: 0
   animationsPerVar:
   - animateVar: 0
-    animDuration: 0.4
-    easeType: 1
+    animDuration: 0.3
+    easeType: 4
     shakeVar: 1
-    values: {x: 20, y: 20, z: 0}
+    values: {x: 25, y: 25, z: 0}
     multiplyValues: 0
-    shakeVibrato: 0
+    shakeVibrato: 12
     shakeRandomness: 0
   - animateVar: 2
     animDuration: 0.4
     easeType: 5
     shakeVar: 0
-    values: {x: 0.25, y: 0.25, z: 0}
+    values: {x: 0.2, y: 0.2, z: 0}
     multiplyValues: 0
     shakeVibrato: 0
     shakeRandomness: 0
