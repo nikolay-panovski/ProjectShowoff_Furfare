@@ -42,8 +42,8 @@ public struct ScoreAnimationConfig
     //[Tooltip("This represents either the target values for the animated variable (relative to the starting values!), or a shake strength.")]
     [Tooltip("This represents the target values for the animated variable (relative to the starting values!).")]
     public Vector3 values;
-    [Tooltip("Multiply or add the values specified to the starting values?")]
-    public bool multiplyValues;
+    //[Tooltip("Multiply or add the values specified to the starting values?")]
+    //public bool multiplyValues;
     public int shakeVibrato;
     [Range(0f, 90f)] public float shakeRandomness;
 }
