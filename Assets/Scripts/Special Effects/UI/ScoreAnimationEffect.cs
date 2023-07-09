@@ -56,7 +56,7 @@ public class ScoreAnimationEffect : MonoBehaviour
     [SerializeField] private List<ScoreAnimationConfig> animationsPerVar;
 
     private TweenParams finalAnimation;
-    private Tween lastTween;
+    private Sequence animSequence;
 
     private void Start()
     {
@@ -85,7 +85,8 @@ public class ScoreAnimationEffect : MonoBehaviour
 
     public void AnimateScoreModification(/*AnimatableText*/Text refText)
     {
-        if (lastTween != null) lastTween.Complete();
+        if (animSequence != null) animSequence.Complete();
+        animSequence = DOTween.Sequence();
 
         foreach (ScoreAnimationConfig config in animationsPerVar)
         {
@@ -96,22 +97,22 @@ public class ScoreAnimationEffect : MonoBehaviour
             switch (config.animateVar)
             {
                 case AnimateVar.POSITION:
-                    if (config.shakeVar) { lastTween = refText.transform.DOShakePosition(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation); }
-                    else { lastTween = refText.transform.DOMove(refText.transform.position + config.values, config.animDuration).SetAs(finalAnimation); }
+                    if (config.shakeVar) { animSequence.Insert(0, refText.transform.DOShakePosition(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation)); }
+                    else { animSequence.Insert(0, refText.transform.DOMove(refText.transform.position + config.values, config.animDuration).SetAs(finalAnimation)); }
                     break;
                 case AnimateVar.ROTATION:
-                    if (config.shakeVar) { lastTween = refText.transform.DOShakeRotation(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation); }
-                    else { lastTween = refText.transform.DORotate(refText.transform.localRotation.eulerAngles + config.values, config.animDuration).SetAs(finalAnimation); }
+                    if (config.shakeVar) { animSequence.Insert(0, refText.transform.DOShakeRotation(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation)); }
+                    else { animSequence.Insert(0, refText.transform.DORotate(refText.transform.localRotation.eulerAngles + config.values, config.animDuration).SetAs(finalAnimation)); }
                     break;
                 case AnimateVar.SCALE:
-                    if (config.shakeVar) { lastTween = refText.transform.DOShakeScale(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation); }
-                    else { lastTween = refText.transform.DOScale(refText.transform.localScale + config.values, config.animDuration).SetAs(finalAnimation); }
+                    if (config.shakeVar) { animSequence.Insert(0, refText.transform.DOShakeScale(config.animDuration, config.values, config.shakeVibrato, config.shakeRandomness).SetAs(finalAnimation)); }
+                    else { animSequence.Insert(0, refText.transform.DOScale(refText.transform.localScale + config.values, config.animDuration).SetAs(finalAnimation)); }
                     break;
                 case AnimateVar.COLOR:
                     if (config.shakeVar) { Debug.LogWarning("[ScoreAnimationEffect] Cannot shake color values"); }
-                    lastTween = refText.DOColor(new Color(refText.color.r + config.values.x,
-                                                          refText.color.g + config.values.y,
-                                                          refText.color.b + config.values.z, 1f), config.animDuration).SetAs(finalAnimation);
+                    animSequence.Insert(0, refText.DOColor(new Color(refText.color.r + config.values.x,
+                                                                     refText.color.g + config.values.y,
+                                                                     refText.color.b + config.values.z, 1f), config.animDuration).SetAs(finalAnimation));
                     break;
             }
         }
