@@ -17364,6 +17364,10 @@ PrefabInstance:
       propertyPath: _timeRemaining
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5767994608998963082, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
+      propertyPath: idleTimeAfterRound
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737200419523797349, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
     - {fileID: 3977784516870639321, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
@@ -24581,6 +24585,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1071264422831746093, guid: 776ce9b005f3e1f41b28fc88e7e5dbbd, type: 3}
   m_PrefabInstance: {fileID: 1764551185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1770187340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770187342}
+  - component: {fileID: 1770187341}
+  m_Layer: 0
+  m_Name: HitStopEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1770187341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770187340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acae22139f5666b44a560560d3173c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalTimeScale: 0.1
+  easeType: 9
+  animDuration: 1.25
+--- !u!4 &1770187342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770187340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1778746195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1281485761646726491, guid: 12679f0727dc6264197595d22c6d46e0, type: 3}
