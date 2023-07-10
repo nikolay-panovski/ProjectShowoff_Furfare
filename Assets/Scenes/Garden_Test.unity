@@ -3404,11 +3404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aabdc3312f170246b4ec05c4276b602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreModifyMode: 0
   animationsPerVar:
   - enabled: 1
     animateVar: 0
-    animDuration: 0.3
+    animDuration: 0.2
     easeType: 4
     shakeVar: 1
     values: {x: 25, y: 25, z: 0}
@@ -3416,7 +3415,7 @@ MonoBehaviour:
     shakeRandomness: 0
   - enabled: 1
     animateVar: 2
-    animDuration: 0.3
+    animDuration: 0.2
     easeType: 5
     shakeVar: 0
     values: {x: 0.2, y: 0.2, z: 0}
@@ -3424,7 +3423,7 @@ MonoBehaviour:
     shakeRandomness: 0
   - enabled: 1
     animateVar: 3
-    animDuration: 0.3
+    animDuration: 0.2
     easeType: 1
     shakeVar: 0
     values: {x: -0.3, y: -0.6, z: -0.6}
@@ -3432,10 +3431,10 @@ MonoBehaviour:
     shakeRandomness: 0
   - enabled: 1
     animateVar: 4
-    animDuration: 0.3
-    easeType: 1
+    animDuration: 0.2
+    easeType: 3
     shakeVar: 0
-    values: {x: -0.3, y: -0.6, z: -0.6}
+    values: {x: 0, y: 0, z: 0}
     shakeVibrato: 0
     shakeRandomness: 0
 --- !u!4 &329236907

@@ -49,17 +49,24 @@ public class ScoreAnimationEffect : MonoBehaviour
     [SerializeField] private List<ScoreAnimationConfig> animationsPerVar;
 
     private TweenParams finalAnimation;
-    private Sequence animSequence;
+
+    private Dictionary<PlayerConfig, Sequence> playersAnimSequences = new Dictionary<PlayerConfig, Sequence>(4);
 
     private void Start()
     {
         finalAnimation = new TweenParams();
     }
 
-    public void AnimateScoreModification(/*AnimatableText*/Text refText, int toScore)
+    public void AnimateScoreModification(/*AnimatableText*/PlayerConfig ofPlayer, int toScore)
     {
+        if (!playersAnimSequences.ContainsKey(ofPlayer)) playersAnimSequences.Add(ofPlayer, null);
+
+        Sequence animSequence = playersAnimSequences[ofPlayer];
+
         if (animSequence != null) animSequence.Complete();
         animSequence = DOTween.Sequence();
+
+        Text refText = ofPlayer.playerUICard.GetComponentInChildren<Text>();
 
         foreach (ScoreAnimationConfig config in animationsPerVar)
         {
@@ -93,6 +100,8 @@ public class ScoreAnimationEffect : MonoBehaviour
                     animSequence.Insert(0, DOTween.To(() => int.Parse(refText.text), x => refText.text = x.ToString(), toScore, config.animDuration));
                     break;
             }
+
+            playersAnimSequences[ofPlayer] = animSequence;
         }
     }
 }

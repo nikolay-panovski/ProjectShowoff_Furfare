@@ -93,15 +93,13 @@ public class InGameUI : MonoBehaviour
             {
                 players[i].score += amount;
 
-                Text playerText = players[i].playerUICard.GetComponentInChildren<Text>();
-
                 if (scoreAnimationEffect != null)
                 {
-                    scoreAnimationEffect.AnimateScoreModification(playerText, players[i].score);
+                    scoreAnimationEffect.AnimateScoreModification(players[i], players[i].score);
                 }
                 else
                 {
-                    playerText.text = players[i].score.ToString();  // no animation defined, so set score text directly
+                    players[i].playerUICard.GetComponentInChildren<Text>().text = players[i].score.ToString();  // no animation defined, so set score text directly
                 }
             }
         }  
