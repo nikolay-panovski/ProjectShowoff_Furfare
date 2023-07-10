@@ -20,6 +20,10 @@ public class TimeAnimationEffect : MonoBehaviour
     [SerializeField] private Vector3 scaleOffset;
     [SerializeField] private bool animateColor;
     [SerializeField] private Vector3 colorRGBOffset;
+    [Space(10)]
+    [Tooltip("Play a countdown sound each time the timer is animated (here: each 1 second).")]
+    [SerializeField] private bool alsoPlaySound;
+    [SerializeField] private SoundPlay.Sound stepSound = SoundPlay.Sound.countdownBeep;
 
     private TweenParams animProperties;
 
@@ -36,7 +40,11 @@ public class TimeAnimationEffect : MonoBehaviour
         // This is hooked to InGameUI and will run every round period (1 second).
         // As such, AnimateTimeStep will be built to only animate one independent step per call.
         // (This is also a justification for the timer animation being less flexible to modify than the score animation.)
-        if (secondsRemaining >= 0 && secondsRemaining <= secondsBeforeRoundEnd) AnimateTimeStep();
+        if (secondsRemaining >= 0 && secondsRemaining <= secondsBeforeRoundEnd)
+        {
+            AnimateTimeStep();
+            //if (alsoPlayBeeps) SoundPlay.PlaySound(stepSound);
+        }
     }
 
     private void AnimateTimeStep()
@@ -50,6 +58,8 @@ public class TimeAnimationEffect : MonoBehaviour
                                                                              colorRGBOffset.y,
                                                                              colorRGBOffset.z,
                                                                              1f), 0.5f).SetAs(animProperties));
+
+        if (alsoPlaySound) SoundPlay.PlaySound(stepSound);
     }
 
     public void SetTimerTextRef(Text text)

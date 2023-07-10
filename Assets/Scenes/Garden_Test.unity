@@ -10481,6 +10481,8 @@ MonoBehaviour:
   scaleOffset: {x: 0.06, y: 0.06, z: 0}
   animateColor: 1
   colorRGBOffset: {x: -0.1, y: -0.9, z: -0.9}
+  alsoPlaySound: 1
+  stepSound: 14
 --- !u!1001 &522512395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17360,7 +17362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767994608998963082, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
       propertyPath: _timeRemaining
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737200419523797349, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
