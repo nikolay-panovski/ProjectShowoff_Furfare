@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         eventQueue = FindObjectOfType<EventQueue>();
+        eventQueue.Subscribe(EventType.GAMEPLAY_ROUND_ENDED, OnRoundEnded);
 
         if (!TryGetComponent<PickupController>(out catcher)) throw new MissingComponentException("Player is missing a PickupController-type script!");
         if (!TryGetComponent<PlayerShootController>(out shooter)) throw new MissingComponentException("Player is missing a ShootController-type script!");
@@ -229,5 +230,25 @@ public class Player : MonoBehaviour
         //Turns invincibility on and after a delay turns it back off
         invincible = !invincible;
         if (invincible == true) Invoke("ToggleInvincibility", _invincibilityDuration);
+    }
+
+    private void OnRoundEnded(EventData eventData)
+    {
+        RoundEndedEventData data = (RoundEndedEventData)eventData;
+
+        if (data.winningPlayer == this)
+        {
+            Light pointLight = GetComponentInChildren<Light>();
+            if (pointLight != null)
+            {
+                pointLight.enabled = true;
+            }
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        eventQueue.Unsubscribe(EventType.GAMEPLAY_ROUND_ENDED, OnRoundEnded);
     }
 }

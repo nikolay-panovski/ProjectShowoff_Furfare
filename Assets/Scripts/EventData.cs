@@ -17,7 +17,9 @@ public enum EventType
     PLAYER_REGISTERED,  // PlayerInput recognized, PlayerConfig created out of it, added to manager and index assigned
     BUTTON_PRESSED,
 
-    CHARACTER_SELECTED  // specifically a character button pressed
+    CHARACTER_SELECTED,  // specifically a character button pressed
+    
+    GAMEPLAY_ROUND_ENDED    // on timer hitting 0, NOT a scene transition event
 }
 
 public class EventData
@@ -152,5 +154,15 @@ public class CharacterSelectedEventData : EventData
         byCursor = pByCursor;
         selectedCharacter = pSelectedCharacter;
         selectedCharacterID = pID;
+    }
+}
+
+public class RoundEndedEventData : EventData
+{
+    public readonly Player winningPlayer;
+
+    public RoundEndedEventData(Player pWinningPlayer) : base(EventType.GAMEPLAY_ROUND_ENDED)
+    {
+        winningPlayer = pWinningPlayer;
     }
 }

@@ -108,7 +108,9 @@ public class InGameUI : MonoBehaviour
             if (_idleTimeAfterRound == idleTimeAfterRound)
             {
                 if (hitStopEffect != null) hitStopEffect.SlowDownTime();
-                // may also send signal that the round is ending, if it's needed
+
+                SortPlayerList();
+                eventQueue.AddEvent(new RoundEndedEventData(players[0].player));
 
                 /**
                 if (destroyObjsOnRoundEnd)

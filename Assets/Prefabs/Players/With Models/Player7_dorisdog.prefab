@@ -107,7 +107,7 @@ RectTransform:
   m_Children:
   - {fileID: 6533510177280416077}
   m_Father: {fileID: 6896220821185776099}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -362,6 +362,14 @@ PrefabInstance:
     - target: {fileID: 5328803503756724786, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
       propertyPath: stunnedAnimationName
       value: Dog_Stunned
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600090465913528644, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942944645624477499, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
+      propertyPath: m_Intensity
+      value: 8000000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1514549403074450010, guid: b3ddaf048002fb44183e486e042b29c8, type: 3}
