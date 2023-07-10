@@ -17,12 +17,6 @@ using DG.Tweening;
 }
 /**/
 
-public enum ScoreModifyMode
-{
-    INSTANT,
-    STEPWISE
-}
-
 public enum AnimateVar
 {
     POSITION,
@@ -35,6 +29,8 @@ public enum AnimateVar
 [System.Serializable]
 public struct ScoreAnimationConfig
 {
+    [Tooltip("Config only applies if enabled. Useful for fast prototyping in play mode.")]
+    public bool enabled;
     public AnimateVar animateVar;
     public float animDuration;
     public Ease easeType;
@@ -43,16 +39,12 @@ public struct ScoreAnimationConfig
     //[Tooltip("This represents either the target values for the animated variable (relative to the starting values!), or a shake strength.")]
     [Tooltip("This represents the target values for the animated variable (relative to the starting values!).")]
     public Vector3 values;
-    //[Tooltip("Multiply or add the values specified to the starting values?")]
-    //public bool multiplyValues;
     public int shakeVibrato;
     [Range(0f, 90f)] public float shakeRandomness;
 }
 
 public class ScoreAnimationEffect : MonoBehaviour
 {
-    [SerializeField] private ScoreModifyMode scoreModifyMode = ScoreModifyMode.INSTANT;
-
     [Header("Animation properties")]
     [SerializeField] private List<ScoreAnimationConfig> animationsPerVar;
 
@@ -64,26 +56,6 @@ public class ScoreAnimationEffect : MonoBehaviour
         finalAnimation = new TweenParams();
     }
 
-
-    public void SetVisualScore(Text refText, int toScore)
-    {
-        switch (scoreModifyMode)
-        {
-            case ScoreModifyMode.INSTANT:
-                //refText.text = toScore.ToString();
-                break;
-            case ScoreModifyMode.STEPWISE:
-                // set text to the next partial step as defined by step parameters here, then call this again when it is time for another step
-
-                //finalAnimation.OnComplete(SetVisualScore(refText, toScore));
-                break;
-            default:
-                throw new System.ArgumentException("Invalid ScoreModifyMode: " + scoreModifyMode);
-        }
-
-        AnimateScoreModification(refText, toScore);
-    }
-
     public void AnimateScoreModification(/*AnimatableText*/Text refText, int toScore)
     {
         if (animSequence != null) animSequence.Complete();
@@ -91,6 +63,8 @@ public class ScoreAnimationEffect : MonoBehaviour
 
         foreach (ScoreAnimationConfig config in animationsPerVar)
         {
+            if (!config.enabled) continue;
+
             finalAnimation.Clear();
             finalAnimation.SetEase(config.easeType);
             finalAnimation.SetLoops(2, LoopType.Yoyo);  //

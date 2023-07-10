@@ -97,7 +97,7 @@ public class InGameUI : MonoBehaviour
 
                 if (scoreAnimationEffect != null)
                 {
-                    scoreAnimationEffect.SetVisualScore(playerText, players[i].score);
+                    scoreAnimationEffect.AnimateScoreModification(playerText, players[i].score);
                 }
                 else
                 {
