@@ -17362,7 +17362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767994608998963082, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
       propertyPath: _timeRemaining
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6737200419523797349, guid: 3ce76b175de557b488167e3acff5087e, type: 3}
@@ -24888,6 +24888,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2794476560600445653, guid: d4c4a3d6b0a25234fb706e546eb0d1f0, type: 3}
   m_PrefabInstance: {fileID: 1806078252}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1806582631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806582633}
+  - component: {fileID: 1806582632}
+  m_Layer: 0
+  m_Name: MusicTempoEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1806582632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806582631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf43501b69e7f82408a00a57ad0a17b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <secondsBeforeRoundEnd>k__BackingField: 10
+  tempo: 1.5
+  easeType: 2
+  animDuration: 1
+--- !u!4 &1806582633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806582631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1810077668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1376459168736489995, guid: 38f555d6a353d3f4cbe715a1f4b8a192, type: 3}

@@ -30,6 +30,7 @@ public class InGameUI : MonoBehaviour
 
     private ScoreAnimationEffect scoreAnimationEffect;
     private TimeAnimationEffect timeAnimationEffect;
+    private MusicTempoEffect musicTempoEffect;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class InGameUI : MonoBehaviour
 
         scoreAnimationEffect = FindObjectOfType<ScoreAnimationEffect>();
         timeAnimationEffect = FindObjectOfType<TimeAnimationEffect>();
+        musicTempoEffect = FindObjectOfType<MusicTempoEffect>();
 
         eventQueue = FindObjectOfType<EventQueue>();
         eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
@@ -71,6 +73,17 @@ public class InGameUI : MonoBehaviour
             {
                 timeAnimationEffect.SetTimerTextRef(timeText);  // generally bad idea if this happened every Update()
                 timeAnimationEffect.CheckForBeforeRoundEnd(_timeRemaining);
+            }
+            if (musicTempoEffect != null)
+            {
+                if (_timeRemaining == musicTempoEffect.secondsBeforeRoundEnd)
+                {
+                    musicTempoEffect.SetMusicTempo();
+                }
+                else if (_timeRemaining == 1)
+                {
+                    musicTempoEffect.TurnMusicOff();
+                }
             }
             Invoke("DecreaseTimer", 1f);
         }
