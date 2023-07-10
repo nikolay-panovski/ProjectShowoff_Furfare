@@ -32,7 +32,10 @@ public class SoundManager : MonoBehaviour
         if (scene.name == "MainMenuVisual")
         {
             SoundtrackSource.clip = MainMenu;
-
+            if (MusicIsOn)
+            {
+                SoundtrackSource.Play();
+            }
         }
         if (scene.name == "AssetsMaterialsLevel")
         {
