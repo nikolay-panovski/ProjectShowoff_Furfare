@@ -29,6 +29,7 @@ public class InGameUI : MonoBehaviour
 
 
     private ScoreAnimationEffect scoreAnimationEffect;
+    private TimeAnimationEffect timeAnimationEffect;
 
     void Start()
     {
@@ -36,8 +37,10 @@ public class InGameUI : MonoBehaviour
         GetAllPlayers();
 
         timeIsLeft = true;
+        timeText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(_timeRemaining / 60), Mathf.FloorToInt(_timeRemaining % 60));
 
         scoreAnimationEffect = FindObjectOfType<ScoreAnimationEffect>();
+        timeAnimationEffect = FindObjectOfType<TimeAnimationEffect>();
 
         eventQueue = FindObjectOfType<EventQueue>();
         eventQueue.Subscribe(EventType.PLAYER_HIT, OnPlayerHit);
@@ -62,12 +65,20 @@ public class InGameUI : MonoBehaviour
         _timeRemaining -= 1;
         DisplayTime(_timeRemaining);
         CheckForMatchEnd();
-        if (_timeRemaining > 0) Invoke("DecreaseTimer", 1f);
+        if (_timeRemaining > 0) 
+        {
+            if (timeAnimationEffect != null)
+            {
+                timeAnimationEffect.SetTimerTextRef(timeText);  // generally bad idea if this happened every Update()
+                timeAnimationEffect.CheckForBeforeRoundEnd(_timeRemaining);
+            }
+            Invoke("DecreaseTimer", 1f);
+        }
     }
 
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay += 1;
+        //timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
