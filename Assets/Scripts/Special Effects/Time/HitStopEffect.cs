@@ -15,6 +15,7 @@ public class HitStopEffect : MonoBehaviour
     // animate timeScale from default 1 to chosen lower number at round end
     public void SlowDownTime()
     {
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, finalTimeScale, animDuration).SetEase(easeType);
+        // messing with Unity's timeScale? make the tween independent of it
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, finalTimeScale, animDuration).SetEase(easeType).SetUpdate(UpdateType.Normal, true);
     }
 }

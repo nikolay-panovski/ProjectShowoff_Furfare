@@ -38,6 +38,12 @@ public class GameSceneManager : MonoBehaviour
 
     private void onSceneChanged(Scene loadedScene, LoadSceneMode loadSceneMode)
     {
+        if (Time.timeScale != 1f)
+        {
+            Time.timeScale = 1f; // reverts "HitStopEffect" - but do not allow that effect to run for longer than the idle time at the end of a round!
+        }
+
+
         SceneProperties loadedSceneProperties = FindObjectOfType<SceneProperties>();
 
         /// ON JOINING PLAYERS ALLOWED

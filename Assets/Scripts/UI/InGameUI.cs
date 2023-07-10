@@ -10,7 +10,7 @@ public class InGameUI : MonoBehaviour
 {
     [Tooltip("After the timer runs out for the current round, the game will wait for this many seconds before going to the next round.")]
     [SerializeField] private float idleTimeAfterRound = 3;
-    private float _idleTimeAfterRound;
+    private float pIdleTimeAfterRound;
     //[SerializeField] private bool destroyObjsOnRoundEnd = true;
     
     //Timer
@@ -38,7 +38,7 @@ public class InGameUI : MonoBehaviour
 
         GetAllPlayers();
 
-        _idleTimeAfterRound = idleTimeAfterRound;
+        pIdleTimeAfterRound = idleTimeAfterRound;
 
         timeIsLeft = true;
         timeText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(_timeRemaining / 60), Mathf.FloorToInt(_timeRemaining % 60));
@@ -55,6 +55,15 @@ public class InGameUI : MonoBehaviour
         foreach (PlayerConfig player in players)
         {
             player.playerUICard.GetComponentInChildren<Text>().text = player.score.ToString();
+        }
+    }
+
+    private void Update()
+    {
+        if (_timeRemaining <= 0)
+        {
+            if (pIdleTimeAfterRound <= 0) GoToNextLevel();
+            else CheckForMatchEnd();
         }
     }
 
@@ -105,7 +114,7 @@ public class InGameUI : MonoBehaviour
     {
         if (_timeRemaining <= 0)
         {
-            if (_idleTimeAfterRound == idleTimeAfterRound)
+            if (pIdleTimeAfterRound == idleTimeAfterRound)
             {
                 if (hitStopEffect != null) hitStopEffect.SlowDownTime();
 
@@ -122,9 +131,7 @@ public class InGameUI : MonoBehaviour
                 /**/
             }
 
-            _idleTimeAfterRound -= Time.unscaledDeltaTime;
-            if (_idleTimeAfterRound <= 0) GoToNextLevel();
-            else CheckForMatchEnd();
+            pIdleTimeAfterRound -= Time.unscaledDeltaTime;
         }
     }
 
