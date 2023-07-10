@@ -28,7 +28,8 @@ public enum AnimateVar
     POSITION,
     ROTATION,
     SCALE,
-    COLOR
+    COLOR,
+    SCORE
 }
 
 [System.Serializable]
@@ -69,7 +70,7 @@ public class ScoreAnimationEffect : MonoBehaviour
         switch (scoreModifyMode)
         {
             case ScoreModifyMode.INSTANT:
-                refText.text = toScore.ToString();
+                //refText.text = toScore.ToString();
                 break;
             case ScoreModifyMode.STEPWISE:
                 // set text to the next partial step as defined by step parameters here, then call this again when it is time for another step
@@ -80,10 +81,10 @@ public class ScoreAnimationEffect : MonoBehaviour
                 throw new System.ArgumentException("Invalid ScoreModifyMode: " + scoreModifyMode);
         }
 
-        AnimateScoreModification(refText);
+        AnimateScoreModification(refText, toScore);
     }
 
-    public void AnimateScoreModification(/*AnimatableText*/Text refText)
+    public void AnimateScoreModification(/*AnimatableText*/Text refText, int toScore)
     {
         if (animSequence != null) animSequence.Complete();
         animSequence = DOTween.Sequence();
@@ -113,6 +114,9 @@ public class ScoreAnimationEffect : MonoBehaviour
                     animSequence.Insert(0, refText.DOColor(new Color(refText.color.r + config.values.x,
                                                                      refText.color.g + config.values.y,
                                                                      refText.color.b + config.values.z, 1f), config.animDuration).SetAs(finalAnimation));
+                    break;
+                case AnimateVar.SCORE:
+                    animSequence.Insert(0, DOTween.To(() => int.Parse(refText.text), x => refText.text = x.ToString(), toScore, config.animDuration));
                     break;
             }
         }
