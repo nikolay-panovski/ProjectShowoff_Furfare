@@ -247,7 +247,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         eventQueue.Unsubscribe(EventType.GAMEPLAY_ROUND_ENDED, OnRoundEnded);
     }

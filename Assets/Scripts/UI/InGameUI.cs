@@ -212,7 +212,7 @@ public class InGameUI : MonoBehaviour
         Debug.Log("The winner is" + players[0]);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         eventQueue.Unsubscribe(EventType.PLAYER_HIT, OnPlayerHit);
     }
